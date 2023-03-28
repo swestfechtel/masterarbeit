@@ -14,8 +14,8 @@ class BasicAnalysisFramework:
 
     def load_edgelist(self, filename: str):
         df = pd.read_csv(filename)
-        df['Referee'] = df['Referee'].astype('Int64', errors='ignore')
-        df['Referral'] = df['Referral'].astype('Int64', errors='ignore')
+        df['Referee'] = df['Referee'].astype('str', errors='ignore')
+        df['Referral'] = df['Referral'].astype('str', errors='ignore')
         rows_with_contact = df[~df['Referral'].isnull()]
         rows_without_contact = df[df['Referral'].isnull()]
         try:
@@ -66,9 +66,7 @@ class BasicAnalysisFramework:
         for node in self._network.nodes:
             df = df.append({'Referee': node, 'Degree_Centrality': self._degree_centrality[node], 'Betweenness_Centrality': self._betweenness_centrality[node], 'Pagerank_Centrality': self._pagerank_centrality[node], 
                             'Component_Size': len(nx.node_connected_component(self._network, node))}, ignore_index=True)
-        
-        df['Referee'] = df['Referee'].astype('Int64', errors='ignore')
-        df = df.sort_values(by='Referee', ascending=True)
+
         df = df.reset_index()
         df.drop(columns=['index'], inplace=True)
         return df
