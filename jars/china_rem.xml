@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<eventnet.configuration name="eventnet.configuration" version="0.5.6-pre">
+    <input.files accept=".csv" has.header="true" delimiter="COMMA" quote.char="DOUBLEQUOTE">
+        <input.directory name="E:\Data\masterarbeit\Data\Preprocessed"/>
+        <file name="china_eventlist.csv"/>
+    </input.files>
+    <output.directory name="E:\Data\masterarbeit\Data\Tables"/>
+    <event.components>
+        <component name="SOURCE" column.name="referee"/>
+        <component name="TARGET" column.name="referral"/>
+        <component name="TIME" column.name="date"/>
+        <component name="TYPE" column.name="type"/>
+        <component name="WEIGHT" column.name="weight"/>
+        <component name="EVENT_INTERVAL_ID" column.name="event_id"/>
+    </event.components>
+    <network.mode is.multimode="false"/>
+    <event.types>
+        <type name="add_actor" implied="false" admits.loops="true"/>
+        <type name="contact_nomination" implied="false" admits.loops="false"/>
+        <type name="gender" implied="false" admits.loops="true"/>
+        <type name="residency" implied="false" admits.loops="true"/>
+        <type name="age" implied="false" admits.loops="true"/>
+        <type name="place_event" implied="false" admits.loops="true"/>
+        <type name="symptom" implied="false" admits.loops="true"/>
+        <type name="symptom_severity" implied="false" admits.loops="true"/>
+        <type name="place_admission" implied="false" admits.loops="true"/>
+    </event.types>
+    <time time.format.type="DATE_TIME" interval.type="TIME" time.unit="1" calendar.time.unit="DAY" date.format.pattern="yyMMdd"/>
+    <attribute name="age" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="age" direction="OUT"/>
+    </attribute>
+    <attribute name="gender" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="gender" direction="OUT"/>
+    </attribute>
+    <attribute name="residency" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="residency" direction="OUT"/>
+    </attribute>
+    <attribute name="place_event" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="place_event" direction="OUT"/>
+    </attribute>
+    <attribute name="symptom" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="symptom" direction="OUT"/>
+    </attribute>
+    <attribute name="symptom_severity" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="symptom_severity" direction="OUT"/>
+    </attribute>
+    <attribute name="place_admission" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="place_admission" direction="OUT"/>
+    </attribute>
+    <attribute name="at_risk" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="SET_VALUE_TO"/>
+        <event.response event.type="add_actor" direction="OUT"/>
+    </attribute>
+    <attribute name="nomination" class="DYAD_LEVEL" type="DEFAULT_DYAD_LEVEL_ATTRIBUTE" description="referee nominates referral as contact">
+        <attr.update type="INCREMENT_VALUE_BY"/>
+        <event.response event.type="contact_nomination"/>
+    </attribute>
+    <attribute name="case" class="NODE_LEVEL" type="DEFAULT_NODE_LEVEL_ATTRIBUTE" description="referee is recorded as patient">
+        <attr.update type="INCREMENT_VALUE_BY"/>
+        <event.response event.type="contact_nomination" direction="OUT"/>
+    </attribute>
+    <attribute name="network_activity" class="NETWORK_LEVEL" type="DEFAULT_NETWORK_LEVEL_ATTRIBUTE" description="">
+        <attr.update type="INCREMENT_VALUE_BY"/>
+        <event.response event.type="contact_nomination"/>
+    </attribute>
+    <statistic name="repetition" type="DYAD_STATISTIC" dyad.attr.name.1="nomination" direction.1="OUT" na.value="-1.0"/>
+    <statistic name="reciprocation" type="DYAD_STATISTIC" dyad.attr.name.1="nomination" direction.1="IN" na.value="-1.0"/>
+    <statistic name="transitive_closure" type="TRIANGLE_STATISTIC" dyad.attr.name.1="nomination" direction.1="OUT" dyad.attr.name.2="nomination" direction.2="IN" na.value="-1.0"/>
+    <statistic name="network_activity" type="NETWORK_STATISTIC" network.attr.name.1="network_activity" na.value="-1.0"/>
+    <statistic name="referee_age" type="NODE_STATISTIC" node.attr.name.1="age" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_age" type="NODE_STATISTIC" node.attr.name.1="age" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_gender" type="NODE_STATISTIC" node.attr.name.1="gender" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_gender" type="NODE_STATISTIC" node.attr.name.1="gender" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_residency" type="NODE_STATISTIC" node.attr.name.1="residency" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_residency" type="NODE_STATISTIC" node.attr.name.1="residency" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_place_event" type="NODE_STATISTIC" node.attr.name.1="place_event" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_place_event" type="NODE_STATISTIC" node.attr.name.1="place_event" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_symptom" type="NODE_STATISTIC" node.attr.name.1="symptom" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_symptom" type="NODE_STATISTIC" node.attr.name.1="symptom" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_symptom_severity" type="NODE_STATISTIC" node.attr.name.1="symptom_severity" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_symptom_severity" type="NODE_STATISTIC" node.attr.name.1="symptom_severity" endpoint="TARGET" na.value="-1.0"/>
+    <statistic name="referee_place_admission" type="NODE_STATISTIC" node.attr.name.1="place_admission" endpoint="SOURCE" na.value="-1.0"/>
+    <statistic name="referral_place_admission" type="NODE_STATISTIC" node.attr.name.1="place_admission" endpoint="TARGET" na.value="-1.0"/>
+    <observation name="nomination" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
+    <observation name="nomination_cond_sender" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
+</eventnet.configuration>
