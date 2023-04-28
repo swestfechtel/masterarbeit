@@ -5,7 +5,7 @@
     <file name="yunnan_eventlist.csv"/>
   </input.files>
 
-  <output.directory name="E:\Data\masterarbeit\Data\Tables"/>
+  <output.directory name="E:\Data\masterarbeit\Data\Tables\rem"/>
 
   <event.components>
     <component name="SOURCE" column.name="referee"/>
@@ -86,6 +86,6 @@
   <statistic name="referral_relatives" type="NODE_STATISTIC" node.attr.name.1="relatives" endpoint="TARGET" na.value="-1.0"/>
 
   <observation name="nomination" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
-  <observation name="nomination_cond_referee" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
+  <observation name="nomination_cond_referee" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
   <observation name="nomination_cond_referral" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
 </eventnet.configuration>

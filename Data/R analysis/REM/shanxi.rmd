@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(survival)
+setwd('E:/Data/masterarbeit/Data/Tables/rem')
+```
+
+
+```{r}
+nomination.events <- read.csv2('shanxi_eventlist_nomination.csv', sep=',')
+nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))] <- log1p(nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))])
+nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))] <- scale(nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))])
+nomination.events.surv <- Surv(time=rep(1, nrow(nomination.events)), event=nomination.events$IS_OBSERVED)
+nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_relatives + referral_relatives + referee_hukou + referral_hukou + strata(EVENT_INTERVAL), data=nomination.events)
+summary(nomination.events.rem)
+```
+
+```{r}
+nomination.events.cond.referee <- read.csv2('yunnan_eventlist_nomination_cond_referee.csv', sep=',')
+nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- log1p(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
+nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- scale(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
+nomination.events.cond.referee.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referee)), event=nomination.events.cond.referee$IS_OBSERVED)
+nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~ reciprocation + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_relatives + referral_relatives + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # all except reciprocation, network activity/time NAN??
+summary(nomination.events.cond.referee.rem)
+```
+
+```{r}
+nomination.events.cond.referral <- read.csv2('shanxi_eventlist_nomination_cond_referral.csv', sep=',')
+nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))] <- log1p(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))])
+nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))] <- scale(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))])
+nomination.events.cond.referral.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referral)), event=nomination.events.cond.referral$IS_OBSERVED)
+nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_relatives + referral_relatives + referee_hukou + referral_hukou + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
+summary(nomination.events.cond.referral.rem)
+```

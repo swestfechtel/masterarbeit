@@ -12,16 +12,19 @@ However, only some referrals are contained in the patient dataset, and not all p
 - RHEM node attribute covariates can either be source-receiver set relation level
 ## Questions for next meeting:
 - how to include relational node attribute covariates in REM analysis?
+- how to handle na values?
+- config files ok?
+- need to one-hot encode categorical vars? 
 
-### REM Covariates:
-#### Note attributes:
+## REM Covariates:
+### Note attributes:
 - age difference
 - sex difference
 - residency difference (where applicable)
 - job difference (where applicable)
 - more from big china dataset
 
-#### Network effects
+### Network effects
 - repetition:
   - A ---> B t_n
   
@@ -60,5 +63,61 @@ However, only some referrals are contained in the patient dataset, and not all p
     B (OUT) ---> C t_n
   
     A <--> B t_n+1
+## RHEM covariates:
+### Node attributes
 
+- age difference: DIR_HYPEREDGE_PARTICIPANT_COVAR_DIFF_STATISTIC
+- sex difference: DIR_HYPEREDGE_PARTICIPANT_COVAR_DIFF_STATISTIC
+- average age: DIR_HYPEREDGE_PARTICIPANT_COVAR_AVG_STATISTIC
+- categorical attributes: DIR_HYPEREDGE_PARTICIPANT_CAT_COVAR_DIFF_STATISTIC
+### Network effects
+
+- exact repetition: (UN)DIR_HYPEREDGE_REPETITION_STATISTIC
+  - A ---> B,C t_n
+  
+    A ---> B,C t_n+1
+- partial repetition: DIR_HYPEREDGE_SUB_REPETITION_STATISTIC_AVG
+  - A ---> B,C t_n
+  
+    A ---> B,D t_n+1
+- unordered repetition: DIR_HYPEREDGE_UNDIRECTED_REPETITION_STATISTIC
+  - A ---> B,C t_n
+  
+    B ---> A,C t_n+1
+- unordered partial repetition: DIR_HYPEREDGE_SUB_REPETITION_STATISTIC_AVG
+  - A ---> B,C t_n
+  
+    B ---> A,D t_n+1
+- generalised reciprocation: DIR_HYPEREDGE_SUB_RECIPROCATION_STATISTIC_AVG
+  - A ---> B,C t_n
+    D ---> A,E t_n+1
+    X ---> A,D t_n+2
+- reciprocation: DIR_HYPEREDGE_SUB_RECIPROCATION_STATISTIC_AVG
+  - A ---> B,C t_n
+    B ---> A,X t_n+1
+- transitive tie: DIR_HYPEREDGE_CLOSURE_STATISTIC
+  - A ---> B,C t_n
+  
+    B ---> D,E t_n+1
+  
+    A ---> D,X t_n+2
+- cyclical tie: DIR_HYPEREDGE_CLOSURE_STATISTIC
+  - A ---> B,C t_n
+  
+    B ---> D,E t_n+1
+  
+    D ---> A,X t_n+1
+- triangle effect parents: DIR_HYPEREDGE_CLOSURE_STATISTIC
+  - A ---> B,C t_n
+  
+    D ---> C,X t_n+1
+  
+    A ---> D,Y t_n+2
+- triangle effect children: DIR_HYPEREDGE_CLOSURE_STATISTIC
+  - A ---> B,C t_n
+  
+    A ---> D,E t_n+1
+
+    C ---> D,X t_n+2
+- hyperedge size: DIR_HYPEREDGE_SIZE_STATISTIC
 ## TODO:
