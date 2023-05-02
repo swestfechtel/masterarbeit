@@ -15,6 +15,8 @@ However, only some referrals are contained in the patient dataset, and not all p
 - how to handle na values?
 - config files ok?
 - need to one-hot encode categorical vars? 
+- is it normal that some statistics are all NAN?
+- why doesn't referrals_difference work for categorical vars?
 
 ## REM Covariates:
 ### Note attributes:
