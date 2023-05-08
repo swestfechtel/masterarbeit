@@ -14,10 +14,12 @@ class BasicAnalysisFramework:
 
     def load_edgelist(self, filename: str):
         df = pd.read_csv(filename)
-        df['Referee'] = df['Referee'].astype('str', errors='ignore')
-        df['Referral'] = df['Referral'].astype('str', errors='ignore')
         rows_with_contact = df[~df['Referral'].isnull()]
         rows_without_contact = df[df['Referral'].isnull()]
+        rows_with_contact['Referee'] = rows_with_contact['Referee'].astype('str', errors='ignore')
+        rows_with_contact['Referral'] = rows_with_contact['Referral'].astype('str', errors='ignore')
+        rows_without_contact['Referee'] = rows_without_contact['Referee'].astype('str', errors='ignore')
+        rows_without_contact['Referral'] = rows_without_contact['Referral'].astype('str', errors='ignore')
         try:
             assert df.shape[0] == (rows_with_contact.shape[0] + rows_without_contact.shape[0]) # sanity check
         except AssertionError:

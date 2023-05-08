@@ -17,6 +17,9 @@ However, only some referrals are contained in the patient dataset, and not all p
 - need to one-hot encode categorical vars? 
 - is it normal that some statistics are all NAN?
 - why doesn't referrals_difference work for categorical vars?
+- how to compare methods against one another? especially basic vs rem/rhem?
+- for rem: compare eventnet output or coxph output?
+- how to incorporate network effects into regression for the non-temporal model?
 
 ## REM Covariates:
 ### Note attributes:
@@ -122,4 +125,8 @@ However, only some referrals are contained in the patient dataset, and not all p
 
     C ---> D,X t_n+2
 - hyperedge size: DIR_HYPEREDGE_SIZE_STATISTIC
+
+## Regression models
+sklearn.feature_selection.f_regression/r_regression to measure effect and significance of predictors 
+
 ## TODO:

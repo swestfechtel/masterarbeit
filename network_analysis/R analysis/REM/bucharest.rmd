@@ -6,7 +6,7 @@ output: html_document
 
 ```{r}
 library(survival)
-setwd('E:/Data/masterarbeit/Data/Tables/')
+setwd('E:/Data/masterarbeit/Data/Tables/rem')
 ```
 
 
