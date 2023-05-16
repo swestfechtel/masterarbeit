@@ -132,17 +132,17 @@
     <statistic name="referee_gender" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referrals_avg_gender" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referee_referrals_gender_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
-    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="gender" na.value="-1.0"/>
+    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
 
     <statistic name="referee_medical" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="medical" na.value="-1.0"/>
     <statistic name="referrals_avg_medical" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="medical" na.value="-1.0"/>
     <statistic name="referee_referrals_medical_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="medical" na.value="-1.0"/>
-    <statistic name="referrals_medical_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="medical" na.value="-1.0"/>
+    <statistic name="referrals_medical_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="medical" na.value="-1.0"/>
 
     <statistic name="referee_isco08_label" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="isco08_label" na.value="-1.0"/>
     <statistic name="referrals_avg_isco08_label" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="isco08_label" na.value="-1.0"/>
     <statistic name="referee_referrals_isco08_label_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="isco08_label" na.value="-1.0"/>
-    <statistic name="referrals_isco08_label_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="isco08_label" na.value="-1.0"/>
+    <statistic name="referrals_isco08_label_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="isco08_label" na.value="-1.0"/>
 
 
     <observation name="nomination" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>

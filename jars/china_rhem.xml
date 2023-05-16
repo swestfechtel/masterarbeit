@@ -147,35 +147,35 @@
     <statistic name="referee_gender" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referrals_avg_gender" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referee_referrals_gender_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
-    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="gender" na.value="-1.0"/>
+    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
 
     <statistic name="referee_residency" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="residency" na.value="-1.0"/>
     <statistic name="referrals_avg_residency" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="residency" na.value="-1.0"/>
     <statistic name="referee_referrals_residency_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="residency" na.value="-1.0"/>
-    <statistic name="referrals_residency_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="residency" na.value="-1.0"/>
+    <statistic name="referrals_residency_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="residency" na.value="-1.0"/>
 
     <statistic name="referee_place_event" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="place_event" na.value="-1.0"/>
     <statistic name="referrals_avg_place_event" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="place_event" na.value="-1.0"/>
     <statistic name="referee_referrals_place_event_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="place_event" na.value="-1.0"/>
-    <statistic name="referrals_place_event_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="place_event" na.value="-1.0"/>
+    <statistic name="referrals_place_event_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="place_event" na.value="-1.0"/>
 
     <statistic name="referee_symptom" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="symptom" na.value="-1.0"/>
     <statistic name="referrals_avg_symptom" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="symptom" na.value="-1.0"/>
     <statistic name="referee_referrals_symptomy_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="symptom" na.value="-1.0"/>
-    <statistic name="referrals_symptom_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="symptom" na.value="-1.0"/>
+    <statistic name="referrals_symptom_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="symptom" na.value="-1.0"/>
 
     <statistic name="referee_symptom_severity" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="symptom_severity" na.value="-1.0"/>
     <statistic name="referrals_avg_symptom_severity" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="symptom_severity" na.value="-1.0"/>
     <statistic name="referee_referrals_symptom_severity_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="symptom_severity" na.value="-1.0"/>
-    <statistic name="referrals_symptom_severity_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="symptom_severity" na.value="-1.0"/>
+    <statistic name="referrals_symptom_severity_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="symptom_severity" na.value="-1.0"/>
 
     <statistic name="referee_place_admission" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="place_admission" na.value="-1.0"/>
     <statistic name="referrals_avg_place_admission" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="place_admission" na.value="-1.0"/>
     <statistic name="referee_referrals_place_admission_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="place_admission" na.value="-1.0"/>
-    <statistic name="referrals_place_admission_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="place_admission" na.value="-1.0"/>
+    <statistic name="referrals_place_admission_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="place_admission" na.value="-1.0"/>
 
 
-    <observation name="nomination" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
-    <observation name="nomination_cond_referee" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
-    <observation name="nomination_cond_referral" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
+    <observation name="nomination" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="200" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
+    <observation name="nomination_cond_referee" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="200" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
+    <observation name="nomination_cond_referral" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="200" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
 </eventnet.configuration>

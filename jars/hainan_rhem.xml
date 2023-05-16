@@ -127,15 +127,15 @@
     <statistic name="referee_gender" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referrals_avg_gender" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
     <statistic name="referee_referrals_gender_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
-    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="gender" na.value="-1.0"/>
+    <statistic name="referrals_gender_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="gender" na.value="-1.0"/>
 
     <statistic name="referee_relatives" type="DIR_HYPEREDGE_SRC_COVAR_AVG_STATISTIC" node.attr.name.1="relatives" na.value="-1.0"/>
     <statistic name="referrals_avg_relatives" type="DIR_HYPEREDGE_TRG_COVAR_AVG_STATISTIC" node.attr.name.1="relatives" na.value="-1.0"/>
     <statistic name="referee_referrals_relatives_difference" type="DIR_HYPEREDGE_SRC_TRG_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="relatives" na.value="-1.0"/>
-    <statistic name="referrals_relatives_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFFERENCE" node.attr.name.1="relatives" na.value="-1.0"/>
+    <statistic name="referrals_relatives_difference" type="DIR_HYPEREDGE_TRG_PAIR_CAT_COVAR_DIFF_STATISTIC" node.attr.name.1="relatives" na.value="-1.0"/>
 
 
-    <observation name="nomination" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
-    <observation name="nomination_cond_referee" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
-    <observation name="nomination_cond_referral" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
+    <observation name="nomination" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="20000" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
+    <observation name="nomination_cond_referee" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="20000" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
+    <observation name="nomination_cond_referral" type="CONDITIONAL_SIZE_DIR_HYPEREDGE_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="20000" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
 </eventnet.configuration>
