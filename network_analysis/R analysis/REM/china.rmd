@@ -15,7 +15,12 @@ nomination.events <- read.csv2('china_eventlist_nomination.csv', sep=',')
 nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))] <- log1p(nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))])
 nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))] <- scale(nomination.events[,c(which(names(nomination.events) == 'nomination_activity'):which(names(nomination.events) == 'network_time'))])
 nomination.events.surv <- Surv(time=rep(1, nrow(nomination.events)), event=nomination.events$IS_OBSERVED)
-nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_residency + referral_residency + referee_place_event + referral_place_event + referee_symptom + referral_symptom + referee_symptom_severity + referral_symptom_severity + referee_place_admission + referral_place_admission + strata(EVENT_INTERVAL), data=nomination.events)
+nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_residency + referral_residency + residency_difference + referee_place_event + referral_place_event + place_event_difference + referee_symptom + referral_symptom + symptom_difference + referee_symptom_severity + referral_symptom_severity + symptom_severity_difference + referee_place_admission + referral_place_admission + place_admission_difference + strata(EVENT_INTERVAL), data=nomination.events)
+
+```
+
+```{r}
+options(width=300)
 summary(nomination.events.rem)
 ```
 
@@ -24,8 +29,13 @@ nomination.events.cond.referee <- read.csv2('china_eventlist_nomination_cond_ref
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- log1p(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- scale(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referee)), event=nomination.events.cond.referee$IS_OBSERVED)
-nomination.events.cond.sender.rem <- coxph(nomination.events.cond.referee.surv ~ nomination_activity +  reciprocation  + exact_reciprocation + cyclical_tie + triangle_effect_children  + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_residency + referral_residency + referee_place_event + referral_place_event + referee_symptom + referral_symptom + referee_symptom_severity + referral_symptom_severity + referee_place_admission + referral_place_admission + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # repetition, transitive_tie and triangle_effect_parents all NAN
-summary(nomination.events.cond.sender.rem)
+nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~ nomination_activity +  reciprocation  + exact_reciprocation + cyclical_tie + triangle_effect_children  + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_residency + referral_residency + residency_difference + referee_place_event + referral_place_event + place_event_difference + referee_symptom + referral_symptom + symptom_difference + referee_symptom_severity + referral_symptom_severity + symptom_severity_difference + referee_place_admission + referral_place_admission + place_admission_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # repetition, transitive_tie and triangle_effect_parents all NAN
+
+```
+
+```{r}
+options(width=300)
+summary(nomination.events.cond.referee.rem)
 ```
 
 ```{r}
@@ -33,6 +43,11 @@ nomination.events.cond.referral <- read.csv2('china_eventlist_nomination_cond_re
 nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))] <- log1p(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))])
 nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))] <- scale(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))])
 nomination.events.cond.referral.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referral)), event=nomination.events.cond.referral$IS_OBSERVED)
-nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + referee_gender + referral_gender + referee_residency + referral_residency + referee_place_event + referral_place_event + referee_symptom + referral_symptom + referee_symptom_severity + referral_symptom_severity + referee_place_admission + referral_place_admission + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
+nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_residency + referral_residency + residency_difference + referee_place_event + referral_place_event + place_event_difference + referee_symptom + referral_symptom + symptom_difference + referee_symptom_severity + referral_symptom_severity + symptom_severity_difference + referee_place_admission + referral_place_admission + place_admission_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
+
+```
+
+```{r}
+options(width=300)
 summary(nomination.events.cond.referral.rem)
 ```

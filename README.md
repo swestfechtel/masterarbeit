@@ -138,3 +138,4 @@ die in beiden Modellen vorkommen
 sklearn.feature_selection.f_regression/r_regression to measure effect and significance of predictors 
 
 ## TODO:
+- for china dataset, calculate percentage of cross-region nominations

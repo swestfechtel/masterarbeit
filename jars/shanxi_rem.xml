@@ -24,7 +24,7 @@
         <type name="gender" implied="false" admits.loops="true"/>
         <type name="relatives" implied="false" admits.loops="true"/>
         <type name="age" implied="false" admits.loops="true"/>
-        <type name="hokou" implied="false" admits.loops="true"/>
+        <type name="hukou" implied="false" admits.loops="true"/>
     </event.types>
 
     <time time.format.type="DATE_TIME" interval.type="TIME" time.unit="1" calendar.time.unit="DAY" date.format.pattern="yyMMdd"/>
@@ -92,7 +92,7 @@
     <statistic name="referee_hukou" type="NODE_STATISTIC" node.attr.name.1="hukou" endpoint="SOURCE" na.value="-1.0"/>
     <statistic name="referral_hukou" type="NODE_STATISTIC" node.attr.name.1="hukou" endpoint="TARGET" na.value="-1.0"/>
 
-    <observation name="nomination" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
-    <observation name="nomination_cond_referee" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
-    <observation name="nomination_cond_referral" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="100" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
+    <observation name="nomination" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="10000" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" target.is.non.zero.on.attr="at_risk"/>
+    <observation name="nomination_cond_referee" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="10000" non.events.are.per.observed.event="true" target.is.non.zero.on.attr="at_risk" condition.on.source="true"/>
+    <observation name="nomination_cond_referral" type="DEFAULT_DYADIC_OBSERVATION" exclude.loops="true" apply.case.control.sampling="true" number.of.non.events="10000" non.events.are.per.observed.event="true" source.is.non.zero.on.attr="at_risk" condition.on.target="true"/>
 </eventnet.configuration>
