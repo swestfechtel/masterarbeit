@@ -12,17 +12,16 @@ However, only some referrals are contained in the patient dataset, and not all p
 - RHEM node attribute covariates can either be source-receiver set relation level
 ## Questions for next meeting:
 - how to include relational node attribute covariates in REM analysis? -> nach eventnet Spalte einfuegen,
-für Differenz etc., das dann in coxph (siehe auch tutorial structural balance)
+für Differenz etc., das dann in coxph (siehe auch tutorial structural balance) [x]
 - how to handle na values? -> fehlende werden rausgelassen, Statistik für Prozentsatz von nicht-fehlenden Instanzen
 d.h. damit abwägen, wenn Prozentsatz von fehlenden Werten zu hoch ist Aussagekraft ggf. fragwürdig
 -> fehlender Wert explizit angeben, z.B. -1 [x]
-- config files ok?
 - need to one-hot encode categorical vars? How to handle categorical vars with lots of unique values? Only difference? 
 -> primär differenz, one-hot-Variante eventuell uninteressant z.B. residence; ggf. Datensatz splitten
 wenn Nominierungen fast nur innerhalb einer Stadt etc.
 - is it normal that some statistics are all NAN? -> wenn alle Instanzen den gleichen Wert haben,
 kann der Effekt nicht geschätzt werden, z.B. wenn jede Instanz nur einmal als Referee auftritt
-- sample rate? Anzahl events indirekt propotional zu Anzahl sampled non-events, events + non-events ~ 1m
+- sample rate? Anzahl events indirekt propotional zu Anzahl sampled non-events, events + non-events ~ 1m [x]
 - why doesn't referrals_difference work for categorical vars? [x]
 - how to compare methods against one another? especially basic vs rem/rhem? -> auf den Statistiken,
 die in beiden Modellen vorkommen
