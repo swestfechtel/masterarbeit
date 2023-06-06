@@ -39,5 +39,9 @@ nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) 
 nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))] <- scale(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'nomination_activity'):which(names(nomination.events.cond.referral) == 'network_time'))])
 nomination.events.cond.referral.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referral)), event=nomination.events.cond.referral$IS_OBSERVED)
 nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ nomination_activity +  reciprocation  + exact_reciprocation + cyclical_tie + triangle_effect_children  + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_isco08_label + referral_isco08_label + isco08_label_difference + referee_medical + referral_medical + medical_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referral) # repetition, transitive_tie and triangle_effect_parents all NAN
+
+```
+
+```{r}
 summary(nomination.events.cond.referral.rem)
 ```

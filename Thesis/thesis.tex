@@ -1,0 +1,54 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[autostyle]{csquotes}
+\usepackage{acronym}
+\usepackage{babel}
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{array}
+%\usepackage{subfig}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\usepackage[style=nature]{biblatex}
+\addbibresource{sources.bib}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}p}
+\newcommand{\re}[1]{\textbf{\textcolor{orange}{#1}}}
+\newcommand{\add}[1]{\textbf{\textcolor{blue}{#1}}}
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries}{}{0pt}{\Large}
+
+
+\title{
+	A Sociable Virus? \\
+	A Comparison and Investigation of Reproducibility of Methods for Analysing COVID-19 Transmission Chains Using Graph Networks
+}
+
+
+\author{Simon Westfechtel}
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		abstract goes here
+	\end{abstract}
+	\include{introduction}
+	\include{previous_data}
+	\include{methods}
+	\include{results_discussion}
+	\include{outlook}
+	\printbibliography
+\end{document}

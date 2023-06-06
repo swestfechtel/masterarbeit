@@ -27,7 +27,7 @@ kann der Effekt nicht geschätzt werden, z.B. wenn jede Instanz nur einmal als R
 die in beiden Modellen vorkommen
 - for rem: compare eventnet output or coxph output? -> Cox-Modelle, qualitativ -> Richtung, Signifikanz etc.
 - how to incorporate network effects into regression for the non-temporal model?
--> Brainlag, ich muss Vorhersagen für Dyaden treffen
+-> Brainlag, ich muss Vorhersagen für Dyaden treffen [x]
 ## REM Covariates:
 ### Note attributes:
 - age difference
