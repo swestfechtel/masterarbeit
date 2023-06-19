@@ -36,31 +36,32 @@ A dataset consisting of records of the form (source, contact) can be modelled as
 			\node (E) at (0,-2) {E};
 			\node (F) at (1,-2) {F};
 			\node (I) at (3,0) {I};
-			\node (J) at (2,-1) {I};
+			\node (J) at (2,-1) {J};
 		\end{scope}
 		
 		\begin{scope}
 			\path (C) edge node {} (D);
 			\path (C) edge node {} (E);
 			\path (C) edge node {} (F);
+			\path (G) edge node {} (H);
 			\path (H) edge node {} (I);
 			\path (H) edge node {} (J);
 			\path (I) edge node {} (J);
 		\end{scope}
 	\end{tikzpicture}
-	\caption{Exemplary case contact network. Confirmed cases are coloured red, and reported contacts are coloured purple.}
+	\caption{Exemplary case contact network. Confirmed cases are coloured red, and reported contacts are coloured purple. This network contains four connected components: $\{\{A\},\{B\},\{C,D,E,F\},\{G,H,I,J\}\}$}
 	\label{fig:example_case_network}
 \end{figure}
 
 \section{Relational Event Models}
-\label{sec:rem}
+\label{sec:intro_rem}
 
 These static networks, however, can only give a partial representation of reality, since temporal information is omitted; thus, it is assumed that all infections and contact nominations happen simultaneously, whereas in reality, events occur sequentially. Therefore, infected patient $A$ might name person $B$ as a contact at time $t_1$, and $B$ might himself be recorded as a patient at a later time $t_2$, nominate persons $B,C,E$ as contacts, and so on. Obviously, this temporal aspect leads to a range of additional possible effects. Do dyads (pairs of source, contact) appear repeatedly (repetition), is a person $B$ who gets nominated as a contact by $A$ at time $t_n$ more likely to become a patient, and nominate $A$ in return at a later time $t_{n+m}$ (reciprocation), or is there a tendency for cyclic closure, where $A$ nominates $B$, $B$ then nominates $C$, and $C$ nominates $A$? \add{illustration}
 
 A common method for modelling time-stamped relational data of the form (time, source, contact) are Relational Event Models, short REM, which were first proposed by \add{CITE}. They will be discussed further in chapter \ref{ch:methods}.
 
 \section{Relational Hyperevent Models}
-\label{sec:rhem}
+\label{sec:intro_rhem}
 
 An obvious shortcoming of relational event models is their dyadic nature, i.e. their inherent assumption that all interactions only involve two people at a time. Of course, this is not an accurate representation of reality. Think, for example, of John sending an email addressed at multiple of his colleagues, or in the context of COVID, Jane testing positive after attending a party and naming all the other guests as contacts. Some workarounds have been proposed to tackle this problem, like treating all interactions separately, or grouping all receiver nodes (email recipients and party attendees in our examples, respectively) into a single node. Refer to figure \ref{fig:polyadic_interactions} for an illustration. The problem with the former method is the fact that is treats the interactions as independent, while the latter may be unfeasible or even intractable for large datasets.
 

@@ -25,70 +25,24 @@ To express this formally, let $A$ be the set of referees, $B$ be the set of refe
 \section{Yunnan Dataset}
 \label{sec:yunnan_data}
 
-\paragraph{Dataset overview} This dataset contains COVID case information from the province of Yunnan in southern China \cite{hainan_data}. There are 171 entries, with dates ranging from 2020-01-17 to 2020-02-16, i.e. this dataset is from the very early stages of the pandemic. The patient covariates deemed to be relevant are age, gender, and whether they are relatives of other confirmed cases listed in the dataset. All covariates are also listed in table \ref{tab:yunnan_hainan_covariates}.
-
-\begin{table}
-	\begin{minipage}{.45\linewidth}
-		\begin{tabularx}{\linewidth}{L{.4\linewidth}L{.6\linewidth}}
-			\hline
-			\textbf{Covariate} & \textbf{Description}\\
-			\hline
-			Date & Date when the case was confirmed/reported\\
-			Gender & Male/Female\\
-			Age & In years\\
-			Relatives & Whether the patient is a relative of previously recorded cases\\
-			\hline
-		\end{tabularx}
-		\caption{Relevant covariates for the Yunnan and Hainan datasets}
-		\label{tab:yunnan_hainan_covariates}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{.45\linewidth}
-		\begin{tabularx}{\linewidth}{L{.4\linewidth}L{.6\linewidth}}
-			\hline
-			\textbf{Covariate} & \textbf{Description}\\
-			\hline
-			Date & Date when the case was confirmed/reported\\
-			Gender & Male/Female\\
-			Age & In years\\
-			Hukou & Place of residence\\
-			Relatives & Whether the patient is a relative of previously recorded cases\\
-			\hline
-		\end{tabularx}
-		\caption{Relevant covariates for the Shanxi dataset}
-		\label{tab:shanxi_covariates}
-	\end{minipage}
-	\begin{tabularx}{\linewidth}{L{.4\linewidth}L{.6\linewidth}}
-		\hline
-		\textbf{Covariate} & \textbf{Description}\\
-		\hline
-		Date & Date when the case was confirmed/reported\\
-		Gender & Male/Female\\
-		Age & In years\\
-		Place of residence & \\
-		Place and event & Activity where infection might have happened\\
-		Symptom & The patient's symptoms\\
-		Symptom severity & \\
-		Place of admission & Where the patient was recorded by health authorities \\
-		\hline
-	\end{tabularx}
-	\caption{Relevant covariates for the China dataset}
-	\label{tab:china_covariates}
-	\begin{tabularx}{\linewidth}{XXXXXX}
-		\hline
-		\textbf{Dataset} & \textbf{Age} & \textbf{Gender} & \textbf{Residence} & \textbf{Relatives} & \textbf{Degree}\\
-		\hline
-		Yunnan & $41\pm18$ & $\approx$ & - & $0.51$ & $1.3\pm3.2$\\
-		Hainan & $48\pm17$ & $\approx$ & - & $0.46$ & $1.5\pm1.8$\\
-		Shanxi & $46\pm16$ & $>men$ & Xian & $0.37$ & $0.99\pm1.3$\\
-		China & $42\pm18$ & $>men$ & Xian & - & $3.6\pm18$\\
-		\hline
-	\end{tabularx}
-	\caption{Comparison of covariates between datasets (where applicable). \emph{Gender} states which sex is more common, or whether they are roughly equal. \emph{Residence} is the most common value. \emph{Relatives} specifies the ratio of cases where relatives were recorded previously.}
-	\label{tab:cov_comp}
-\end{table}
+\paragraph{Dataset overview} This dataset contains COVID case information from the province of Yunnan in southern China \cite{hainan_data}. There are 171 entries, with dates ranging from 2020-01-17 to 2020-02-16, i.e. this dataset is from the very early stages of the pandemic. The patient covariates deemed to be relevant are age, gender, and whether they are relatives of other confirmed cases listed in the dataset. All covariates are also listed in table \ref{tab:yunnan_covariates}.
 
 Of the 171 individuals who have been confirmed positive, 114 cases have named no contacts at all, 25 have named one contact, eleven have named two contacts, and 21 have named three contacts or more. 58 and 62 cases are female and male, respectively; this information has not been recorded for the remaining 51 patients. This suggests neither sex is more susceptible to the virus. The average age of patients is $41\pm18$, with a 25 percentile of 26 and a 75 percentile of 54, meaning patients are mostly younger or middle-aged. From the 60 cases where this information is available, 31 are family members of other patients present in the dataset. 
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXX}
+		\hline
+		\textbf{Covariate} & \textbf{Description} & \textbf{Mean / Ratio / Range}\\
+		\hline
+		Date & Date when the case was confirmed/reported & 20/01/17 - 20/02/16\\
+		Gender & Male/Female & $51.6\%$ \\
+		Age & In years & $41\pm18$ \\
+		Relatives & Whether the patient is a relative of previously recorded cases & $51.6\%$ \\
+		\hline
+	\end{tabularx}
+	\caption{Relevant covariates for the Yunnan dataset}
+	\label{tab:yunnan_covariates}
+\end{table}
 
 \paragraph{Network analysis}
 As previously mentioned, this dataset was analysed by Yang et al. using network modelling \cite{hainan_publication}. In their work, they determined the effect of the aforementioned patient covariates like age and gender, as well as the following network effects:
@@ -108,6 +62,21 @@ According to Yang et al., the zero value for betweenness centrality indicates th
 
 84 and 78 cases are female and male, respectively. An average age of $48\pm17$, a 25 percentile of 36 and a 75 percentile of 62 mean that the patients in this dataset are from an older age group compared to the Yunnan data. 75 out of 162 patients are family members of previously recorded cases.
 
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXX}
+		\hline
+		\textbf{Covariate} & \textbf{Description} & \textbf{Mean / Ratio / Range}\\
+		\hline
+		Date & Date when the case was confirmed/reported & 20/01/22 - 20/02/14\\
+		Gender & Male/Female & $48.2\%$ \\
+		Age & In years & $48\pm17$ \\
+		Relatives & Whether the patient is a relative of previously recorded cases & $46.3\%$ \\
+		\hline
+	\end{tabularx}
+	\caption{Relevant covariates for the Hainan dataset}
+	\label{tab:hainan_covariates}
+\end{table}
+
 \paragraph{Network analysis} This dataset was analysed by Yang et al. using the same methodology outlined in section \ref{sec:yunnan_data}. They report an average degree centrality of $1.51\pm1.79$, an average betweenness centrality of $0\pm0$, and an average pagerank centrality of $0.0062\pm0.0043$. Ten out of 27 connected components are comprised of more than three nodes \cite{hainan_publication}. 
 
 Interpretation of these numbers is similar to the Yunnan network. The zero value for betweenness centrality again indicated transmission happening in clusters rather than chains, and a maximum pagerank score of 0.0189 compared to the mean $0.0062\pm0.0043$ suggests an uneven distribution of ties. However, the larger fraction of patients with contacts (57\% here vs. just 33\% in the Yunnan dataset), paired with the larger number of connected components (27 vs. 18) means that less cases were imported from other states and/or containment measures might not have been as effective (the authors state that imposed measures were largely the same for both Yunnan and Hainan provinces). Accordingly, the temporal development of the case contact network shows an earlier emergence of infection clusters \cite{hainan_publication}.
@@ -118,6 +87,22 @@ Interpretation of these numbers is similar to the Yunnan network. The zero value
 \paragraph{Dataset overview} This dataset contains COVID case information from the province of Shaanxi in northern China \cite{shaanxi_data}. There are 237 entries, with dates ranging from 2020-01-23 to 2020-02-16, so this dataset too is from the early stages. Relevant covariates are mostly equivalent to those of the previous two discussed sets, with the addition of the place of residence; covariates are listed in table \ref{tab:shanxi_covariates}. 
 
 Of the 237 positively tested patients, 108 cases have named no contacts at all, 68 have named one contact, 36 have named two contacts, and 25 have named three contacts or more.  With 129 versus 108, there are slightly more men in this dataset compared to the near-equal distribution found in the previous two discussed datasets. The average age of patients is $46\pm17$, the 25 percentile is 35, and the 75 percentile is 59. Only 87 of the 237 patients are family members of previously recorded cases, suggesting that the majority of infections were transmitted from stranger to stranger rather than between family members; this is a contrast to the near-equal distribution found in the Yunnan and Hainan datasets (36.7\% vs. 51.6\% and 46.2\%, respectively). The three most common places of residence are \emph{Xian}, \emph{Ankang} and \emph{Hanzhong}.
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXX}
+		\hline
+		\textbf{Covariate} & \textbf{Description} & \textbf{Mean / Ratio / Range}\\
+		\hline
+		Date & Date when the case was confirmed/reported & 20/01/23 - 20/02/16\\
+		Gender & Male/Female & $54.4\%$ \\
+		Age & In years & $46\pm17$ \\
+		Relatives & Whether the patient is a relative of previously recorded cases & $36.7\%$\\
+		Hukou & Place of residence & -\\
+		\hline
+	\end{tabularx}
+	\caption{Relevant covariates for the Shanxi dataset}
+	\label{tab:shanxi_covariates}
+\end{table}
 
 \paragraph{Network analysis} This dataset, too, was analysed by Yang. In addition to the previously discussed network statistics, closeness centrality was also included in the analysis. Closeness centrality a node-specific centrality measure, which is defined as the reciprocal of the sum of all shortest paths for a node $i$. Nodes with a high closeness centrality are nodes that are only a few edges away from other nodes, and are therefore deemed more central, i.e. important \cite{sabidussi1966centrality}. 
 
@@ -209,6 +194,20 @@ There are 1291 connected components, and 82 out of those consist of more than th
 	\caption{Possible triadic structures for any three nodes $A,B,C$.}
 \end{figure}
 
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXXXX}
+		\hline
+		\textbf{Dataset} & \textbf{Degree centrality} & \textbf{Betweenness centrality} & \textbf{Pagerank centrality} & \textbf{Connected components} \\
+		\hline
+		Yunnan & $1.3\pm3.2$ & $0\pm0$ & $0.0058\pm0.0055$ & $3/18$ \\
+		Hainan & $1.5\pm1.8$ & $0\pm0$ & $0.0062\pm0.0043$ & $10/27$ \\
+		Shaanxi & $0.99\pm1.3$ & $0\pm$ & $0.0042\pm0.0035$ & $12/40$ \\
+		Xi'an & $0.7\pm1.4$ & $3.4\pm50.6$ & $0.0005\pm0.0006$ & $82/1291$\\
+		\hline
+	\end{tabularx}
+	\caption{Network statistics for the Yunnan, Hainan, Shaanxi and Xi'an datasets. Values for centrality measures are mean value and standard deviation. Values for connected components are the number of connected components that are comprised of more than three nodes, and the total number of connected components.}
+	\label{tab:network_stats}
+\end{table}
 
 \section{China Dataset}
 \label{sec:china_data}
@@ -216,6 +215,25 @@ There are 1291 connected components, and 82 out of those consist of more than th
 \paragraph{Dataset overview} This dataset contains COVID case information from all of China \cite{china_publication,china_data}. After preprocessing, there are 25,877 entries, with dates ranging from 2020-01-01 to 2022-08-14; therefore, this set is significantly larger than the ones discussed previously, and covers most of the pandemic. Relevant patient covariates are age, gender, residence, the location and/or activity where the patient was most likely infected, the patient's symptoms, the severity of the symptoms, and where the patient was registered by health authorities; covariates are also listed in \ref{tab:china_covariates}. The number of recorded covariates makes this dataset stand out among the others.
 
 Out of the 25,877 confirmed cases, 20,577 have named no contacts at all, 2,995 have named one contact, 1,045 have named two contacts, and 1,260 have named three contacts or more. The mean age of patients is $42\pm18$ (information missing for 6,206 entries), with a 25 percentile of 30 and a 75 percentile of 54, meaning this dataset contains members of all age groups. 9,070 women versus 11,182 men shows a slight bias towards men (information missing for 5,625 entries). The three most common places of residence are \emph{Xi'an} (1,947), \emph{Wuhan} (1,671), and \emph{Shijiazhuang} (888) (information missing for 9,077 entries). The three most common occasions where patients were most likely infected are \emph{travel to Wuhan} (596), \emph{dinner} (360), and \emph{residence in Wuhan} (337) (information missing for 18,167 entries). The three most common symptoms are \emph{somatosensory related} (1,904), \emph{respiratory system/somatosensory related} (640), and \emph{respiratory system related} (495) (information missing for 20,142 entries). Out of the 7,061 cases where this information is available, 3,979 are classified as stable, 2,545 have mild symptoms, 405 have light symptoms, and 132 have severe symptoms. The three most common places of admission, i.e. where the patient was registered/admitted to hospital are \emph{Xi'an} (2292), \emph{Shanghai} (2079), and \emph{Guangzhou} (1398).
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXX}
+		\hline
+		\textbf{Covariate} & \textbf{Description} & \textbf{Mean / Ratio / Range}\\
+		\hline
+		Date & Date when the case was confirmed/reported & 20/01/01 - 22/08/14\\
+		Gender & Male/Female & $55.2\%$ \\
+		Age & In years & $42\pm18$ \\
+		Place of residence & - & -\\
+		Place and event & Activity where infection might have happened & - \\
+		Symptom & The patient's symptoms & - \\
+		Symptom severity & - & - \\
+		Place of admission & Where the patient was recorded by health authorities & - \\
+		\hline
+	\end{tabularx}
+	\caption{Relevant covariates for the China dataset}
+	\label{tab:china_covariates}
+\end{table}
 
 \paragraph{Network analysis} To the knowledge of the author, this dataset had not been analysed yet at the time of writing this.
 
@@ -227,6 +245,22 @@ Out of the 25,877 confirmed cases, 20,577 have named no contacts at all, 2,995 h
 \paragraph{Dataset overview} This dataset contains COVID case information from Bucharest, the capital of Romania \cite{bucharest_data}. It consists of 46,269 positively tested patients, of which 6,895 named at least one other person as a possible contact. Out of the 13,272 individuals nominated as contacts, 1,811 were themselves recorded as patients; therefore, this dataset differs from the others in the sense that not all named contacts were tested positive. Dates range from 2020-03-07 to 2020-11-11. Patient covariates deemed relevant are age, sex, the patient's field of work and whether the patient is active in the medical field; these are also listed in table \add{table, reference}. Out of the 46,269 positive cases and the additional 11,461 individuals who were nominated as contacts but were not themselves recorded as patients, 38,122 individuals have named no contacts at all, 15,856 have nominated one contact, 2,130 have nominated two contacts, and 1,727 patients have named three contacts or more \add{numbers don't add up, not sure why}. 
 
 The average age of patients is $41\pm19$, with a 25 percentile of 29 and a 75 percentile of 53, meaning most are on the younger side. 21,665 males versus 24,604 females shows a slight bias towards females. Of the 6,964 patients where this information was recorded, only 186 are active in the medical field. Furthermore, a majority of patients for whom job information was recorded are not active in the labour market (6,298 out of 9,806). 
+
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXX}
+		\hline
+		\textbf{Covariate} & \textbf{Description} & \textbf{Mean / Ratio / Range}\\
+		\hline
+		Date & Date when the case was confirmed/reported & 20/03/07 - 20/11/11\\
+		Gender & Male/Female & $46.8\%$ \\
+		Age & In years & $41\pm19$ \\
+		Medical field & Whether the individual works in the medical sector & $2.7\%$ \\
+		Active & Whether the individual is active in the labour market & $64.2\%$ \\
+		\hline
+	\end{tabularx}
+	\caption{Relevant covariates for the Bucharest dataset}
+	\label{tab:bucharest_covariates}
+\end{table}
 
 \paragraph{Network analysis} This dataset was analysed by H\^ancean et al. in two separate papers, with the first focusing on the role of age \cite{hancean2021role}, and the second addressing the impact of occupations on the spread of COVID-19 \cite{hancean2022occupations}.
 
@@ -248,4 +282,18 @@ The following results were reported regarding patient covariates. Nominator age 
 
 As for the network effects, results were the following. Individual contact popularity is negatively associated with contact nomination likelihood; joint contact popularity is positively associated with contact nomination likelihood; reciprocation is positively associated with contact nomination likelihood; nominations among contacts is positively associated with contact nomination likelihood; shared referee is positively associated with contact nomination likelihood. These results corroborate findings from the previous article, and thus, interpretations are equivalent. Both the in-degree of the nominator and the out-degree of the nominees are negatively associated with contact nomination likelihood, i.e. for any possible contact nomination, where $i$ names $\{j,k,...,n\}$ as contacts at time $t_x$, the likelihood of that contact nomination decreases with an increasing number of previous contact nominations at a time $t_{x-y}$, where $i$ was named as a contact, and also decreases with an increasing number of previous contact nominations at a time $t_{x-y}$, where an individual $j \in \{j,k,...,n\}$ acted as a nominator \cite{hancean2021role,hancean2022occupations}. 
 
-\paragraph{A note on data availability and ethical considerations} Although a fair number of research on the topic of contact tracing data have been published (e.g. \add{CITE}), general data availability was rather restricted at the time of writing this. Many datasets were either only available upon request to the respective author or outright unavailable, presumably due to privacy considerations. Some were even behind paywalls. Due to this, four of the five datasets used in this work originate from China, where such data is widely available and was regularly published by local health authorities during the pandemic. Since all data records have been pseudonymised, there should be no ethical concern regarding privacy violation.
+\begin{table}
+	\begin{tabularx}{\linewidth}{XXXXXX}
+		\hline
+		\textbf{Dataset} & \textbf{Age} & \textbf{Gender} & \textbf{Residence} & \textbf{Relatives} & \textbf{Degree}\\
+		\hline
+		Yunnan & $41\pm18$ & $\approx$ & - & $0.51$ & $1.3\pm3.2$\\
+		Hainan & $48\pm17$ & $\approx$ & - & $0.46$ & $1.5\pm1.8$\\
+		Shanxi & $46\pm16$ & $>men$ & Xian & $0.37$ & $0.99\pm1.3$\\
+		China & $42\pm18$ & $>men$ & Xian & - & $3.6\pm18$\\
+		\hline
+	\end{tabularx}
+	\caption{Comparison of covariates between datasets (where applicable). \emph{Gender} states which sex is more common, or whether they are roughly equal. \emph{Residence} is the most common value. \emph{Relatives} specifies the ratio of cases where relatives were recorded previously.}
+	\label{tab:cov_comp}
+\end{table}
+%\paragraph{A note on data availability and ethical considerations} Although a fair number of research on the topic of contact tracing data have been published (e.g. \add{CITE}), general data availability was rather restricted at the time of writing this. Many datasets were either only available upon request to the respective author or outright unavailable, presumably due to privacy considerations. Some were even behind paywalls. Due to this, four of the five datasets used in this work originate from China, where such data is widely available and was regularly published by local health authorities during the pandemic. Since all data records have been pseudonymised, there should be no ethical concern regarding privacy violation.

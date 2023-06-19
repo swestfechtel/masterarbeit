@@ -1,2 +1,154 @@
 \chapter{Methodology}
 \label{ch:methods}
+
+\section{Social Networks}
+\label{sec:social_networks}
+
+\subsection{Fundamentals}
+\label{sec:social_networks_fundamentals}
+
+In sociological terms, a social network is a social structure that maps out the relationships or interactions among various entities such as individuals, groups, organizations, or even entire societies. These entities, often referred to as nodes or vertices, are connected by one or multiple types of interdependencies, such as friendship, kinship, common interest, financial exchange, likes, dislikes, knowledge, prestige, or any other meaningful interactions or relationships.
+
+Social networks are often visualized as graphs, where nodes represent the entities, and the edges or links represent the relationships or interactions between them. The patterns of these links often provide meaningful insights into the nature of relationships, social behaviours, group dynamics, organizational structures, and much more. For example, these structures may reveal who influences whom within a group or which entities act as gatekeepers or bridges in the flow of information or resources.
+
+The size and complexity of social networks can vary greatly. They can be as small and simple as a family network or as vast and complex as the network of internet users across the globe. It's crucial to note that in a social network, the emphasis is on the relationships between entities, not just the entities themselves.
+
+Graph theory, a fundamental area of mathematics, has found significant application in the study of social networks. In the context of social networks, graph theory provides a robust mathematical structure and a rich toolkit for understanding and analysing these networks.
+
+A graph in mathematics is a structure that encapsulates the idea of pairwise relationships between objects. A graph comprises vertices (or nodes) and edges (or links). An edge connects a pair of vertices, indicating a relationship between them. This simple but powerful concept fits perfectly with the idea of a social network where entities (vertices) and their relationships (edges) form the fabric of the network. To make a formal definition, a basic social network can be defined as a tuple $G = (V,E)$, where $V$ is the set of vertices, and $E \subseteq V \times V$ is the set of edges.
+
+\bigskip
+\noindent Social network analysis (SNA) often leverages graph theory in multiple ways:
+
+\begin{itemize}
+	\item Visualisation: Graph theory aids in visually representing social networks, enabling a clear understanding of the complex web of relationships.
+	\item Measurement and Analysis: Graph theory provides various measures and metrics such as centrality, clustering coefficient, diameter, etc., which can quantify important aspects of social networks like prominence of entities, propensity of clustering, reachability, etc.
+	\item Modelling and Prediction: Graph models can mimic the behaviour of real-world social networks, helping in predicting future trends, understanding the spread of information or epidemics, or identifying influential entities in the network.
+	\item Community Detection: Algorithms derived from graph theory help to discover communities or clusters within networks, revealing groups of entities with densely packed relationships.
+\end{itemize}
+
+\noindent In summary, a social network is a social structure that portrays interactions or relationships among entities. These networks can be effectively represented, measured, analysed, and modelled using the concepts and tools provided by graph theory, which provides a powerful mathematical lens to understand the complex dynamics of social networks. 
+
+\subsection{Application to COVID-19 case contact data}
+\label{sec:social_networks_application}
+
+As mentioned earlier, social networks can be used to model the social dynamics of pandemic situations. Recall the definition of a social network as a tuple $G = (V,E)$. All datasets analysed in this work adhere to the basic form (time, source, target), and additional covariates depending on the dataset in question. The time component can be discarded for now, as it becomes relevant only when working with relational (hyper)event models later on. In the context of case contact networks, $V$ therefore is the set of cases/contacts, and $E$ is the set of contact nominations between cases. One might make a case for using bipartite (also known as two-mode networks), where vertices are divided into two classes, and edges only exist between vertices of different class \cite{borgatti1997network,latapy2008basic}. Although it may seem sensible to do this here, where, in principle, there are indeed two classes (nominators and nominees), in practice, this only holds true for the data from Bucharest, where a large fraction of nominated contacts were never registered as positive cases. However, it is not clear if this is only due to missing information, i.e. they might have contracted the virus and health authorities were just not aware of it, or due to them indeed not having been infected. Therefore, and to ensure comparability of results, two-mode networks were not used to model the case contact networks here. 
+
+Also, there is the question of directionality. Networks can be either directed or undirected, meaning that edges between nodes $u$ and $v$ are either one- or bidirectional. Directed networks usually carry a different semantic meaning compared to undirected ones, and also differ in the computation of network effects. For example, in a directed network, nodes have an in-degree and an out-degree, i.e. the number of incoming and outgoing edges, respectively; therefore, there also need to be two measures for degree centrality, one accounting for in-degree, and one for out-degree. Although it might seem sensible to use directed networks here, since contact nominations are of a (source, target) form, the actual semantic meaning of the connection is often not clear (i.e. whether the source node is naming possible contacts who might have infected him, or if the source node is naming contacts whom he himself might have infected) \cite{kojaku2021effectiveness}, except for the Bucharest dataset, where it is explicitly stated that authorities employed backward contact tracing, i.e. patients name individuals who might be the source of their infection \cite{hancean2021role}.
+
+\subsection{Network analysis}
+\label{sec:social_networks_analysis}
+
+As mentioned in section \ref{sec:social_networks_fundamentals}, graph theory offers a wide array of methods to extract useful information from social networks. In the context of pandemics, key interests include the identification of influential individuals (e.g. "super-spreaders") and the overall dynamic of infections, i.e. in which patterns a virus tends to spread; insights into these factors help understanding, and therefore combatting the respective pandemic, e.g. by putting a particular focus on individuals who are similar to those found to be especially prone to spread the virus to others \add{cite}.
+
+For all networks derived from the different datasets, the following network statistics were computed:
+
+\begin{itemize}
+	\item Degree centrality: For any node $v \in V$, the degree centrality is defined as $C_D(v) = \text{deg}(v)$, i.e. the degree centrality of a node is equal to the number of edges connected to that node. This measure can be used to identify individuals who hold an important position in the network (in this context, those who nominate many contacts), and also as an indicator for overall network density.
+	\item Betweenness centrality: For any node $v \in V$, the betweenness centrality is defined as $C_B(v) = \sum_{s\neq v\neq t\in V}\frac{\sigma_{st}(v)}{\sigma_{st}}$, where $\sigma_{st}$ is the total number of shortest paths from $s$ to $t$, and $\sigma_{st}(v)$ is the number of shortest paths from $s$ to $t$ that go through $v$. This measure can be used to identify individuals who facilitate information flow (in this context, those who might have spread the virus from one individual to another).
+	\item Pagerank centrality: This is an iterative algorithm originally proposed to rank websites according to importance, where importance is defined by the number of hyperlinks that point to that website. For any node $v \in V$, the pagerank centrality is defined as $C_P(v) = \sum_{u \in B_v}\frac{C_P(u)}{\text{deg}(u)}$, where $B_v$ is the set of all nodes connected to $v$. Pagerank is computed iteratively; at time 0, it is
+	\begin{equation*}
+		PR(v_i;0) = \frac{1}{N} \forall v_i \in V
+	\end{equation*}
+	where $N = \lvert V \rvert$. At time $t$, it is
+	\begin{equation*}
+		PR(v_i;t+1) = \frac{1 - d}{N} + d \sum_{v_j \in B_{v_i}} \frac{PR(v_j;t)}{deg(v_j)} \forall v_i \in V
+	\end{equation*}
+	where $d = 0.85$ is the damping parameter. This measure is another way to identify important individuals in the network.
+	\item Component size: The task of community detection is the division of a network into a set of sub-networks according to specific criteria; in general, a community is a set of nodes with a strong cohesion, i.e. a high degree of inter-connectedness, while connections to other groups are sparse or even non-existent. Here, the latter is the case, i.e. a connected component is a set of nodes $C = \{v_1,...,v_n\} \in V$, where for each pair of nodes $v_i,v_j \in C$, there exists an edge $(v_i,v_j) \in E$, and for each pair $v_i,n_j;\: v_i \in C, n_j \in V \setminus C$, there is no edge, i.e. $(v_i,n_j) \notin E$. This division can be achieved e.g. by \emph{Markov clustering algorithm} \cite{community_detection,markov_clustering}. In the context of pandemics, community detection can be used to identify infection clusters. Therefore, connected components are computed for all networks, and component size is determined for all nodes.
+	\item Average shortest path length: In general, the shortest path between any two nodes $v_x,v_y \in V$ is a sequence of vertices $S = (v_x,...,v_y)$ such that 
+	\begin{enumerate}
+		\item for all $v_i,v_j \in S, i < j$, there is an edge $(v_i,v_j) \in E$
+		\item out of all possible paths between $v_x$ and $v_y$, $S$ has the smallest cost
+	\end{enumerate}
+	where cost is the sum of weights associated with the edges. Since the graphs here are unweighted, i.e. all edges have a weight value of 1, the shortest path amounts to that sequence $S$ that contains the lowest amount of nodes out of all possible sequences. Shortest paths can be computed for example by the Dijkstra or A* algorithm \add{cite dijsktra, a* and shortest path definition}. In the context of case contact networks, shortest paths yield interesting insights into transmission chains, and the average shortest path length of a network might be used as a measure for how effective containment methods (e.g. lockdowns, social distancing etc.) have been.
+\end{itemize}  
+\bigskip
+
+\noindent Based on these statistics, the data was analysed both in qualitative and quantitative manner. Specifically, examples are given for how epidemiological insights can be gained from contact tracing data (qualitative), and the statistics computed for the different datasets are statistically compared to investigate whether there are significant differences between the different regions (quantitative). Results are presented in section \ref{ch:results_discussion}.
+
+\section{Relational Event Models}
+\label{sec:rem}
+
+\subsection{Fundamentals}
+\label{sec:rem_fundamentals}
+
+Relational event models (REMs) are a class of statistical models used for analysing ordered sequences of social interactions among actors. They offer a means to explain the timing and sequencing of events in a social network context, often focusing on patterns of communication, relationships, and interactions between network actors over time. 
+
+In the realm of social networks, an event signifies an action that happens at a specific point in time from one actor to another. For instance, in a network of email communications among a group of people, an email sent by person A to person B would be considered an event. REMs are concerned with the study of these actions or events, their timing, and the dependencies between them.
+
+The main idea behind REMs is to treat social interactions as events that happen in continuous time, rather than at discrete, predetermined intervals. Each event in the sequence is an interaction between pairs of actors, and the time between consecutive events is explicitly modelled and analysed. 
+
+\noindent REMs take into consideration two key factors:
+
+\begin{enumerate}
+	\item Order of events: The order in which events occur can have significant implications. For example, an email conversation would make little sense if the emails are not read in the sequence they were sent and received.
+	\item Timing of events: The time between consecutive events can reveal crucial information. For example, the length of time between receiving an email and replying to it could indicate the importance or urgency of the conversation.
+\end{enumerate}
+
+REMs use the order and timing information to make inferences about the underlying social process that generated the observed sequence of events. They allow for the analysis of dynamic network data in ways that conventional social network analysis tools, which often assume static networks, can not. 
+
+Applications of REMs include studying patterns of communication in social media, organisational behaviour, group dynamics, online collaboration, animal social behaviour, and many other fields where understanding the sequence and timing of interactions can provide valuable insights.
+
+In essence, relational event models specify the probability of a possible event sequence $E$ happening up to a point in time $t_n$, given a sequence of past events $E_{<t_n}$; formally, it is
+\begin{equation*}
+	P(E) = \prod_{i=1}^{n}P(e_i|E_{<t_i})
+\end{equation*}
+where $E = (e_1,...,e_n)$ is a sequence of events, and $E_{<t_i} = \{e_j \in E;\: t_j < t_i\}$ is the sequence of past events before $t_i$.
+
+The partial likelihood for a specific event $e_i = (u_i,v_i,t_i)$ is expressed in terms of hazard functions. It is
+\begin{equation*}
+	P(e_i|E_{<t_i};\theta) = \frac{\lambda_1(u_i,v_i,t_i;\theta)}{\sum_{uv\in R_{t_i}}\lambda_1(u,v,t_i;\theta)}
+\end{equation*}
+where $\lambda_1(u,v,t_i;\theta)$ is the hazard rate of the dyad $(u,v)$, i.e. the expected number of events on $(u,v)$ per time unit, which is given by
+\begin{align*}
+	\lambda_1(u,v,t_i;\theta) &= \exp(\theta^T s(u,v;E_{<t_i}))\\
+	&= \exp(\sum_h \theta_h \cdot s_h(u,v;E_{<t_i}))&&
+\end{align*}
+and $R_{t_i}$ is the set of all events that could potentially happen at time $t_i$, aka the risk set. The rate function $\lambda$ depends on source ($u$), target ($v$), event type, past event history ($E_{<t_i}$), and exogenous variables. This is expressed by a vector of statistics $s$, which is parametrised by a vector of unknown parameters ($\theta$, estimated from the data), which determine the influence of each individual factor on the overall incidence rate. To summarise, the probability for a particular event $e_i$ occurring is the hazard rate of $e_i$ divided by the sum of the hazard rates of all events which could potentially occur at time $t_i$ \cite{butts20084}.
+
+The statistics expressed by $s$ may be broadly categorised into endogenous and exogenous factors; endogenous factors are derived from past events involving $u$ and $v$, and possibly common third actors, while exogenous factors are given by covariates specific to the actors, e.g. personal characteristics like age or sex. 
+
+Given a set of sufficient statistics $s$, the model parameters $\theta$ can be determined through maximum likelihood estimation (MLE), such that \[\hat{\theta} = \argmax_{\theta} P(E|\theta)\]
+
+A potential issue in this MLE is the computation of the risk set $R$; this is because the number of potential events occurring at time $t_i$ rises exponentially with the number of actors (with $N$ actors, for each time step $t_i$, there are $N \cdot (N - 1)$ possible events) \cite{butts20084}. This can be alleviated by replacing the full risk set $R_{t_i}$ by a sampled risk set $\tilde{R_{t_i}}$, which contains an arbitrary number of potential events per observed event (e.g. 100 potential, but unobserved events per every one event seen in the data).
+
+\subsection{Application to COVID-19 case contact data}
+\label{sec:rem_application}
+
+Recall that all case contact datasets conform to the basic format (timestamp, source, target). Therefore, they are, in essence, sequences of events, where the social interaction between the actors is a contact nomination. Conventional social network analysis, as described in section \ref{sec:social_networks}, neglects the time component of the data entirely. Therefore, it seems prudent to also analyse the data using relational event modelling. It is worthy to note that, in contrast to static network modelling, REM necessitates an assumption of directionality, i.e. events have a source and a target; in this case, the source would be the nominator, and the target the nominee. However, the fact remains that it is difficult to determine the actual semantic of a particular interaction, i.e. whether the source infected the target, or vice versa.
+
+As mentioned before, there are essentially two steps, which are 1) the computation of statistics $s$, and 2) the estimation of model parameters $\theta$. Therefore, it is necessary to specify a set of statistics which may potentially influence the incidence rate of events. Based on previous work (\cite{butts20084,brandes2009networks,stadtfeld2017interactions}), the following effects were analysed:
+
+\begin{itemize}
+	\item Effects depending on past events:
+	\begin{itemize}
+		\item Nomination activity, i.e. the influence of the number of past events at times $<t_i$ involving actor $u$ as a source on the likelihood a possible event $(u,v,t_i)$
+		\item Reciprocation
+		\item Repetition
+		\item Exact repetition
+		\item Transitive tie
+		\item Cyclical tie
+		\item Triangle effect children
+		\item Triangle effect parents
+	\end{itemize}
+	\item Effects depending on actor attributes:
+	\begin{itemize}
+		\item Nominator age
+		\item Nominee age
+		\item Age difference (age homophily)
+		\item Nominator sex
+		\item Nominee sex
+		\item Sex difference (sex homophily)
+		\item Other covariates specific to the individual datasets, which are listed in section \ref{ch:previous_work_data}. In general, there are three statistics for each covariate: the value of the nominator, the value of the nominee, and the difference between the values.
+	\end{itemize}
+\end{itemize} 
+
+\section{Relational Hyperevent Models}
+\label{sec:rhem}
+
+\subsection{Fundamentals}
+\label{sec:rhem_fundamentals}
+
+\subsection{Application to COVID-19 case contact data}
+\label{sec:rhem_application}

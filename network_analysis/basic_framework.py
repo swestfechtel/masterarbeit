@@ -11,6 +11,7 @@ class BasicAnalysisFramework:
         self._pagerank_centrality = None
         self._connected_components = None
         self._triadic_census = None
+        self._shortest_path_lengths = None
 
     def load_edgelist(self, filename: str):
         df = pd.read_csv(filename)
@@ -54,20 +55,29 @@ class BasicAnalysisFramework:
     def triadic_census(self):
         return self._triadic_census
 
+    @property
+    def shortest_path_lengths(self):
+        return self._shortest_path_lengths
+
     def compute_measurements(self):
         self._degree_centrality = nx.degree_centrality(self._network)
         self._betweenness_centrality = nx.betweenness_centrality(self._network)
         self._pagerank_centrality = nx.pagerank(self._network)
         self._connected_components = nx.connected_components(self._network)
+        self._shortest_path_lengths = nx.shortest_path_length(self._network)
 
-        di_network = nx.to_directed(self._network)
-        self._triadic_census = nx.triadic_census(di_network)
+        #di_network = nx.to_directed(self._network)
+        #self._triadic_census = nx.triadic_census(di_network)
 
     def create_report(self):
-        df = pd.DataFrame(columns=['Referee', 'Degree_Centrality', 'Betweenness_Centrality', 'Pagerank_Centrality', 'Component_Size'])
+        sp_dict = dict()
+        for node in self._shortest_path_lengths:
+            sp_dict[node[0]] = np.array(list((node[1].values()))).mean()
+
+        df = pd.DataFrame(columns=['Referee', 'Degree_Centrality', 'Betweenness_Centrality', 'Pagerank_Centrality', 'Component_Size', 'Avg_Shortest_Path_Length'])
         for node in self._network.nodes:
             df = df.append({'Referee': node, 'Degree_Centrality': self._degree_centrality[node], 'Betweenness_Centrality': self._betweenness_centrality[node], 'Pagerank_Centrality': self._pagerank_centrality[node], 
-                            'Component_Size': len(nx.node_connected_component(self._network, node))}, ignore_index=True)
+                            'Component_Size': len(nx.node_connected_component(self._network, node)), 'Avg_Shortest_Path_Length': sp_dict[node]}, ignore_index=True)
 
         df = df.reset_index()
         df.drop(columns=['index'], inplace=True)
