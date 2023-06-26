@@ -41,13 +41,15 @@ die in beiden Modellen vorkommen
   - A ---> B t_n
   
     A ---> B t_n+1
+- nomination activity
   - A ---> B t_n
     
     A ---> X t_n+1
-- reciprocity:
+- exact reciprocity:
   - A ---> B t_n
     
     A <--- B t_n+1
+- reciprocity
   - A ---> B t_n
   
     X <--- B t_n+1
