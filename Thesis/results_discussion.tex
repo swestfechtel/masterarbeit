@@ -1,2 +1,365 @@
 \chapter{4\quad Results and Discussion}
 \label{ch:results_discussion}
+
+\section{Comparison of Social Network Analysis across regions}
+\label{sec:res_sna}
+
+\subsection{One-way ANOVAs for network statistics}
+\label{sec:sna_anovas}
+
+One of the goals of this work is to investigate whether there are significant differences between the different datasets in terms of network statistics. This knowledge might be used e.g. to the impact of different containment methods. One-way ANOVAs with multiple comparisons were used to identify significant differences between the networks derived from the datasets. Furthermore, descriptive statistics are given for all computed network statistics.
+
+\paragraph{Degree centrality} Recall that degree centrality values are normalised; therefore comparison values derived from original publications are adjusted accordingly. Average values for the different regions were $0.0071\pm0.016$ for the Yunnan dataset ($1.345\pm3.187$ reported in the original publication \cite{hainan_publication}; $0.0079\pm0.018$ adjusted for normalisation), $0.0093\pm0.011$ for the Hainan dataset ($1.51\pm1.79$ reported in the original publication \cite{hainan_publication}; $0.0093\pm0.011$ adjusted for normalisation), $0.0043\pm0.0056$ for the Shaanxi dataset ($0.987\pm1.351$ reported in the original publication \cite{shaanxi_publication}; $0.0041\pm0.0057$ adjusted for normalisation), $0.00036\pm0.00067$ for the Xi'an dataset ($0.741\pm1.379$ in the original publication \cite{xian_publication}; $0.00036\pm0.00067$ adjusted for normalisation), $1.80e^{-5}\pm6.84e^{-5}$ for the China dataset (no data reported in the original publication), and $7.9e^{-6}\pm1.4e^{-5}$ for the Bucharest dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
+
+\begin{table}[h]
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llllll}
+			\hline
+			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
+			\hline
+			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
+			\textbf{Minimum} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{25 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{Median} & 0.0 & 0.0062 & 0.0042 & 0.00048 & 0.0 & 0.0\\
+			\textbf{75 Percentile} & 0.0058 & 0.018 & 0.0084 & 0.00048 & $1.72e^{-5}$ & 0.0\\
+			\textbf{Maximum} & 0.070 & 0.037 & 0.046 & 0.020 & 0.00032 & 0.0052\\
+			\textbf{Mean} & 0.0071 & 0.0093 & 0.0043 & 0.00036 & $7.93e^{-6}$ & $1.80e^{-5}$\\
+			\textbf{Std. Dev.} & 0.016 & 0.011 & 0.0056 & 0.00067 & $1.42e^{-5}$ & $6.74e^{-5}$\\
+			\hline
+		\end{tabular*}
+		\caption{Descriptive statistics for degree centrality.}
+		\label{tab:degree_centrality_desc}
+		\vskip 10pt
+		\small
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
+			\hline
+			Yunnan vs. Hainan & -0.0022 & -0.0024 to -0.0019 & Yes & $<0.0001$\\
+			Yunnan vs. Shaanxi & 0.0028 & 0.0025 to 0.0030 & Yes & $<0.0001$\\
+			Yunnan vs. Bucharest & 0.0071 & 0.0069 to 0.0073 & Yes & $<0.0001$\\
+			Yunnan vs. China & 0.0071 & 0.0069 to 0.0073 & Yes & $<0.0001$\\
+			Yunnan vs. Xi'an & 0.0067 & 0.0065 to 0.0070 & Yes & $<0.0001$\\
+			Hainan vs. Shaanxi & 0.0050 & 0.0047 to 0.0053 & Yes & $<0.0001$\\
+			Hainan vs. Bucharest & 0.0093 & 0.0091 to 0.0095 & Yes & $<0.0001$\\
+			Hainan vs. China & 0.0093 & 0.0091 to 0.0095 & Yes & $<0.0001$\\
+			Hainan vs. Xi'an & 0.0089 & 0.0087 to 0.0092 & Yes & $<0.0001$\\
+			Shaanxi vs. Bucharest & 0.0043 & 0.0041 to 0.0044 & Yes & $<0.0001$\\
+			Shaanxi vs. China & 0.0043 & 0.0041 to 0.0044 & Yes & $<0.0001$\\
+			Shaanxi vs. Xi'an & 0.0039 & 0.0037 to 0.0041 & Yes & $<0.0001$\\
+			Bucharest vs. China & $-1.01e^{-5}$ & $-3.00e^{-5}$ to $9.76e^{-6}$ & No & 0.6956\\
+			Bucharest vs. Xi'an & -0.00035 & -0.00041 to -0.00029 & Yes & $<0.0001$\\
+			China vs. Xi'an & -0.00034 & -0.00040 to -0.00028 & Yes & $<0.0001$\\
+			\hline
+		\end{tabular*}
+		\caption{Multiple comparisons for degree centrality. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
+		\label{tab:degree_centrality_tukey}
+	\end{mdframed}
+\end{table}
+
+One-way ANOVA comparison between the regions found a significant difference between the means ($F(5,86327) = 6265; \: p<0.0001$). Compared against each other (using Tukey's multiple comparisons test with 95\% confidence interval), all regions were pairwise significantly different except Bucharest vs. China ($p=0.6956$).
+
+\paragraph{Betweenness centrality} Average values for the different regions were $7.32e^{-6}\pm3.67e^{-5}$ for the Yunnan dataset ($0.0000\pm0.0000$ reported in the original publication \cite{hainan_publication}), $1.72e^{-5}\pm1.09e^{-4}$ for the Hainan dataset ($0.0000\pm0.0001$ reported in the original publication \cite{hainan_publication}), $1.68e^{-5}\pm1.02e^{-4}$ for the Shaanxi dataset ($0.0000\pm0.0001$ reported in the original publication \cite{shaanxi_publication}), $1.60e^{-6}\pm2.41e^{-5}$ for the Xi'an dataset (no data reported in the original publication), $5.18e^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $2.33e^{-8}\pm9.05e^{-7}$ for the China dataset (no data reported in the original publication). Taking into account that values only include four digits after the decimal point and the resulting loss of information, values could reliably be reproduced where applicable.
+
+\begin{table}[h]
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llllll}
+			\hline
+			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
+			\hline
+			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
+			\textbf{Minimum} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{25 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{Median} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{75 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{Maximum} & 0.00034 & 0.0012 & 0.0013 & 0.00079 & 3.0 & $9.40e^{-5}$\\
+			\textbf{Mean} & $7.32e^{-6}$ & $1.72e^{-5}$ & $1.68e^{-5}$ & $1.60e^{-6}$ & $5.18e^{-5}$ & $2.33e^{-8}$\\
+			\textbf{Std. Dev.} & $3.67e^{-5}$ & 0.00010 & 0.00010 & $2.41e^{-5}$ & 0.012 & $9.05e^{-7}$\\
+			\hline
+		\end{tabular*}
+		\caption{Descriptive statistics for betweenness centrality.}
+		\label{tab:betweenness_centrality_desc}
+		\vskip 10pt
+		\small
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
+			\hline
+			Yunnan vs. Hainan & $-9.92e^{-6}$ & -0.0032 to 0.0031 & No & $>0.9999$\\
+			Yunnan vs. Shaanxi & $-9.56e^{-6}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
+			Yunnan vs. Bucharest & $-4.45e^{-5}$ & -0.0022 to 0.0021 & No & $>0.9999$\\
+			Yunnan vs. China & $7.30e^{-6}$ & -0.0022 to 0.0022 & No & $>0.9999$\\
+			Yunnan vs. Xi'an & $5.72e^{-6}$ & -0.0023 to 0.0023 & No & $>0.9999$\\
+			Hainan vs. Shaanxi & $3.63e^{-7}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
+			Hainan vs. Bucharest & $-3.46e^{-5}$ & -0.0023 to 0.0022 & No & $>0.9999$\\
+			Hainan vs. China & $1.72e^{-5}$ & -0.0022 to 0.0023 & No & $>0.9999$\\
+			Hainan vs. Xi'an & $1.56e^{-5}$ & 0.0023 to 0.0023 & No & $>0.9999$\\
+			Shaanxi vs. Bucharest & $-3.49e^{-5}$ & -0.0019 to 0.0018 & No & $>0.9999$\\
+			Shaanxi vs. China & $1.68e^{-5}$ & -0.0018 to 0.0019 & No & $>0.9999$\\
+			Shaanxi vs. Xi'an & $1.52e^{-5}$ & -0.0019 to 0.0020 & No & $>0.9999$\\
+			Bucharest vs. China & $5.18e^{-5}$ & -0.00016 to 0.00026 & No & 0.9843\\
+			Bucharest vs. Xi'an & $5.02e^{-5}$ & -0.00060 to 0.00070 & No & $>0.9999$\\
+			China vs. Xi'an & $-1.58e^{-6}$ & -0.00066 to 0.00066 & No & $>0.9999$\\
+			\hline
+		\end{tabular*}
+		\caption{Multiple comparisons for betweenness centrality. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
+		\label{tab:betweenness_centrality_tukey}
+	\end{mdframed}
+\end{table}
+
+One-way ANOVA comparison between the regions found no significant difference between the means $F(5,86327) = 0.09719; \: p=0.9926$). Compared against each other (Tukey's test, 95\% CI), no regions were pairwise significantly different.
+
+\paragraph{Pagerank centrality} Average values for the different regions were $0.0058\pm0.0055$ for the Yunnan dataset ($0.0058\pm0.0055$ reported in the original publication \cite{hainan_publication}), $0.0061\pm0.0043$ for the Hainan dataset ($0.0062\pm0.0043$ reported in the original publication \cite{hainan_publication}), $0.0042\pm0.0034$ for the Shaanxi dataset ($0.0042\pm0.0035$ reported in the original publication \cite{shaanxi_publication}), $0.00048\pm0.00057$ for the Xi'an dataset ($0.0005\pm0.0006$ reported in the original publication \cite{xian_publication}), $6.91e^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $3.86e^{-5}\pm6.07e^{-5}$ for the China dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
+
+\begin{table}[h]
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llllll}
+			\hline
+			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
+			\hline
+			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
+			\textbf{Minimum} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09e^{-6}$ & $1.87e^{-5}$\\
+			\textbf{25 Percentile} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09e^{-6}$ & $1.87e^{-5}$\\
+			\textbf{Median} & 0.0020 & 0.0081 & 0.0043 & 0.00044 & $6.09e^{-6}$ & $1.87e^{-5}$\\
+			\textbf{75 Percentile} & 0.013 & 0.0098 & 0.0066 & 0.00081 & $2.60e^{-5}$ & $1.87e^{-5}$\\
+			\textbf{Maximum} & 0.022 & 0.018 & 0.023 & 0.016 & 3.0 & 0.0047\\
+			\textbf{Mean} & 0.0058 & 0.0061 & 0.0042 & 0.00048 & $6.91e^{-5}$ & $3.86e^{-5}$\\
+			\textbf{Std. Dev.} & 0.0055 & 0.0043 & 0.0034 & 0.00057 & 0.012 & $6.07e^{-5}$\\
+			\hline
+		\end{tabular*}
+		\caption{Descriptive statistics for pagerank centrality.}
+		\label{tab:pagerank_centrality_desc}
+		\vskip 10pt
+		\small
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
+			\hline
+			Yunnan vs. Hainan & -0.00032 & -0.0035 to 0.0028 & No & 0.9997\\
+			Yunnan vs. Shaanxi & 0.0016 & -0.0012 to 0.0045 & No & 0.6061\\
+			Yunnan vs. Bucharest & 0.0057 & 0.0035 to 0.0080 & Yes & $<0.0001$\\
+			Yunnan vs. China & 0.0058 & 0.0035 to 0.0080 & Yes & $<0.0001$\\
+			Yunnan vs. Xi'an & 0.0053 & 0.0030 to 0.0076 & Yes & $<0.0001$\\
+			Hainan vs. Shaanxi & 0.0019 & -0.0010 to 0.0049 & No & 0.4173\\
+			Hainan vs. Bucharest & 0.0061 & 0.0038 to 0.0083 & Yes & $<0.0001$\\
+			Hainan vs. China & 0.0061 & 0.0038 to 0.0084 & Yes & $<0.0001$\\
+			Hainan vs. Xi'an & 0.0056 & 0.0033 to 0.0080 & Yes & $<0.0001$\\
+			Shaanxi vs. Bucharest & 0.0041 & 0.0022 to 0.0060 & Yes & $<0.0001$\\
+			Shaanxi vs. China & 0.0041 & 0.0022 to 0.0060 & Yes & $<0.0001$\\
+			Shaanxi vs. Xi'an & 0.0037 &0.0017 to 0.0057 & Yes & $<0.0001$\\
+			Bucharest vs. China & $3.05e^{-5}$ & -0.00018 to 0.00024 & No & 0.9987\\
+			Bucharest vs. Xi'an & -0.00041 & -0.0010 to 0.00023 & No & 0.4507\\
+			China vs. Xi'an & -0.00044 & -0.0011 to 0.00021 & No & 0.3922\\
+			\hline
+		\end{tabular*}
+		\caption{Multiple comparisons for pagerank centrality. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
+		\label{tab:pagerank_centrality_tukey}
+	\end{mdframed}
+\end{table}
+
+One-way ANOVA comparison between the regions found a significant difference between the means ($F(5,86327) = 38.86; \: p<0.0001$). Compared against each other (Tukey's test, 95\% CI), results were mixed. There was no significant difference for Yunnan vs. Hainan ($p=0.9997$), Yunnan vs. Shaanxi ($p=0.6061$), Hainan vs. Shaanxi ($p=0.4173$), Bucharest vs. China ($p=0.9987$), Bucharest vs. Xi'an ($p=0.4507$), and China vs. Xi'an ($p=0.3922$). All other pairs were significantly different.
+
+\paragraph{Component size} Average values for the different regions were $2.42\pm3.23$ for the Yunnan dataset, $2.85\pm2.32$ for the Hainan dataset, $2.86\pm2.71$ for the Shaanxi dataset, $5.23\pm12.34$ for the Xi'an dataset, $1.93\pm1.79$ for the Bucharest dataset, and $6.76\pm38.15$ for the China dataset. No values were reported in the original publications, only individual clusters were examined in an exploratory fashion in \cite{hainan_publication,shaanxi_publication,xian_publication}.
+
+\begin{table}[h]
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llllll}
+			\hline
+			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
+			\hline
+			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
+			\textbf{Minimum} & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0\\
+			\textbf{25 Percentile} & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0\\
+			\textbf{Median} & 1.0 & 2.0 & 2.0 & 2.0 & 1.0 & 1.0\\
+			\textbf{75 Percentile} & 2.0 & 4.0 & 4.0 & 4.0 & 2.0 & 1.0\\
+			\textbf{Maximum} & 13.0 & 9.0 & 12.0 & 64.0 & 20.0 & 329.0\\
+			\textbf{Mean} & 2.42 & 2.85 & 2.86 & 5.23 & 1.93 & 6.76\\
+			\textbf{Std. Dev.} & 3.23 & 2.32 & 2.71 & 12.34 & 1.79 & 38.15\\
+			\hline
+		\end{tabular*}
+		\caption{Descriptive statistics for component size.}
+		\label{tab:component_size_desc}
+		\vskip 10pt
+		\small
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
+			\hline
+			Yunnan vs. Hainan & -0.42 & -6.99 to 6.14 & No & $>0.9999$\\
+			Yunnan vs. Shaanxi & -0.43 & -6.45 to 5.57 & No & $>0.9999$\\
+			Yunnan vs. Bucharest & 0.49 & -4.09 to 5.08 & No & 0.9996\\
+			Yunnan vs. China & -4.33 & -8.93 to 0.25 & No & 0.0772\\
+			Yunnan vs. Xi'an & -2.81 & -7.58 to 1.95 & No & 0.5452\\
+			Hainan vs. Shaanxi & -0.013 & -6.12 to 6.09 & No & $>0.9999$\\
+			Hainan vs. Bucharest & 0.92 & -3.79 to 5.63 & No & 0.9936\\
+			Hainan vs. China & -3.91 & -8.63 to 0.80 & No & 0.1698\\
+			Hainan vs. Xi'an & -2.38 & -7.27 to 2.50 & No & 0.7328\\
+			Shaanxi vs. Bucharest & 0.93 & -2.96 to 4.83 & No & 0.9838\\
+			Shaanxi vs. China & -3.90 & -7.81 to 0.0087 & No & 0.0509\\
+			Shaanxi vs. Xi'an & -2.37 & -6.48 to 1.73 & No & 0.5684\\
+			Bucharest vs. China & -4.83 & -5.28 to -4.38 & Yes & $<0.0001$\\
+			Bucharest vs. Xi'an & -3.30 & -4.65 to -1.96 & Yes & $<0.0001$\\
+			China vs. Xi'an & 1.52 & 0.15 to 2.90 & Yes & 0.0192\\
+			\hline
+		\end{tabular*}
+		\caption{Multiple comparisons for component sizes. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
+		\label{tab:component_size_tukey}
+	\end{mdframed}
+\end{table}
+
+One-way ANOVA comparison between the regions found a significant difference between the means ($F(5,86326) = 192.3; \: p<0.0001$). Compared against each other (Tukey's test, 95\% CI), no pairs were significantly different from each other except Bucharest vs. China, Bucharest vs. Xi'an, and China vs. Xi'an.
+
+\paragraph{Average shortest path length} Average values for the different regions were $0.25\pm0.39$ for the Yunnan dataset, $0.45\pm0.47$ for the Hainan dataset, $0.52\pm0.56$ for the Shaanxi dataset, $0.61\pm0.80$ for the Xi'an dataset, $0.32\pm0.51$ for the Bucharest dataset, and $0.24\pm0.67$ for the China dataset. Shortest path length was not analysed in any of the previous works, therefore there are no comparison values.
+
+\begin{table}[h]
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llllll}
+			\hline
+			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
+			\hline
+			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
+			\textbf{Minimum} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{25 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+			\textbf{Median} & 0.0 & 0.5 & 0.5 & 0.5 & 0.0 & 0.0\\
+			\textbf{75 Percentile} & 0.5 & 0.75 & 1.0 & 1.0 & 0.5 & 0.0\\
+			\textbf{Maximum} & 1.53 & 1.88 & 2.0 & 4.62 & 4.25 & 7.24\\
+			\textbf{Mean} & 0.25 & 0.45 & 0.52 & 0.61 & 0.32 & 0.24\\
+			\textbf{Std. Dev.} & 0.39 & 0.47 & 0.56 & 0.80 & 0.51 & 0.67\\
+			\hline
+		\end{tabular*}
+		\caption{Descriptive statistics for average shortest path length per vertex.}
+		\label{tab:avg_shortest_path_desc}
+		\vskip 10pt
+		\small
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
+			\hline
+			Yunnan vs. Hainan & -0.20 & -0.38 to -0.023 & Yes & 0.0164\\
+			Yunnan vs. Shaanxi & -0.26 & -0.43 to -0.10 & Yes & $<0.0001$\\
+			Yunnan vs. Bucharest & -0.070 & -0.19 to 0.055 & No & 0.5994\\
+			Yunnan vs. China & 0.0093 & -0.11 to 0.13 & No & $>0.9999$\\
+			Yunnan vs. Xi'an & -0.35 & -0.48 to -0.22 & Yes & $<0.0001$\\
+			Hainan vs. Shaanxi & -0.066 & -0.23 to 0.10 & No & 0.8659\\
+			Hainan vs. Bucharest & 0.13 & 0.0034 to 0.26 & Yes & 0.0401\\
+			Hainan vs. China & 0.21 & 0.083 to 0.34 & Yes & $<0.0001$\\
+			Hainan vs. Xi'an & -0.15 & -0.29 to -0.022 & Yes & 0.0111\\
+			Shaanxi vs. Bucharest & 0.19 & 0.092 to 0.30 & Yes & $<0.0001$\\
+			Shaanxi vs. China & 0.27 & 0.17 to 0.38 & Yes & $<0.0001$\\
+			Shaanxi vs. Xi'an & -0.089 & -0.20 to 0.022 & No & 0.2042\\
+			Bucharest vs. China & 0.079 & 0.067 to 0.092 & Yes & $<0.0001$\\
+			Bucharest vs. Xi'an & -0.28 & -0.32 to -0.25 & Yes & $<0.0001$\\
+			China vs. Xi'an & -0.36 & -0.40 to -0.33 & Yes & $<0.0001$\\
+			\hline
+		\end{tabular*}
+		\caption{Multiple comparisons for average shortest path length per vertex. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
+		\label{tab:avg_shortest_path_tukey}
+	\end{mdframed}
+\end{table}
+
+One-way ANOVA comparison between the regions found a significant difference between the means ($F(5,86326)=196.8; \: p<0.0001$). Compared against each other (Tukey's test, 95\% CI), results were mixed. There was no significant difference for Yunnan vs. Bucharest ($p=0.5994$), Yunnan vs. China ($p>0.9999$), Hainan vs. Shaanxi ($p=0.8659$), and Shaanxi vs Xi'an ($p=0.2042$). All other pairs were significantly different.
+
+\subsection{Regression models for contact nomination likelihood}
+\label{sec:sna_regression}
+
+As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression was subsequently used to determine the influence of network statistics and actor covariates on contact nomination likelihood. To this end, for each dataset, all possible actor combinations were compiled into a dataset; each record contains network statistics and actor covariates of the source and target, and the absolute difference between source and target values for each variable. The regression model is fitted on the complete dataset, conditioned on whether there is a contact nomination seen in the actual underlying data (i.e. the original data presented in chapter \ref{ch:previous_work_data}). Therefore, the focus lies on explaining rather than predicting contact nominations. As covariates differ between the datasets, a different model was created for each dataset. The Xi'an dataset was excluded from this analysis, as it unfortunately does not include patient covariates.
+
+\paragraph{Yunnan network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the sex of the nominator ($p<0.001$), sex discrepancy between nominator and nominee ($p<0.001$), whether the nominator is a family member of another actor in the dataset ($p<0.001$), and all network statistics for nominator, nominee, and the difference between nominator and nominee, with the exception of the average shortest path length of the nominator ($p=0.224$). Nominator sex has a marginally positive effect on contact nomination likelihood (coefficient = 0.0036); sex discrepancy has a marginally positive effect (coefficient = 0.0033); family member status of the nominator has a marginally positive effect (coefficient = 0.0036); degree centrality of nominator and nominee both have a slightly positive effect (coefficients = 0.0874 and 0.0901), while degree centrality discrepancy has a slightly negative effect (coefficient = -0.0880); betweenness centrality of nominator and nominee both have a slightly negative effect (covariates = -0.0103 and -0.0114), while betweenness centrality discrepancy has a slightly positive effect (coefficient = 0.0182); pagerank centrality of the nominator has a slightly negative effect, the pagerank centrality of the nominee has a slightly positive effect, and pagerank centrality discrepancy has a slightly negative effect (coefficients = -0.0182, 0.172, and -0.0193, respectively); the component size of the nominator has a slightly negative effect, the component size of the nominee has a slightly positive effect, and component size discrepancy has a slightly negative effect (coefficients = -0.0350, 0.1101, and -0.1140, respectively); finally, the average shortest path length of the nominator has a marginally positive effect, the average shortest path length of the nominee has a slightly negative effect, and average shortest path length discrepancy has a slightly positive effect on contact nomination likelihood (coefficients = 0.0024, -0.0665, and 0.0702, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{t}$ & $\mathbf{P>\lvert t \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/yunnan_regression.csv}{}
+			{\\ \a & \b & \c & \d & \e}\\
+			\hline
+		\end{tabular}
+		\caption{Ordinary least-squares regression results for the Yunnan network.}
+		\label{tab:yunnan_regression}
+	\end{mdframed}
+
+\end{table}
+
+\paragraph{Hainan network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are whether the nominee is a family member of another actor in the datatset ($p<0.001$) and all network statistics with the exceptions of nominee degree centrality ($p=0.435$), nominee pagerank centrality ($p=0.705$), pagerank centrality discrepancy ($p=0.126$), and nominator component size ($p=0.790$). Nominee family member status has a marginally positive effect on contact nomination likelihood (coefficient = 0.0132); nominator degree centrality has a marginally positive effect, while degree centrality discrepancy has a marginally negative effect (coefficients = 0.0385 and -0.0125, respectively); nominator and nominee betweenness centrality have a marginally positive effect, while betweenness centrality discrepancy has a marginally negative effect (coefficients = 0.0431, 0.0733, and =0.0820, respectively); nominator pagerank centrality has a marginally negative effect (coefficient = -0.0114); the component size of the nominee has a marginally positive effect, while component size discrepancy has a marginally negative effect (coefficients = 0.0506 and -0.0487, respectively); nominator and nominee average path length both have a marginally negative effect, while average path length discrepancy has a marginally positive effect (coefficients = -0.0105, -0.0268 and 0.0289, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{t}$ & $\mathbf{P>\lvert t \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/hainan_regression.csv}{}
+			{\\ \a & \b & \c & \d & \e}\\
+			\hline
+		\end{tabular}
+		\caption{Ordinary least-squares regression results for the Hainan network.}
+		\label{tab:hainan_regression}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Shaanxi network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the age of the nominator ($p=0.016$), the age of the nominee ($p=0.008$), age discrepancy ($p=0.007$), sex of the nominator ($p=0.001$), sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), whether the nominator is a family member of another actor in the dataset ($p<0.001$), family member status discrepancy ($p=0.045$), the place of residence of the nominator ($p<0.001$), the place of residence of the nominee ($p<0.001$), place of residence discrepancy ($p<0.001$), and all network statistics except pagerank centrality discrepancy ($p=0.244$). Nominator age, nominee age, and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0033, -0.0032 and -0.0028, respectively); nominator sex, nominee sex and sex discrepancy all have a marginally positive effect (coefficients = 0.0025, 0.0028 and 0.0040, respectively); the family member status of the nominator and family member discrepancy both have a marginally positive effect (coefficients = 0.0107 and 0.0017, respectively); nominator and nominee place of residence have a marginally positive effect, while place of residence discrepancy has a marginally negative effect (coefficients = 0.0007, 0.0006 and -0.0145, respectively); nominator and nominee degree centrality have a marginally positive effect, while degree centrality discrepancy has a marginally negative effect (coefficients = 0.0171, 0.0101 and -0.0110, respectively); nominator betweenness centrality has a marginally negative effect, while nominee betweenness centrality and betweenness centrality discrepancy have a marginally positive effect (coefficients = -0.0163, 0.0034 and 0.0204, respectively); nominator and nominee pagerank centrality both have a marginally negative effect (coefficients = -0.0103 and -0.0019, respectively); nominator and nominee component size have a marginally positive effect, while component size discrepancy has a marginally negative effect (coefficients = 0.0293, 0.0218 and -0.0381, respectively); nominator and nominee average path length have a marginally negative effect, while average path length discrepancy has a marginally positive effect (coefficients = -0.0162, -0.0166 and 0.0206, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{t}$ & $\mathbf{P>\lvert t \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/shanxi_regression.csv}{}
+			{\\ \a & \b & \c & \d & \e}\\
+			\hline
+		\end{tabular}
+		\caption{Ordinary least-squares regression results for the Shaanxi network.}
+		\label{tab:shaanxi_regression}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Bucharest network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are age discrepancy ($p<0.001$), sex of the nominator ($p<0.001$), sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), whether the nominator is active in the medical field ($p<0.001$), whether the nominee is active in the medical field ($p<0.001$), medical employment discrepancy ($p<0.001$), the job of the nominator ($p<0.001$), the job of the nominee ($p<0.001$), job discrepancy ($p<0.001$), and all network statistics. Age discrepancy has a marginally negative effect on contact nomination likelihood (coefficient = -0.0290); nominator and nominee sex have a marginally positive effect, while sex discrepancy has a marginally negative effect (coefficients = 0.0008, 0.0002 and -0.0007, respectively); nominator and nominee medical deployment have a marginally/slightly negative effect, while medical employment discrepancy has a marginally positive effect (coefficients = -0.0827, -0.1616 and 0.0588, respectively); the job of the nominator has a marginally negative effect, while the job of the nominee and job discrepancy have a marginally/slightly positive effect (coefficients = -0.0084, 0.0086 and 0.1852, respectively); nominator degree centrality, nominee degree centrality and degree centrality discrepancy all have a moderately/slightly positive effect (coefficients = 0.3564, 0.1728 and 0.1853, respectively); nominator betweenness centrality has a marginally negative effect, while nominee betweenness centrality and betweenness centrality discrepancy have a marginally/slightly positive effect (coefficients = -0.0820, 0.0301 and 0.1155, respectively); nominator pagerank centrality has a marginally positive effect, while nominee pagerank centrality and pagerank centrality discrepancy have a slightly/moderate negative effect (coefficients = 0.0816, -0.1084 and -0.4072, respectively); nominator component size, nominee component size and component size discrepancy all have a slightly/marginally negative effect (coefficients = -0.2374, -0.0984 and -0.0769, respectively); finally, nominator and nominee average shortest path length both have a moderate/marginally positive effect, while average shortest path length discrepancy has a marginally negative effect (coefficients = 0.2308, 0.0424 and -0.0548, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{t}$ & $\mathbf{P>\lvert t \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/bucharest_regression.csv}{}
+			{\\ \a & \b & \c & \d & \e}\\
+			\hline
+		\end{tabular}
+		\caption{Ordinary least-squares regression results for the Bucharest network.}
+		\label{tab:bucharest_regression}
+	\end{mdframed}
+\end{table}
+
+\paragraph{China network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the age of the nominator ($p=0.032$), the age of the nominee ($p<0.001$), age discrepancy ($p<0.001$), the sex of the nominator ($p<0.001$), the sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), the place of residence of the nominator ($p<0.001$), the place of residence of the nominee ($p<0.001$), place of residence discrepancy ($p<0.001$), the place/occasion where the nominator might have been infected ($p<0.001$), the place/occasion where the nominee might have been infected ($p<0.001$), place/occasion discrepancy ($p<0.001$), the nominator's symptoms ($p<0.001$), the nominee's symptoms ($p<0.001$), symptom discrepancy ($p<0.001$), the severity of the nominator's symptoms ($p<0.001$), the severity of the nominee's symptoms ($p<0.001$), symptom severity discrepancy ($p<0.001$), the discrepancy between the place where nominator and nominees were registered as patients ($p<0.001$), and all network statistics. The age of the nominator has a marginally negative effect on contact nomination likelihood, while nominee age and age discrepancy have a marginally positive effect (coefficients = -0.0046, 0.0130 and 0.0087, respectively); The sex of the nominator, the sex of the nominee and sex discrepancy all have a marginally positive effect (coefficients = 0.0144, 0.0161 and 0.0409, respectively); the nominator's place of residence, the nominee's place of residence and place of residence discrepancy all have a negligibly/marginally positive effect (coefficients = 0.0001, 0.0002 and 0.0136, respectively); the place/occasion where the nominator might have been infected and the place/occasion where the nominee might have been infected have a negligibly positive effect, while the discrepancy between the two has a marginally negative effect (coefficients = 0.000039, 0.000063 and -0.0148, respectively); the nominator's symptoms and the nominee's symptoms both have a negligibly positive effect, while the symptom discrepancy has a marginally negative effect (coefficients = 0.0005, 0.0006 and -0.0405, respectively); the severity of the nominator's symptoms, the severity of the nominee's symptoms and the discrepancy in symptom severity all have a marginally positive effect (coefficients = 0.0689, 0.0788 and 0.0999, respectively); the discrepancy between the places where nominator and nominee have been recorded as positive patients has a strong negative effect (coefficient = -0.7422); the degree centrality of the nominator has a marginally positive effect, while the degree centrality of the nominee and the degree centrality discrepancy have a marginally negative effect (coefficients = 0.0155, -0.0284 and -0.0368, respectively); the betweenness centrality of the nominator and the betweenness centrality of the nominee both have a negligibly/marginally positive effect, while the betweenness centrality discrepancy has a marginally negative effect (coefficients = 0.0037, 0.0841 and -0.0417, respectively); the pagerank centrality of the nominator and the pagerank centrality of the nominee have a marginally positive effect, while the pagerank centrality discrepancy has a marginally negative effect (coefficients = 0.0246, 0.1119 and -0.0497, respectively); the component size of the nominator and the component size of the nominee both have a marginally positive effect, while the component size discrepancy has a marginally negative effect (coefficients = 0.0060, 0.0295 and -0.0156, respectively); finally, the average shortest path length of the nominator and the average shortest path length of the nominee both have a marginally positive effect, while the average shortest path length discrepancy has a marginally negative effect (coefficients = 0.0420, 0.0236 and -0.0370, respectively);
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{t}$ & $\mathbf{P>\lvert t \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/china_regression.csv}{}
+			{\\ \a & \b & \c & \d & \e}\\
+			\hline
+		\end{tabular}
+		\caption{Ordinary least-squares regression results for the China network.}
+		\label{tab:china_regression}
+	\end{mdframed}
+\end{table}
+
+\section{Comparison of Relational Event Model Analysis across regions}
+\label{sec:res_rem}
+
+\section{Comparison of Relational Hyperevent Model Analysis across regions}
+\label{sec:res_rhem}
+
+\section{Discussion of results}
+\label{sec:res_discussion}

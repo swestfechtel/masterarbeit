@@ -1,7 +1,7 @@
 \chapter{4\quad Methodology}
 \label{ch:methods}
 
-\section{Social Networks}
+\section{Social Network Analysis}
 \label{sec:social_networks}
 
 \subsection{Fundamentals}
@@ -44,7 +44,7 @@ As mentioned in section \ref{sec:social_networks_fundamentals}, graph theory off
 For all networks derived from the different datasets, the following network statistics were computed:
 
 \begin{itemize}
-	\item Degree centrality: For any node $v \in V$, the degree centrality is defined as $C_D(v) = \text{deg}(v)$, i.e. the degree centrality of a node is equal to the number of edges connected to that node. This measure can be used to identify individuals who hold an important position in the network (in this context, those who nominate many contacts), and also as an indicator for overall network density.
+	\item Degree centrality: For any node $v \in V$, the degree centrality is defined as $C_D(v) = \frac{\text{deg}(v)}{\lvert V \rvert - 1}$, i.e. the degree centrality of a node is equal to the number of edges connected to that node, normalised by the maximum possible degree in the graph, i.e. the total number of nodes minus one. This measure can be used to identify individuals who hold an important position in the network (in this context, those who nominate many contacts), and also as an indicator for overall network density.
 	\item Betweenness centrality: For any node $v \in V$, the betweenness centrality is defined as $C_B(v) = \sum_{s\neq v\neq t\in V}\frac{\sigma_{st}(v)}{\sigma_{st}}$, where $\sigma_{st}$ is the total number of shortest paths from $s$ to $t$, and $\sigma_{st}(v)$ is the number of shortest paths from $s$ to $t$ that go through $v$. This measure can be used to identify individuals who facilitate information flow (in this context, those who might have spread the virus from one individual to another).
 	\item Pagerank centrality: This is an iterative algorithm originally proposed to rank websites according to importance, where importance is defined by the number of hyperlinks that point to that website. For any node $v \in V$, the pagerank centrality is defined as $C_P(v) = \sum_{u \in B_v}\frac{C_P(u)}{\text{deg}(u)}$, where $B_v$ is the set of all nodes connected to $v$. Pagerank is computed iteratively; at time 0, it is
 	\begin{equation*}
@@ -65,7 +65,7 @@ For all networks derived from the different datasets, the following network stat
 \end{itemize}  
 \bigskip
 
-\noindent Based on these statistics, the data was analysed both in qualitative and quantitative manner. Specifically, examples are given for how epidemiological insights can be gained from contact tracing data (qualitative), and the statistics computed for the different datasets are statistically compared to investigate whether there are significant differences between the different regions (quantitative). Results are presented in section \ref{ch:results_discussion}.
+\noindent Based on these statistics, the data was analysed both in qualitative and quantitative manner. Specifically, examples are given for how epidemiological insights can be gained from contact tracing data (qualitative), and the statistics computed for the different datasets are statistically compared to investigate whether there are significant differences between the different regions (quantitative). Furthermore, ordinary least-squares regression models are used to determine the influence of node-specific network statistics and actor covariates on contact nomination likelihood. Results are presented in section \ref{ch:results_discussion}.
 
 \section{Relational Event Models}
 \label{sec:rem}
