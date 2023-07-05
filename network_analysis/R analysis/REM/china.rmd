@@ -6,7 +6,8 @@ output: html_notebook
 
 ```{r}
 library(survival)
-setwd('E:/Data/masterarbeit/Data/Tables/')
+library(broom)
+setwd('E:/Data/masterarbeit/Data/Tables/rem/')
 ```
 
 
@@ -23,6 +24,9 @@ nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  r
 options(width=300)
 summary(nomination.events.rem)
 ```
+```{r}
+write.csv(tidy(nomination.events.rem), file='../../../Thesis/tables/china_rem.csv')
+```
 
 ```{r}
 nomination.events.cond.referee <- read.csv2('china_eventlist_nomination_cond_referee.csv', sep=',')
@@ -37,6 +41,9 @@ nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv 
 options(width=300)
 summary(nomination.events.cond.referee.rem)
 ```
+```{r}
+write.csv(tidy(nomination.events.cond.referee.rem), file='../../../Thesis/tables/china_rem_cond_sender.csv')
+```
 
 ```{r}
 nomination.events.cond.referral <- read.csv2('china_eventlist_nomination_cond_referral.csv', sep=',')
@@ -50,4 +57,7 @@ nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.sur
 ```{r}
 options(width=300)
 summary(nomination.events.cond.referral.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.cond.referral.rem), file='../../../Thesis/tables/china_rem_cond_receiver.csv')
 ```

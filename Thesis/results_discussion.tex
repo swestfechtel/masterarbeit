@@ -9,7 +9,7 @@
 
 One of the goals of this work is to investigate whether there are significant differences between the different datasets in terms of network statistics. This knowledge might be used e.g. to the impact of different containment methods. One-way ANOVAs with multiple comparisons were used to identify significant differences between the networks derived from the datasets. Furthermore, descriptive statistics are given for all computed network statistics.
 
-\paragraph{Degree centrality} Recall that degree centrality values are normalised; therefore comparison values derived from original publications are adjusted accordingly. Average values for the different regions were $0.0071\pm0.016$ for the Yunnan dataset ($1.345\pm3.187$ reported in the original publication \cite{hainan_publication}; $0.0079\pm0.018$ adjusted for normalisation), $0.0093\pm0.011$ for the Hainan dataset ($1.51\pm1.79$ reported in the original publication \cite{hainan_publication}; $0.0093\pm0.011$ adjusted for normalisation), $0.0043\pm0.0056$ for the Shaanxi dataset ($0.987\pm1.351$ reported in the original publication \cite{shaanxi_publication}; $0.0041\pm0.0057$ adjusted for normalisation), $0.00036\pm0.00067$ for the Xi'an dataset ($0.741\pm1.379$ in the original publication \cite{xian_publication}; $0.00036\pm0.00067$ adjusted for normalisation), $1.80e^{-5}\pm6.84e^{-5}$ for the China dataset (no data reported in the original publication), and $7.9e^{-6}\pm1.4e^{-5}$ for the Bucharest dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
+\paragraph{Degree centrality} Recall that degree centrality values are normalised; therefore comparison values derived from original publications are adjusted accordingly. Average values for the different regions were $0.0071\pm0.016$ for the Yunnan dataset ($1.345\pm3.187$ reported in the original publication \cite{hainan_publication}; $0.0079\pm0.018$ adjusted for normalisation), $0.0093\pm0.011$ for the Hainan dataset ($1.51\pm1.79$ reported in the original publication \cite{hainan_publication}; $0.0093\pm0.011$ adjusted for normalisation), $0.0043\pm0.0056$ for the Shaanxi dataset ($0.987\pm1.351$ reported in the original publication \cite{shaanxi_publication}; $0.0041\pm0.0057$ adjusted for normalisation), $0.00036\pm0.00067$ for the Xi'an dataset ($0.741\pm1.379$ in the original publication \cite{xian_publication}; $0.00036\pm0.00067$ adjusted for normalisation), $1.80\cdot 10^{-5}\pm6.84\cdot 10^{-5}$ for the China dataset (no data reported in the original publication), and $7.9\cdot 10^{-6}\pm1.4\cdot 10^{-5}$ for the Bucharest dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
 
 \begin{table}[h]
 	\begin{mdframed}
@@ -21,10 +21,10 @@ One of the goals of this work is to investigate whether there are significant di
 			\textbf{Minimum} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
 			\textbf{25 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
 			\textbf{Median} & 0.0 & 0.0062 & 0.0042 & 0.00048 & 0.0 & 0.0\\
-			\textbf{75 Percentile} & 0.0058 & 0.018 & 0.0084 & 0.00048 & $1.72e^{-5}$ & 0.0\\
+			\textbf{75 Percentile} & 0.0058 & 0.018 & 0.0084 & 0.00048 & $1.72\cdot 10^{-5}$ & 0.0\\
 			\textbf{Maximum} & 0.070 & 0.037 & 0.046 & 0.020 & 0.00032 & 0.0052\\
-			\textbf{Mean} & 0.0071 & 0.0093 & 0.0043 & 0.00036 & $7.93e^{-6}$ & $1.80e^{-5}$\\
-			\textbf{Std. Dev.} & 0.016 & 0.011 & 0.0056 & 0.00067 & $1.42e^{-5}$ & $6.74e^{-5}$\\
+			\textbf{Mean} & 0.0071 & 0.0093 & 0.0043 & 0.00036 & $7.93\cdot 10^{-6}$ & $1.80\cdot 10^{-5}$\\
+			\textbf{Std. Dev.} & 0.016 & 0.011 & 0.0056 & 0.00067 & $1.42\cdot 10^{-5}$ & $6.74\cdot 10^{-5}$\\
 			\hline
 		\end{tabular*}
 		\caption{Descriptive statistics for degree centrality.}
@@ -47,7 +47,7 @@ One of the goals of this work is to investigate whether there are significant di
 			Shaanxi vs. Bucharest & 0.0043 & 0.0041 to 0.0044 & Yes & $<0.0001$\\
 			Shaanxi vs. China & 0.0043 & 0.0041 to 0.0044 & Yes & $<0.0001$\\
 			Shaanxi vs. Xi'an & 0.0039 & 0.0037 to 0.0041 & Yes & $<0.0001$\\
-			Bucharest vs. China & $-1.01e^{-5}$ & $-3.00e^{-5}$ to $9.76e^{-6}$ & No & 0.6956\\
+			Bucharest vs. China & $-1.01\cdot 10^{-5}$ & $-3.00\cdot 10^{-5}$ to $9.76\cdot 10^{-6}$ & No & 0.6956\\
 			Bucharest vs. Xi'an & -0.00035 & -0.00041 to -0.00029 & Yes & $<0.0001$\\
 			China vs. Xi'an & -0.00034 & -0.00040 to -0.00028 & Yes & $<0.0001$\\
 			\hline
@@ -59,7 +59,7 @@ One of the goals of this work is to investigate whether there are significant di
 
 One-way ANOVA comparison between the regions found a significant difference between the means ($F(5,86327) = 6265; \: p<0.0001$). Compared against each other (using Tukey's multiple comparisons test with 95\% confidence interval), all regions were pairwise significantly different except Bucharest vs. China ($p=0.6956$).
 
-\paragraph{Betweenness centrality} Average values for the different regions were $7.32e^{-6}\pm3.67e^{-5}$ for the Yunnan dataset ($0.0000\pm0.0000$ reported in the original publication \cite{hainan_publication}), $1.72e^{-5}\pm1.09e^{-4}$ for the Hainan dataset ($0.0000\pm0.0001$ reported in the original publication \cite{hainan_publication}), $1.68e^{-5}\pm1.02e^{-4}$ for the Shaanxi dataset ($0.0000\pm0.0001$ reported in the original publication \cite{shaanxi_publication}), $1.60e^{-6}\pm2.41e^{-5}$ for the Xi'an dataset (no data reported in the original publication), $5.18e^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $2.33e^{-8}\pm9.05e^{-7}$ for the China dataset (no data reported in the original publication). Taking into account that values only include four digits after the decimal point and the resulting loss of information, values could reliably be reproduced where applicable.
+\paragraph{Betweenness centrality} Average values for the different regions were $7.32\cdot 10^{-6}\pm3.67\cdot 10^{-5}$ for the Yunnan dataset ($0.0000\pm0.0000$ reported in the original publication \cite{hainan_publication}), $1.72\cdot 10^{-5}\pm1.09\cdot 10^{-4}$ for the Hainan dataset ($0.0000\pm0.0001$ reported in the original publication \cite{hainan_publication}), $1.68\cdot 10^{-5}\pm1.02\cdot 10^{-4}$ for the Shaanxi dataset ($0.0000\pm0.0001$ reported in the original publication \cite{shaanxi_publication}), $1.60\cdot 10^{-6}\pm2.41\cdot 10^{-5}$ for the Xi'an dataset (no data reported in the original publication), $5.18\cdot 10^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $2.33\cdot 10^{-8}\pm9.05\cdot 10^{-7}$ for the China dataset (no data reported in the original publication). Taking into account that values only include four digits after the decimal point and the resulting loss of information, values could reliably be reproduced where applicable.
 
 \begin{table}[h]
 	\begin{mdframed}
@@ -72,9 +72,9 @@ One-way ANOVA comparison between the regions found a significant difference betw
 			\textbf{25 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
 			\textbf{Median} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
 			\textbf{75 Percentile} & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
-			\textbf{Maximum} & 0.00034 & 0.0012 & 0.0013 & 0.00079 & 3.0 & $9.40e^{-5}$\\
-			\textbf{Mean} & $7.32e^{-6}$ & $1.72e^{-5}$ & $1.68e^{-5}$ & $1.60e^{-6}$ & $5.18e^{-5}$ & $2.33e^{-8}$\\
-			\textbf{Std. Dev.} & $3.67e^{-5}$ & 0.00010 & 0.00010 & $2.41e^{-5}$ & 0.012 & $9.05e^{-7}$\\
+			\textbf{Maximum} & 0.00034 & 0.0012 & 0.0013 & 0.00079 & 3.0 & $9.40\cdot 10^{-5}$\\
+			\textbf{Mean} & $7.32\cdot 10^{-6}$ & $1.72\cdot 10^{-5}$ & $1.68\cdot 10^{-5}$ & $1.60\cdot 10^{-6}$ & $5.18\cdot 10^{-5}$ & $2.33\cdot 10^{-8}$\\
+			\textbf{Std. Dev.} & $3.67\cdot 10^{-5}$ & 0.00010 & 0.00010 & $2.41\cdot 10^{-5}$ & 0.012 & $9.05\cdot 10^{-7}$\\
 			\hline
 		\end{tabular*}
 		\caption{Descriptive statistics for betweenness centrality.}
@@ -85,21 +85,21 @@ One-way ANOVA comparison between the regions found a significant difference betw
 			\hline
 			\textbf{Pair} & \textbf{Mean Diff.} & \textbf{95\% CI of diff.} & \textbf{Sign.?} & \textbf{Adj. P value}\\
 			\hline
-			Yunnan vs. Hainan & $-9.92e^{-6}$ & -0.0032 to 0.0031 & No & $>0.9999$\\
-			Yunnan vs. Shaanxi & $-9.56e^{-6}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
-			Yunnan vs. Bucharest & $-4.45e^{-5}$ & -0.0022 to 0.0021 & No & $>0.9999$\\
-			Yunnan vs. China & $7.30e^{-6}$ & -0.0022 to 0.0022 & No & $>0.9999$\\
-			Yunnan vs. Xi'an & $5.72e^{-6}$ & -0.0023 to 0.0023 & No & $>0.9999$\\
-			Hainan vs. Shaanxi & $3.63e^{-7}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
-			Hainan vs. Bucharest & $-3.46e^{-5}$ & -0.0023 to 0.0022 & No & $>0.9999$\\
-			Hainan vs. China & $1.72e^{-5}$ & -0.0022 to 0.0023 & No & $>0.9999$\\
-			Hainan vs. Xi'an & $1.56e^{-5}$ & 0.0023 to 0.0023 & No & $>0.9999$\\
-			Shaanxi vs. Bucharest & $-3.49e^{-5}$ & -0.0019 to 0.0018 & No & $>0.9999$\\
-			Shaanxi vs. China & $1.68e^{-5}$ & -0.0018 to 0.0019 & No & $>0.9999$\\
-			Shaanxi vs. Xi'an & $1.52e^{-5}$ & -0.0019 to 0.0020 & No & $>0.9999$\\
-			Bucharest vs. China & $5.18e^{-5}$ & -0.00016 to 0.00026 & No & 0.9843\\
-			Bucharest vs. Xi'an & $5.02e^{-5}$ & -0.00060 to 0.00070 & No & $>0.9999$\\
-			China vs. Xi'an & $-1.58e^{-6}$ & -0.00066 to 0.00066 & No & $>0.9999$\\
+			Yunnan vs. Hainan & $-9.92\cdot 10^{-6}$ & -0.0032 to 0.0031 & No & $>0.9999$\\
+			Yunnan vs. Shaanxi & $-9.56\cdot 10^{-6}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
+			Yunnan vs. Bucharest & $-4.45\cdot 10^{-5}$ & -0.0022 to 0.0021 & No & $>0.9999$\\
+			Yunnan vs. China & $7.30\cdot 10^{-6}$ & -0.0022 to 0.0022 & No & $>0.9999$\\
+			Yunnan vs. Xi'an & $5.72\cdot 10^{-6}$ & -0.0023 to 0.0023 & No & $>0.9999$\\
+			Hainan vs. Shaanxi & $3.63\cdot 10^{-7}$ & -0.0029 to 0.0029 & No & $>0.9999$\\
+			Hainan vs. Bucharest & $-3.46\cdot 10^{-5}$ & -0.0023 to 0.0022 & No & $>0.9999$\\
+			Hainan vs. China & $1.72\cdot 10^{-5}$ & -0.0022 to 0.0023 & No & $>0.9999$\\
+			Hainan vs. Xi'an & $1.56\cdot 10^{-5}$ & 0.0023 to 0.0023 & No & $>0.9999$\\
+			Shaanxi vs. Bucharest & $-3.49\cdot 10^{-5}$ & -0.0019 to 0.0018 & No & $>0.9999$\\
+			Shaanxi vs. China & $1.68\cdot 10^{-5}$ & -0.0018 to 0.0019 & No & $>0.9999$\\
+			Shaanxi vs. Xi'an & $1.52\cdot 10^{-5}$ & -0.0019 to 0.0020 & No & $>0.9999$\\
+			Bucharest vs. China & $5.18\cdot 10^{-5}$ & -0.00016 to 0.00026 & No & 0.9843\\
+			Bucharest vs. Xi'an & $5.02\cdot 10^{-5}$ & -0.00060 to 0.00070 & No & $>0.9999$\\
+			China vs. Xi'an & $-1.58\cdot 10^{-6}$ & -0.00066 to 0.00066 & No & $>0.9999$\\
 			\hline
 		\end{tabular*}
 		\caption{Multiple comparisons for betweenness centrality. Method is Tukey's multiple comparison test with an alpha value of 0.05 (i.e. 95\% confidence interval).}
@@ -109,7 +109,7 @@ One-way ANOVA comparison between the regions found a significant difference betw
 
 One-way ANOVA comparison between the regions found no significant difference between the means $F(5,86327) = 0.09719; \: p=0.9926$). Compared against each other (Tukey's test, 95\% CI), no regions were pairwise significantly different.
 
-\paragraph{Pagerank centrality} Average values for the different regions were $0.0058\pm0.0055$ for the Yunnan dataset ($0.0058\pm0.0055$ reported in the original publication \cite{hainan_publication}), $0.0061\pm0.0043$ for the Hainan dataset ($0.0062\pm0.0043$ reported in the original publication \cite{hainan_publication}), $0.0042\pm0.0034$ for the Shaanxi dataset ($0.0042\pm0.0035$ reported in the original publication \cite{shaanxi_publication}), $0.00048\pm0.00057$ for the Xi'an dataset ($0.0005\pm0.0006$ reported in the original publication \cite{xian_publication}), $6.91e^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $3.86e^{-5}\pm6.07e^{-5}$ for the China dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
+\paragraph{Pagerank centrality} Average values for the different regions were $0.0058\pm0.0055$ for the Yunnan dataset ($0.0058\pm0.0055$ reported in the original publication \cite{hainan_publication}), $0.0061\pm0.0043$ for the Hainan dataset ($0.0062\pm0.0043$ reported in the original publication \cite{hainan_publication}), $0.0042\pm0.0034$ for the Shaanxi dataset ($0.0042\pm0.0035$ reported in the original publication \cite{shaanxi_publication}), $0.00048\pm0.00057$ for the Xi'an dataset ($0.0005\pm0.0006$ reported in the original publication \cite{xian_publication}), $6.91\cdot 10^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $3.86\cdot 10^{-5}\pm6.07\cdot 10^{-5}$ for the China dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
 
 \begin{table}[h]
 	\begin{mdframed}
@@ -118,13 +118,13 @@ One-way ANOVA comparison between the regions found no significant difference bet
 			\textbf{ } & \textbf{Yunnan} & \textbf{Hainan} & \textbf{Shaanxi} & \textbf{Xi'an} & \textbf{Bucharest} & \textbf{China}\\
 			\hline
 			\textbf{N} & 171 & 162 & 237 & 2050 & 57836 & 25877\\
-			\textbf{Minimum} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09e^{-6}$ & $1.87e^{-5}$\\
-			\textbf{25 Percentile} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09e^{-6}$ & $1.87e^{-5}$\\
-			\textbf{Median} & 0.0020 & 0.0081 & 0.0043 & 0.00044 & $6.09e^{-6}$ & $1.87e^{-5}$\\
-			\textbf{75 Percentile} & 0.013 & 0.0098 & 0.0066 & 0.00081 & $2.60e^{-5}$ & $1.87e^{-5}$\\
+			\textbf{Minimum} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09\cdot 10^{-6}$ & $1.87\cdot 10^{-5}$\\
+			\textbf{25 Percentile} & 0.0020 & 0.0014 & 0.00099 & 0.00012 & $6.09\cdot 10^{-6}$ & $1.87\cdot 10^{-5}$\\
+			\textbf{Median} & 0.0020 & 0.0081 & 0.0043 & 0.00044 & $6.09\cdot 10^{-6}$ & $1.87\cdot 10^{-5}$\\
+			\textbf{75 Percentile} & 0.013 & 0.0098 & 0.0066 & 0.00081 & $2.60\cdot 10^{-5}$ & $1.87\cdot 10^{-5}$\\
 			\textbf{Maximum} & 0.022 & 0.018 & 0.023 & 0.016 & 3.0 & 0.0047\\
-			\textbf{Mean} & 0.0058 & 0.0061 & 0.0042 & 0.00048 & $6.91e^{-5}$ & $3.86e^{-5}$\\
-			\textbf{Std. Dev.} & 0.0055 & 0.0043 & 0.0034 & 0.00057 & 0.012 & $6.07e^{-5}$\\
+			\textbf{Mean} & 0.0058 & 0.0061 & 0.0042 & 0.00048 & $6.91\cdot 10^{-5}$ & $3.86\cdot 10^{-5}$\\
+			\textbf{Std. Dev.} & 0.0055 & 0.0043 & 0.0034 & 0.00057 & 0.012 & $6.07\cdot 10^{-5}$\\
 			\hline
 		\end{tabular*}
 		\caption{Descriptive statistics for pagerank centrality.}
@@ -147,7 +147,7 @@ One-way ANOVA comparison between the regions found no significant difference bet
 			Shaanxi vs. Bucharest & 0.0041 & 0.0022 to 0.0060 & Yes & $<0.0001$\\
 			Shaanxi vs. China & 0.0041 & 0.0022 to 0.0060 & Yes & $<0.0001$\\
 			Shaanxi vs. Xi'an & 0.0037 &0.0017 to 0.0057 & Yes & $<0.0001$\\
-			Bucharest vs. China & $3.05e^{-5}$ & -0.00018 to 0.00024 & No & 0.9987\\
+			Bucharest vs. China & $3.05\cdot 10^{-5}$ & -0.00018 to 0.00024 & No & 0.9987\\
 			Bucharest vs. Xi'an & -0.00041 & -0.0010 to 0.00023 & No & 0.4507\\
 			China vs. Xi'an & -0.00044 & -0.0011 to 0.00021 & No & 0.3922\\
 			\hline
@@ -357,6 +357,229 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \section{Comparison of Relational Event Model Analysis across regions}
 \label{sec:res_rem}
+
+All five main datasets (Yunnan, Hainan, Shaanxi, Bucharest and China) were analysed using relational event modelling. A varying number of non-events were sampled for each observed event, such that for each individual dataset, the total number of events would be around one million. Cox proportional hazards models were used to determine the significance and effect of computed statistics (which are listed in chapter \ref{ch:methods}) on contact nomination likelihood. Some of the statistics were all-zero in some datasets. The results of the Cox regressions will be presented below. For all datasets, three different sets of statistics and accompanying Cox proportional hazards models were computed. One with no conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may include any other event $(u',v',t_i)$ which may have the same or a different source and the same or a different target, but not $u' = u \land v' = v$; one with source-specific conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may only include those $e_s(u,v',t_i)$ which have the same source $u$, but another target $v'$; and one with target-specific conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may only include those $e_s(u',v,t_i)$ which have the same target $v$, but another source $u'$. 
+
+\paragraph{Yunnan network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominee ($p=0.0302$), whether the nominee is a family member of a family member who was registered as a patient at a previous point in time ($p=0.0508$), and the discrepancy in family member status ($p<0.0001$). Reciprocation has a slightly positive effect on contact nomination likelihood (coefficient = 0.2434); age discrepancy has a marginally negative effect (coefficient = -0.0513), the sex of the nominee has a moderately positive effect (coefficient = 0.5077), the family member status of the nominee has a strong negative effect (coefficient = -1.127), and the discrepancy in family member status has a very strong negative effect (coefficient = -3.009).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/yunnan_rem.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned REM results for the Yunnan network.}
+		\label{tab:yunnan_rem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the age of the nominator ($p=0.0920$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominee ($p=0.0082)$, whether the nominee is a family member of an actor who was registered as a patient at a previous point in time ($p=0.0438$), and the discrepancy in family member status $p<0.0001$. Reciprocation has a slightly positive effect on contact nomination likelihood (coefficient = 0.2936), the nominator's age has a marginally negative effect (coefficient = -0.0152), age discrepancy has a marginally negative effect (coefficient = -0.0497), the sex of the nominee has a moderately positive effect (coefficient = 0.6192), discrepancy in family member status has a strong negative effect (coefficient = -1.170), and discrepancy in family member status has a very
+strong negative effect (coefficient = -3.094). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/yunnan_rem_cond_sender.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned REM results for the Yunnan network. Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.}
+		\label{tab:yunnan_rem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the discrepancy between nominator's and nominee's age ($p=0.0001$) and the discrepancy in family member status ($p<0.0001$). Age discrepancy has a marginally negative effect on contact nomination likelihood (coefficient = -0.0412), and family member status discrepancy has a strong negative effect (coefficient = -2.898).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/yunnan_rem_cond_receiver.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned REM results for the Yunnan network.}
+		\label{tab:yunnan_rem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Hainan network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0152$), the age of the nominee ($p=0.0509$), the discrepancy between nominator's and nominee's age ($p=0.0256$), the sex of the nominee ($p=0.0762$), whether the nominator is a family member of an actor who was registered as a patient at a previous point in time ($p=0.0001$), whether the nominee is a family member of an actor who was registered as a patient at a previous point in time ($p<0.0001$), and the discrepancy in family member status ($p<0.0001$). The nominator's age, the nominee's age and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0121, -0.0095 and -0.0137, respectively); the sex of the nominee has a marginally positive effect (coefficient = 0.3250); family member status of the nominator and nominee both have a strongly positive effect, while family member status discrepancy has a strongly negative effect (coefficients = 1.504, 2.213 and -1.586, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/hainan_rem.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned REM results for the Hainan network.}
+		\label{tab:hainan_rem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0404$), the discrepancy between nominator's and nominee's age ($p=0.0132$), whether the nominator is a family member of another actor who was registered as a patient at a previous point in time ($p=0.0068$), and the discrepancy in family member status ($p<0.0001$). The nominator's age and age discrepancy both have a marginally negative effect on contact nomination likelihood (coefficients = -0.0102 and -0.0151, respectively); the family member status of the nominator has a strongly positive effect, while discrepancy in family member status has a strongly negative effect (coefficients = 1.065 and -1.580, respectively). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/hainan_rem_cond_sender.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned REM results for the Hainan network. Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.}
+		\label{tab:hainan_rem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0119$), the age of the nominee ($p=0.0996$), the discrepancy between nominator's and nominee's age ($p=0.0132$), whether the nominator is a family member of another actor who was registered as a patient at a previous point in time ($p=0.0002$), and the discrepancy in family member status ($p<0.0001$). The nominator's age, the nominee's age and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0125, -0.0091 and -0.0150, respectively); the family member status of the nominator has a strongly positive effect, while discrepancy in family member status has a strongly negative effect (coefficients = 1.449 and -1.664, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/hainan_rem_cond_receiver.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned REM results for the Hainan network.}
+		\label{tab:hainan_rem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Shaanxi network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p=0.0718$), whether the nominator is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), whether the nominee is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0011$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Reciprocation has a marginally positive effect on contact nomination likelihood (coefficient = 0.3591); sex discrepancy has a marginally positive effect (coefficient = 0.3333); family member status of nominator and nominee both have a strongly/marginally positive effect (coefficients = 2.377 and 0.0692, respectively); the nominee's place of residence and discrepancy in place of residence have a marginally/strongly negative effect (coefficients = -0.0624 and -3.086, respectively).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/shanxi_rem.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned REM results for the Shaanxi network.}
+		\label{tab:shaanxi_rem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), discrepancy between nominator's and nominee's sex ($p=0.0815$), whether the nominee is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0007$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Reciprocation has a moderately positive effect on contact nomination likelihood (coefficient = 0.3555); sex discrepancy has a moderately positive effect (coefficient = 0.3222); family member status of the nominee has a strongly positive effect (coefficient = 0.8221); the place of residence of the nominee and discrepancy in place of residence have a marginally/strongly negative effect (coefficients = -0.0654 and -3.071, respectively). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/hainan_rem_cond_sender.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned REM results for the Shaanxi network. Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.}
+		\label{tab:shaanxi_rem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the discrepancy between nominator's and nominee's sex ($p-0.0935$), whether the nominator is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0104$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Sex discrepancy has a marginally positive effect on contact nomination likelihood (coefficient = 0.3118); family member status of the nominator has a strongly positive effect (coefficient = 2.276); the place of residence of the nominee has a marginally negative effect (coefficient = -0.0638); the discrepancy in place of residence has a strongly negative effect (coefficient = -3.297).
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/shanxi_rem_cond_receiver.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned REM results for the Shaanxi network.}
+		\label{tab:shaanxi_rem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Bucharest network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p=0.0018$), shared sender ($p<0.0001$), the age of the nominator ($p=0.0305$), the age of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0051$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the nominee's job ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is active in the medical field ($p<0.0001$), whether the nominee is active in the medical field ($p<0.0001$), and the discrepancy between nominator's and nominee's medical employment status ($p<0.0001$). Reciprocation has a slightly negative effect on contact nomination likelihood (coefficient = -0.3098); exact reciprocation has a marginally positive effect (coefficient = 0.0256); cyclical tie has a marginally positive effect (coefficient = 0.0027); shared sender has a marginally positive effect (coefficient = 0.0189); nominator age, nominee age and age discrepancy all have a marginally negative effect (coefficients = -0.0028, -0.0094 and -0.0220, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1444, 0.2500 and 0.6859, respectively); nominee job has a marginally positive effect, while job discrepancy has a moderately negative effect (coefficients = 0.0577 and -0.6991, respectively); nominator and nominee medical employment status both have a strongly negative effect, while discrepancy in medical employment has a moderately positive effect (coefficients = -1.5437, -1.4391 and 0.4569, respectively). Transitive tie and shared target are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/bucharest_rem.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned REM results for the Bucharest network. Transitive tie and shared target are all/zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p=0.0006$), shared source ($p<0.0001$), the age of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0004$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the job of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is employed in the medical field ($p<0.0001$), whether the nominee is employed in the medical field($p<0.0001$), and the discrepancy between nominator's and nominee's medical employment status ($p=0.0003$). Reciprocation has a slightly negative effect on contact nomination likelihood (coefficient = -0.3209), exact reciprocation has a marginally positive effect (coefficient = 0.0347), cyclical tie has a marginally positive effect (coefficient = 0.0030), shared source has a marginally positive effect (coefficient = 0.0185), nominee age and age discrepancy both have a marginally negative effect (coefficients = -0.0090 and -0.0118, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1825, 0.2266 and 0.6970, respectively); nominee job has a marginally positive effect, while discrepancy between nominator's and nominee's job has a strongly negative effect (coefficients = 0.0656 and -0.7420, respectively); medical employment of nominator and nominee both have a slightly/strongly negative effect, while discrepancy in medical employment has a slightly positive effect (coefficients = -0.3595, -1.5172 and 0.3145, respectively). Nomination activity, repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/bucharest_rem_cond_sender.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned REM results for the Bucharest network. Nomination activity, repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p=0.0085$), exact reciprocation ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p=0.0391$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0153$), the sex of the nominee ($p=0.0477$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is employed in the medical field ($p<0.0001$), whether the nominee is employed in the medical field ($p=0.0036$), and the discrepancy between nominator's and nominee's medical employment status ($p=0.0005$). Reciprocation has a marginally negative effect on contact nomination likelihood (coefficient = -0.0294); exact reciprocation has a marginally positive effect (coefficient = 0.0202); shared source has a marginally positive effect (coefficient = 0.0163); nominator age and age discrepancy both have a marginally negative effect (coefficients = -0.0027 and -0.0237, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1250, 0.1036 and 0.6887, respectively); job discrepancy has a moderately negative effect (coefficient = -0.4774); nominator medical employment and nominee medical employment both have a strongly/slightly negative effect, while medical employment status discrepancy has a slightly positive effect (coefficients = -1.5120, -0.1581 and 0.3031, respectively). Repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.
+
+\begin{table}[h]
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/bucharest_rem_cond_receiver.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned REM results for the Bucharest network. Repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{China network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are nomination activity ($p<0.0001$), reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the age of the nominee ($p<0.0001$), the sex of the nominator ($p<0.0001$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the place of residence of the nominator ($p<0.0001$), the place of residence of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's place of residence ($p<0.0001$), the place/occasion where the nominator might have been infected ($p<0.0001$), the place/occasion where the nominee might have been infected ($p<0.0001$), the discrepancy between nominator's and nominee's place/occasion ($p=0.0060$), the symptoms of the nominator ($p<0.0001$), the symptoms of the nominee ($p<0.0001$), the severity of the nominator's symptoms ($p<0.0001$), the severity of the nominee's symptoms ($p<0.0001$), the discrepancy in symptom severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the place where the nominee was registered as positive ($p=0.0006$), and the discrepancy between nominator's and nominee's place of registration ($p<0.0001$). Nomination activity has a strongly negative effect on contact nomination likelihood (coefficient = -2.602); reciprocation has a slightly positive effect (coefficient = 0.2493); exact reciprocation has a marginally positive effect (coefficient = 0.0672); cyclical tie has a marginally negative effect (coefficient = -0.0642); shared source has a marginally positive effect (coefficient = 0.0150); nominator age and nominee age both have a marginally positive effect (coefficients = 0.0037 and 0.0053, respectively); nominator sex and nominee sex both have a slightly negative effect, while sex discrepancy has a slightly positive effect (coefficients = -0.1575, -0.2394 and 0.1519, respectively); nominator place of residence, nominee place of residence and discrepancy in place of residence all have a marginally/moderately negative effect (coefficients = -0.0010, -0.0009 and -0.4074, respectively); nominator and nominee place/occasion both have a marginally positive effect, while discrepancy in place/occasion has a marginally negative effect (coefficients = 0.0003, 0.0001 and -0.0576, respectively); nominator and nominee symptoms both have a marginally positive effect, while discrepancy in symptoms has a marginally negative effect (coefficients = 0.0026, 0.0016 and -0.0177, respectively); nominator symptom severity and nominee symptom severity both have a marginally/slightly positive effect, while discrepancy in symptom severity has a slightly negative effect (coefficients = 0.0601, 0.1692 and -0.2882, respectively); the nominator's place of registration, the nominee's place of registration and discrepancy in place of registration all have a marginally/very strongly negative effect (coefficients = -0.0010, -0.0009 and -5.928, respectively).
+
+
 
 \section{Comparison of Relational Hyperevent Model Analysis across regions}
 \label{sec:res_rhem}

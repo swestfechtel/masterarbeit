@@ -6,6 +6,7 @@ output: html_notebook
 
 ```{r}
 library(survival)
+library(broom)
 setwd('E:/Data/masterarbeit/Data/Tables/rem')
 ```
 
@@ -19,12 +20,18 @@ nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  r
 summary(nomination.events.rem)
 ```
 ```{r}
+write.csv(tidy(nomination.events.rem), file='../../../Thesis/tables/hainan_rem.csv')
+```
+```{r}
 nomination.events.cond.referee <- read.csv2('hainan_eventlist_nomination_cond_referee.csv', sep=',')
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- log1p(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- scale(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referee)), event=nomination.events.cond.referee$IS_OBSERVED)
 nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~ reciprocation + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_relatives + referral_relatives + relatives_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # all except reciprocation, network activity/time NAN??
 summary(nomination.events.cond.referee.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.cond.referee.rem), file='../../../Thesis/tables/hainan_rem_cond_sender.csv')
 ```
 
 ```{r}
@@ -34,4 +41,7 @@ nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) 
 nomination.events.cond.referral.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referral)), event=nomination.events.cond.referral$IS_OBSERVED)
 nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ nomination_activity +  reciprocation + repetition + exact_reciprocation +transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_relatives + referral_relatives + relatives_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
 summary(nomination.events.cond.referral.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.cond.referral.rem), file='../../../Thesis/tables/hainan_rem_cond_receiver.csv')
 ```
