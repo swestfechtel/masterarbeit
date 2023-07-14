@@ -1,7 +1,7 @@
 \chapter{4\quad Results and Discussion}
 \label{ch:results_discussion}
 
-\section{Comparison of Social Network Analysis across regions}
+\section{Results of Social Network Analysis across regions}
 \label{sec:res_sna}
 
 \subsection{One-way ANOVAs for network statistics}
@@ -11,7 +11,7 @@ One of the goals of this work is to investigate whether there are significant di
 
 \paragraph{Degree centrality} Recall that degree centrality values are normalised; therefore comparison values derived from original publications are adjusted accordingly. Average values for the different regions were $0.0071\pm0.016$ for the Yunnan dataset ($1.345\pm3.187$ reported in the original publication \cite{hainan_publication}; $0.0079\pm0.018$ adjusted for normalisation), $0.0093\pm0.011$ for the Hainan dataset ($1.51\pm1.79$ reported in the original publication \cite{hainan_publication}; $0.0093\pm0.011$ adjusted for normalisation), $0.0043\pm0.0056$ for the Shaanxi dataset ($0.987\pm1.351$ reported in the original publication \cite{shaanxi_publication}; $0.0041\pm0.0057$ adjusted for normalisation), $0.00036\pm0.00067$ for the Xi'an dataset ($0.741\pm1.379$ in the original publication \cite{xian_publication}; $0.00036\pm0.00067$ adjusted for normalisation), $1.80\cdot 10^{-5}\pm6.84\cdot 10^{-5}$ for the China dataset (no data reported in the original publication), and $7.9\cdot 10^{-6}\pm1.4\cdot 10^{-5}$ for the Bucharest dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\begin{mdframed}
 		\begin{tabular*}{\linewidth}{l|llllll}
 			\hline
@@ -61,7 +61,7 @@ One-way ANOVA comparison between the regions found a significant difference betw
 
 \paragraph{Betweenness centrality} Average values for the different regions were $7.32\cdot 10^{-6}\pm3.67\cdot 10^{-5}$ for the Yunnan dataset ($0.0000\pm0.0000$ reported in the original publication \cite{hainan_publication}), $1.72\cdot 10^{-5}\pm1.09\cdot 10^{-4}$ for the Hainan dataset ($0.0000\pm0.0001$ reported in the original publication \cite{hainan_publication}), $1.68\cdot 10^{-5}\pm1.02\cdot 10^{-4}$ for the Shaanxi dataset ($0.0000\pm0.0001$ reported in the original publication \cite{shaanxi_publication}), $1.60\cdot 10^{-6}\pm2.41\cdot 10^{-5}$ for the Xi'an dataset (no data reported in the original publication), $5.18\cdot 10^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $2.33\cdot 10^{-8}\pm9.05\cdot 10^{-7}$ for the China dataset (no data reported in the original publication). Taking into account that values only include four digits after the decimal point and the resulting loss of information, values could reliably be reproduced where applicable.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\begin{mdframed}
 		\begin{tabular*}{\linewidth}{l|llllll}
 			\hline
@@ -111,7 +111,7 @@ One-way ANOVA comparison between the regions found no significant difference bet
 
 \paragraph{Pagerank centrality} Average values for the different regions were $0.0058\pm0.0055$ for the Yunnan dataset ($0.0058\pm0.0055$ reported in the original publication \cite{hainan_publication}), $0.0061\pm0.0043$ for the Hainan dataset ($0.0062\pm0.0043$ reported in the original publication \cite{hainan_publication}), $0.0042\pm0.0034$ for the Shaanxi dataset ($0.0042\pm0.0035$ reported in the original publication \cite{shaanxi_publication}), $0.00048\pm0.00057$ for the Xi'an dataset ($0.0005\pm0.0006$ reported in the original publication \cite{xian_publication}), $6.91\cdot 10^{-5}\pm0.01$ for the Bucharest dataset (no data reported in the original publication), and $3.86\cdot 10^{-5}\pm6.07\cdot 10^{-5}$ for the China dataset (no data reported in the original publication). Therefore, values could reliably be reproduced where applicable, assuming some loss of precision.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\begin{mdframed}
 		\begin{tabular*}{\linewidth}{l|llllll}
 			\hline
@@ -161,7 +161,7 @@ One-way ANOVA comparison between the regions found a significant difference betw
 
 \paragraph{Component size} Average values for the different regions were $2.42\pm3.23$ for the Yunnan dataset, $2.85\pm2.32$ for the Hainan dataset, $2.86\pm2.71$ for the Shaanxi dataset, $5.23\pm12.34$ for the Xi'an dataset, $1.93\pm1.79$ for the Bucharest dataset, and $6.76\pm38.15$ for the China dataset. No values were reported in the original publications, only individual clusters were examined in an exploratory fashion in \cite{hainan_publication,shaanxi_publication,xian_publication}.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\begin{mdframed}
 		\begin{tabular*}{\linewidth}{l|llllll}
 			\hline
@@ -211,7 +211,7 @@ One-way ANOVA comparison between the regions found a significant difference betw
 
 \paragraph{Average shortest path length} Average values for the different regions were $0.25\pm0.39$ for the Yunnan dataset, $0.45\pm0.47$ for the Hainan dataset, $0.52\pm0.56$ for the Shaanxi dataset, $0.61\pm0.80$ for the Xi'an dataset, $0.32\pm0.51$ for the Bucharest dataset, and $0.24\pm0.67$ for the China dataset. Shortest path length was not analysed in any of the previous works, therefore there are no comparison values.
 
-\begin{table}[h]
+\begin{table}[htbp]
 	\begin{mdframed}
 		\begin{tabular*}{\linewidth}{l|llllll}
 			\hline
@@ -266,7 +266,8 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \paragraph{Yunnan network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the sex of the nominator ($p<0.001$), sex discrepancy between nominator and nominee ($p<0.001$), whether the nominator is a family member of another actor in the dataset ($p<0.001$), and all network statistics for nominator, nominee, and the difference between nominator and nominee, with the exception of the average shortest path length of the nominator ($p=0.224$). Nominator sex has a marginally positive effect on contact nomination likelihood (coefficient = 0.0036); sex discrepancy has a marginally positive effect (coefficient = 0.0033); family member status of the nominator has a marginally positive effect (coefficient = 0.0036); degree centrality of nominator and nominee both have a slightly positive effect (coefficients = 0.0874 and 0.0901), while degree centrality discrepancy has a slightly negative effect (coefficient = -0.0880); betweenness centrality of nominator and nominee both have a slightly negative effect (covariates = -0.0103 and -0.0114), while betweenness centrality discrepancy has a slightly positive effect (coefficient = 0.0182); pagerank centrality of the nominator has a slightly negative effect, the pagerank centrality of the nominee has a slightly positive effect, and pagerank centrality discrepancy has a slightly negative effect (coefficients = -0.0182, 0.172, and -0.0193, respectively); the component size of the nominator has a slightly negative effect, the component size of the nominee has a slightly positive effect, and component size discrepancy has a slightly negative effect (coefficients = -0.0350, 0.1101, and -0.1140, respectively); finally, the average shortest path length of the nominator has a marginally positive effect, the average shortest path length of the nominee has a slightly negative effect, and average shortest path length discrepancy has a slightly positive effect on contact nomination likelihood (coefficients = 0.0024, -0.0665, and 0.0702, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -285,7 +286,8 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \paragraph{Hainan network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are whether the nominee is a family member of another actor in the datatset ($p<0.001$) and all network statistics with the exceptions of nominee degree centrality ($p=0.435$), nominee pagerank centrality ($p=0.705$), pagerank centrality discrepancy ($p=0.126$), and nominator component size ($p=0.790$). Nominee family member status has a marginally positive effect on contact nomination likelihood (coefficient = 0.0132); nominator degree centrality has a marginally positive effect, while degree centrality discrepancy has a marginally negative effect (coefficients = 0.0385 and -0.0125, respectively); nominator and nominee betweenness centrality have a marginally positive effect, while betweenness centrality discrepancy has a marginally negative effect (coefficients = 0.0431, 0.0733, and =0.0820, respectively); nominator pagerank centrality has a marginally negative effect (coefficient = -0.0114); the component size of the nominee has a marginally positive effect, while component size discrepancy has a marginally negative effect (coefficients = 0.0506 and -0.0487, respectively); nominator and nominee average path length both have a marginally negative effect, while average path length discrepancy has a marginally positive effect (coefficients = -0.0105, -0.0268 and 0.0289, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -303,7 +305,8 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \paragraph{Shaanxi network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the age of the nominator ($p=0.016$), the age of the nominee ($p=0.008$), age discrepancy ($p=0.007$), sex of the nominator ($p=0.001$), sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), whether the nominator is a family member of another actor in the dataset ($p<0.001$), family member status discrepancy ($p=0.045$), the place of residence of the nominator ($p<0.001$), the place of residence of the nominee ($p<0.001$), place of residence discrepancy ($p<0.001$), and all network statistics except pagerank centrality discrepancy ($p=0.244$). Nominator age, nominee age, and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0033, -0.0032 and -0.0028, respectively); nominator sex, nominee sex and sex discrepancy all have a marginally positive effect (coefficients = 0.0025, 0.0028 and 0.0040, respectively); the family member status of the nominator and family member discrepancy both have a marginally positive effect (coefficients = 0.0107 and 0.0017, respectively); nominator and nominee place of residence have a marginally positive effect, while place of residence discrepancy has a marginally negative effect (coefficients = 0.0007, 0.0006 and -0.0145, respectively); nominator and nominee degree centrality have a marginally positive effect, while degree centrality discrepancy has a marginally negative effect (coefficients = 0.0171, 0.0101 and -0.0110, respectively); nominator betweenness centrality has a marginally negative effect, while nominee betweenness centrality and betweenness centrality discrepancy have a marginally positive effect (coefficients = -0.0163, 0.0034 and 0.0204, respectively); nominator and nominee pagerank centrality both have a marginally negative effect (coefficients = -0.0103 and -0.0019, respectively); nominator and nominee component size have a marginally positive effect, while component size discrepancy has a marginally negative effect (coefficients = 0.0293, 0.0218 and -0.0381, respectively); nominator and nominee average path length have a marginally negative effect, while average path length discrepancy has a marginally positive effect (coefficients = -0.0162, -0.0166 and 0.0206, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -321,7 +324,8 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \paragraph{Bucharest network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are age discrepancy ($p<0.001$), sex of the nominator ($p<0.001$), sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), whether the nominator is active in the medical field ($p<0.001$), whether the nominee is active in the medical field ($p<0.001$), medical employment discrepancy ($p<0.001$), the job of the nominator ($p<0.001$), the job of the nominee ($p<0.001$), job discrepancy ($p<0.001$), and all network statistics. Age discrepancy has a marginally negative effect on contact nomination likelihood (coefficient = -0.0290); nominator and nominee sex have a marginally positive effect, while sex discrepancy has a marginally negative effect (coefficients = 0.0008, 0.0002 and -0.0007, respectively); nominator and nominee medical deployment have a marginally/slightly negative effect, while medical employment discrepancy has a marginally positive effect (coefficients = -0.0827, -0.1616 and 0.0588, respectively); the job of the nominator has a marginally negative effect, while the job of the nominee and job discrepancy have a marginally/slightly positive effect (coefficients = -0.0084, 0.0086 and 0.1852, respectively); nominator degree centrality, nominee degree centrality and degree centrality discrepancy all have a moderately/slightly positive effect (coefficients = 0.3564, 0.1728 and 0.1853, respectively); nominator betweenness centrality has a marginally negative effect, while nominee betweenness centrality and betweenness centrality discrepancy have a marginally/slightly positive effect (coefficients = -0.0820, 0.0301 and 0.1155, respectively); nominator pagerank centrality has a marginally positive effect, while nominee pagerank centrality and pagerank centrality discrepancy have a slightly/moderate negative effect (coefficients = 0.0816, -0.1084 and -0.4072, respectively); nominator component size, nominee component size and component size discrepancy all have a slightly/marginally negative effect (coefficients = -0.2374, -0.0984 and -0.0769, respectively); finally, nominator and nominee average shortest path length both have a moderate/marginally positive effect, while average shortest path length discrepancy has a marginally negative effect (coefficients = 0.2308, 0.0424 and -0.0548, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -339,7 +343,8 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 
 \paragraph{China network} With a 95\% confidence interval, the statistically significant predictors for contact nomination likelihood are the age of the nominator ($p=0.032$), the age of the nominee ($p<0.001$), age discrepancy ($p<0.001$), the sex of the nominator ($p<0.001$), the sex of the nominee ($p<0.001$), sex discrepancy ($p<0.001$), the place of residence of the nominator ($p<0.001$), the place of residence of the nominee ($p<0.001$), place of residence discrepancy ($p<0.001$), the place/occasion where the nominator might have been infected ($p<0.001$), the place/occasion where the nominee might have been infected ($p<0.001$), place/occasion discrepancy ($p<0.001$), the nominator's symptoms ($p<0.001$), the nominee's symptoms ($p<0.001$), symptom discrepancy ($p<0.001$), the severity of the nominator's symptoms ($p<0.001$), the severity of the nominee's symptoms ($p<0.001$), symptom severity discrepancy ($p<0.001$), the discrepancy between the place where nominator and nominees were registered as patients ($p<0.001$), and all network statistics. The age of the nominator has a marginally negative effect on contact nomination likelihood, while nominee age and age discrepancy have a marginally positive effect (coefficients = -0.0046, 0.0130 and 0.0087, respectively); The sex of the nominator, the sex of the nominee and sex discrepancy all have a marginally positive effect (coefficients = 0.0144, 0.0161 and 0.0409, respectively); the nominator's place of residence, the nominee's place of residence and place of residence discrepancy all have a negligibly/marginally positive effect (coefficients = 0.0001, 0.0002 and 0.0136, respectively); the place/occasion where the nominator might have been infected and the place/occasion where the nominee might have been infected have a negligibly positive effect, while the discrepancy between the two has a marginally negative effect (coefficients = 0.000039, 0.000063 and -0.0148, respectively); the nominator's symptoms and the nominee's symptoms both have a negligibly positive effect, while the symptom discrepancy has a marginally negative effect (coefficients = 0.0005, 0.0006 and -0.0405, respectively); the severity of the nominator's symptoms, the severity of the nominee's symptoms and the discrepancy in symptom severity all have a marginally positive effect (coefficients = 0.0689, 0.0788 and 0.0999, respectively); the discrepancy between the places where nominator and nominee have been recorded as positive patients has a strong negative effect (coefficient = -0.7422); the degree centrality of the nominator has a marginally positive effect, while the degree centrality of the nominee and the degree centrality discrepancy have a marginally negative effect (coefficients = 0.0155, -0.0284 and -0.0368, respectively); the betweenness centrality of the nominator and the betweenness centrality of the nominee both have a negligibly/marginally positive effect, while the betweenness centrality discrepancy has a marginally negative effect (coefficients = 0.0037, 0.0841 and -0.0417, respectively); the pagerank centrality of the nominator and the pagerank centrality of the nominee have a marginally positive effect, while the pagerank centrality discrepancy has a marginally negative effect (coefficients = 0.0246, 0.1119 and -0.0497, respectively); the component size of the nominator and the component size of the nominee both have a marginally positive effect, while the component size discrepancy has a marginally negative effect (coefficients = 0.0060, 0.0295 and -0.0156, respectively); finally, the average shortest path length of the nominator and the average shortest path length of the nominee both have a marginally positive effect, while the average shortest path length discrepancy has a marginally negative effect (coefficients = 0.0420, 0.0236 and -0.0370, respectively);
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -355,14 +360,15 @@ As briefly stated in chapter \ref{ch:methods}, ordinary least-squares regression
 	\end{mdframed}
 \end{table}
 
-\section{Comparison of Relational Event Model Analysis across regions}
+\section{Results of Relational Event Model Analysis across regions}
 \label{sec:res_rem}
 
 All five main datasets (Yunnan, Hainan, Shaanxi, Bucharest and China) were analysed using relational event modelling. A varying number of non-events were sampled for each observed event, such that for each individual dataset, the total number of events would be around one million. Cox proportional hazards models were used to determine the significance and effect of computed statistics (which are listed in chapter \ref{ch:methods}) on contact nomination likelihood. Some of the statistics were all-zero in some datasets. The results of the Cox regressions will be presented below. For all datasets, three different sets of statistics and accompanying Cox proportional hazards models were computed. One with no conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may include any other event $(u',v',t_i)$ which may have the same or a different source and the same or a different target, but not $u' = u \land v' = v$; one with source-specific conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may only include those $e_s(u,v',t_i)$ which have the same source $u$, but another target $v'$; and one with target-specific conditioning, i.e. for any event $e(u,v,t_i)$, sampled non-events may only include those $e_s(u',v,t_i)$ which have the same target $v$, but another source $u'$. 
 
 \paragraph{Yunnan network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominee ($p=0.0302$), whether the nominee is a family member of a family member who was registered as a patient at a previous point in time ($p=0.0508$), and the discrepancy in family member status ($p<0.0001$). Reciprocation has a slightly positive effect on contact nomination likelihood (coefficient = 0.2434); age discrepancy has a marginally negative effect (coefficient = -0.0513), the sex of the nominee has a moderately positive effect (coefficient = 0.5077), the family member status of the nominee has a strong negative effect (coefficient = -1.127), and the discrepancy in family member status has a very strong negative effect (coefficient = -3.009).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -381,7 +387,8 @@ All five main datasets (Yunnan, Hainan, Shaanxi, Bucharest and China) were analy
 For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the age of the nominator ($p=0.0920$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominee ($p=0.0082)$, whether the nominee is a family member of an actor who was registered as a patient at a previous point in time ($p=0.0438$), and the discrepancy in family member status $p<0.0001$. Reciprocation has a slightly positive effect on contact nomination likelihood (coefficient = 0.2936), the nominator's age has a marginally negative effect (coefficient = -0.0152), age discrepancy has a marginally negative effect (coefficient = -0.0497), the sex of the nominee has a moderately positive effect (coefficient = 0.6192), discrepancy in family member status has a strong negative effect (coefficient = -1.170), and discrepancy in family member status has a very
 strong negative effect (coefficient = -3.094). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -399,7 +406,8 @@ strong negative effect (coefficient = -3.094). Nomination activity, exact repeti
 
 Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the discrepancy between nominator's and nominee's age ($p=0.0001$) and the discrepancy in family member status ($p<0.0001$). Age discrepancy has a marginally negative effect on contact nomination likelihood (coefficient = -0.0412), and family member status discrepancy has a strong negative effect (coefficient = -2.898).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -417,7 +425,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 \paragraph{Hainan network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0152$), the age of the nominee ($p=0.0509$), the discrepancy between nominator's and nominee's age ($p=0.0256$), the sex of the nominee ($p=0.0762$), whether the nominator is a family member of an actor who was registered as a patient at a previous point in time ($p=0.0001$), whether the nominee is a family member of an actor who was registered as a patient at a previous point in time ($p<0.0001$), and the discrepancy in family member status ($p<0.0001$). The nominator's age, the nominee's age and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0121, -0.0095 and -0.0137, respectively); the sex of the nominee has a marginally positive effect (coefficient = 0.3250); family member status of the nominator and nominee both have a strongly positive effect, while family member status discrepancy has a strongly negative effect (coefficients = 1.504, 2.213 and -1.586, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -435,7 +444,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0404$), the discrepancy between nominator's and nominee's age ($p=0.0132$), whether the nominator is a family member of another actor who was registered as a patient at a previous point in time ($p=0.0068$), and the discrepancy in family member status ($p<0.0001$). The nominator's age and age discrepancy both have a marginally negative effect on contact nomination likelihood (coefficients = -0.0102 and -0.0151, respectively); the family member status of the nominator has a strongly positive effect, while discrepancy in family member status has a strongly negative effect (coefficients = 1.065 and -1.580, respectively). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -453,7 +463,8 @@ For the source-conditioned model, the statistics that have a statistically signi
 
 Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the age of the nominator ($p=0.0119$), the age of the nominee ($p=0.0996$), the discrepancy between nominator's and nominee's age ($p=0.0132$), whether the nominator is a family member of another actor who was registered as a patient at a previous point in time ($p=0.0002$), and the discrepancy in family member status ($p<0.0001$). The nominator's age, the nominee's age and age discrepancy all have a marginally negative effect on contact nomination likelihood (coefficients = -0.0125, -0.0091 and -0.0150, respectively); the family member status of the nominator has a strongly positive effect, while discrepancy in family member status has a strongly negative effect (coefficients = 1.449 and -1.664, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -471,7 +482,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 \paragraph{Shaanxi network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p=0.0718$), whether the nominator is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), whether the nominee is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0011$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Reciprocation has a marginally positive effect on contact nomination likelihood (coefficient = 0.3591); sex discrepancy has a marginally positive effect (coefficient = 0.3333); family member status of nominator and nominee both have a strongly/marginally positive effect (coefficients = 2.377 and 0.0692, respectively); the nominee's place of residence and discrepancy in place of residence have a marginally/strongly negative effect (coefficients = -0.0624 and -3.086, respectively).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -489,7 +501,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), discrepancy between nominator's and nominee's sex ($p=0.0815$), whether the nominee is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0007$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Reciprocation has a moderately positive effect on contact nomination likelihood (coefficient = 0.3555); sex discrepancy has a moderately positive effect (coefficient = 0.3222); family member status of the nominee has a strongly positive effect (coefficient = 0.8221); the place of residence of the nominee and discrepancy in place of residence have a marginally/strongly negative effect (coefficients = -0.0654 and -3.071, respectively). Nomination activity, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared sender and shared receiver are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -507,7 +520,8 @@ For the source-conditioned model, the statistics that have a statistically signi
 
 Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are the discrepancy between nominator's and nominee's sex ($p-0.0935$), whether the nominator is a family member of another actor who has been registered as a patient at a previous point in time ($p<0.0001$), the place of residence of the nominee ($p=0.0104$), and the discrepancy between nominator's and nominee's place of residence ($p<0.0001$). Sex discrepancy has a marginally positive effect on contact nomination likelihood (coefficient = 0.3118); family member status of the nominator has a strongly positive effect (coefficient = 2.276); the place of residence of the nominee has a marginally negative effect (coefficient = -0.0638); the discrepancy in place of residence has a strongly negative effect (coefficient = -3.297).
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -525,7 +539,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 \paragraph{Bucharest network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p=0.0018$), shared sender ($p<0.0001$), the age of the nominator ($p=0.0305$), the age of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0051$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the nominee's job ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is active in the medical field ($p<0.0001$), whether the nominee is active in the medical field ($p<0.0001$), and the discrepancy between nominator's and nominee's medical employment status ($p<0.0001$). Reciprocation has a slightly negative effect on contact nomination likelihood (coefficient = -0.3098); exact reciprocation has a marginally positive effect (coefficient = 0.0256); cyclical tie has a marginally positive effect (coefficient = 0.0027); shared sender has a marginally positive effect (coefficient = 0.0189); nominator age, nominee age and age discrepancy all have a marginally negative effect (coefficients = -0.0028, -0.0094 and -0.0220, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1444, 0.2500 and 0.6859, respectively); nominee job has a marginally positive effect, while job discrepancy has a moderately negative effect (coefficients = 0.0577 and -0.6991, respectively); nominator and nominee medical employment status both have a strongly negative effect, while discrepancy in medical employment has a moderately positive effect (coefficients = -1.5437, -1.4391 and 0.4569, respectively). Transitive tie and shared target are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -543,7 +558,8 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p=0.0006$), shared source ($p<0.0001$), the age of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0004$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the job of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is employed in the medical field ($p<0.0001$), whether the nominee is employed in the medical field($p<0.0001$), and the discrepancy between nominator's and nominee's medical employment status ($p=0.0003$). Reciprocation has a slightly negative effect on contact nomination likelihood (coefficient = -0.3209), exact reciprocation has a marginally positive effect (coefficient = 0.0347), cyclical tie has a marginally positive effect (coefficient = 0.0030), shared source has a marginally positive effect (coefficient = 0.0185), nominee age and age discrepancy both have a marginally negative effect (coefficients = -0.0090 and -0.0118, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1825, 0.2266 and 0.6970, respectively); nominee job has a marginally positive effect, while discrepancy between nominator's and nominee's job has a strongly negative effect (coefficients = 0.0656 and -0.7420, respectively); medical employment of nominator and nominee both have a slightly/strongly negative effect, while discrepancy in medical employment has a slightly positive effect (coefficients = -0.3595, -1.5172 and 0.3145, respectively). Nomination activity, repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -561,7 +577,8 @@ For the source-conditioned model, the statistics that have a statistically signi
 
 Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are reciprocation ($p=0.0085$), exact reciprocation ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p=0.0391$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0153$), the sex of the nominee ($p=0.0477$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the discrepancy between nominator's and nominee's job ($p<0.0001$), whether the nominator is employed in the medical field ($p<0.0001$), whether the nominee is employed in the medical field ($p=0.0036$), and the discrepancy between nominator's and nominee's medical employment status ($p=0.0005$). Reciprocation has a marginally negative effect on contact nomination likelihood (coefficient = -0.0294); exact reciprocation has a marginally positive effect (coefficient = 0.0202); shared source has a marginally positive effect (coefficient = 0.0163); nominator age and age discrepancy both have a marginally negative effect (coefficients = -0.0027 and -0.0237, respectively); nominator sex, nominee sex and sex discrepancy all have a slightly/moderately positive effect (coefficients = 0.1250, 0.1036 and 0.6887, respectively); job discrepancy has a moderately negative effect (coefficient = -0.4774); nominator medical employment and nominee medical employment both have a strongly/slightly negative effect, while medical employment status discrepancy has a slightly positive effect (coefficients = -1.5120, -0.1581 and 0.3031, respectively). Repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.
 
-\begin{table}[h]
+\begin{table}[htbp]
+	\footnotesize
 	\centering
 	\begin{mdframed}
 		\begin{tabular}[width=\linewidth]{l|llll}
@@ -579,10 +596,431 @@ Finally, for the target-conditioned model, the statistics that have a statistica
 
 \paragraph{China network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are nomination activity ($p<0.0001$), reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the age of the nominee ($p<0.0001$), the sex of the nominator ($p<0.0001$), the sex of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p<0.0001$), the place of residence of the nominator ($p<0.0001$), the place of residence of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's place of residence ($p<0.0001$), the place/occasion where the nominator might have been infected ($p<0.0001$), the place/occasion where the nominee might have been infected ($p<0.0001$), the discrepancy between nominator's and nominee's place/occasion ($p=0.0060$), the symptoms of the nominator ($p<0.0001$), the symptoms of the nominee ($p<0.0001$), the severity of the nominator's symptoms ($p<0.0001$), the severity of the nominee's symptoms ($p<0.0001$), the discrepancy in symptom severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the place where the nominee was registered as positive ($p=0.0006$), and the discrepancy between nominator's and nominee's place of registration ($p<0.0001$). Nomination activity has a strongly negative effect on contact nomination likelihood (coefficient = -2.602); reciprocation has a slightly positive effect (coefficient = 0.2493); exact reciprocation has a marginally positive effect (coefficient = 0.0672); cyclical tie has a marginally negative effect (coefficient = -0.0642); shared source has a marginally positive effect (coefficient = 0.0150); nominator age and nominee age both have a marginally positive effect (coefficients = 0.0037 and 0.0053, respectively); nominator sex and nominee sex both have a slightly negative effect, while sex discrepancy has a slightly positive effect (coefficients = -0.1575, -0.2394 and 0.1519, respectively); nominator place of residence, nominee place of residence and discrepancy in place of residence all have a marginally/moderately negative effect (coefficients = -0.0010, -0.0009 and -0.4074, respectively); nominator and nominee place/occasion both have a marginally positive effect, while discrepancy in place/occasion has a marginally negative effect (coefficients = 0.0003, 0.0001 and -0.0576, respectively); nominator and nominee symptoms both have a marginally positive effect, while discrepancy in symptoms has a marginally negative effect (coefficients = 0.0026, 0.0016 and -0.0177, respectively); nominator symptom severity and nominee symptom severity both have a marginally/slightly positive effect, while discrepancy in symptom severity has a slightly negative effect (coefficients = 0.0601, 0.1692 and -0.2882, respectively); the nominator's place of registration, the nominee's place of registration and discrepancy in place of registration all have a marginally/very strongly negative effect (coefficients = -0.0010, -0.0009 and -5.928, respectively).
 
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/china_rem.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned REM results for the China network.}
+		\label{tab:china_rem}
+	\end{mdframed}
+\end{table}
 
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are nomination activity ($p=0.0470$), reciprocation ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p<0.0001$), shared source $(p=0.0004$), the age of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the sex of the nominator ($p=0.0050$), the discrepancy between nominator's and nominee's sex ($0.0001$), the place of residence of the nominee ($0.0081$), the discrepancy between nominator's and nominee's place of residence ($p<0.0001$), the place/occasion where the nominee might have become infected ($p=0.0521$), the discrepancy between nominator's and nominee's place/occasion ($p<0.0001$), the symptoms of the nominator ($p=0.0989$), the discrepancy between nominator's and nominee's symptoms ($p=0.0067$), the severity of the nominator's symptoms ($p=0.0620$), the severity of the nominee's symptoms ($p<0.0001$), the discrepancy between nominator's and nominee's symptom severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the place where the nominee was registered as positive ($p<0.0001$), and the discrepancy between nominator's and nominee's place of registration ($p<0.0001$). Nomination activity has a marginally negative effect on contact nomination likelihood (coefficient = -0.0551); reciprocation has a slightly positive effect (coefficient = 0.1638); exact reciprocation has a marginally positive effect (coefficient = 0.0531); cyclical tie has a marginally negative effect (coefficient = -0.0488); shared source has a marginally positive effect (coefficient = 0.0097); the age of the nominee has a marginally positive effect, while discrepancy in age has a marginally negative effect (coefficients = 0.0026 and -0.0039, respectively); nominee sex and discrepancy in sex both have a marginally positive effect (coefficients = 0.0056 and 0.0074, respectively); the place of residence of the nominee has a marginally positive effect, while discrepancy in place of residence has a moderately negative effect (coefficients = 0.0003 and -0.6273, respectively); the nominee's place/occasion of infection and discrepancy in place/occasion of infection have a negligibly/slightly negative effect (coefficients = -0.00006 and -0.2910, respectively); the symptoms of the nominator has a marginally positive effect, while discrepancy in symptoms has a marginally negative effect (coefficients = 0.0003 and -0.070, respectively); the severity of nominator's and nominee's symptoms both have a marginally/slightly positive effect, while discrepancy in symptom severity has a moderately negative effect (coefficients = 0.0398, 0.1581 and -0.4103, respectively); the nominator's place of registration as positive has a marginally positive effect, while the nominee's place of registration and discrepancy in place of registration both have a marginally/very strongly negative effect (coefficients = 0.0020, -0.0021 and -6.506, respectively). Repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.
 
-\section{Comparison of Relational Hyperevent Model Analysis across regions}
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/china_rem_cond_sender.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned REM results for the China network. Repetition, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:china_rem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are nomination activity ($p<0.0001$), exact reciprocation ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p=0.0512$), the discrepancy between nominator's and nominee's age ($p<0.0001$), the discrepancy between nominator's and nominee's sex ($p=0.0003$), the place of residence of the nominator ($p<0.0001$), the place of residence of the nominee ($p<0.0001$), the discrepancy between nominator's and nominee's place of residence ($p<0.0001$), the place/occasion where the nominator might have become infected ($p=0.0361$), the discrepancy between nominator's and nominee's place/occasion of infection ($p<0.0001$), the symptoms of the nominator ($p<0.0001$), the symptoms of the nominee ($p=0.0499$), the discrepancy between nominator's and nominee's symptoms ($p=0.0035$), the severity of the nominee's symptoms ($p<0.0001$), the discrepancy between nominator's and nominee's symptoms severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the place where the nominee was registered as positive ($p<0.0001$), and the discrepancy between nominator's and nominee's place of registration ($p<0.0001$). Nomination activity has a very strongly positive negative effect on contact nomination likelihood (coefficient = -3.077); exact reciprocation has a marginally positive effect (coefficient = 0.0473); cyclical tie has a marginally negative effect (coefficient -0.0418); shared source has a marginally positive effect (coefficient = 0.0536); nominator age has a marginally positive effect, while discrepancy in age has a marginally negative effect (coefficients = 0.0010 and -0.0026, respectively); sex discrepancy has a marginally positive effect (coefficient = 0.0692); the place of residence of the nominator has a marginally positive effect, while the place of residence of the nominee and the discrepancy in place of residence have a marginally/moderately negative effect (coefficients = 0.0006, -0.0004 and -0.4793, respectively); the place/occasion of the nominator has a negligibly positive effect, while discrepancy in place/occasion of infection has a slightly negative effect (coefficients = 0.00006 and -0.2906, respectively); the nominator's symptoms have a marginally positive effect, while the nominee's symptoms and discrepancy in symptoms have a marginally negative effect (coefficients = 0.0009, -0.0003 and -0.0636, respectively); the severity of the nominee's symptoms has a marginally positive effect, while discrepancy in symptom severity has a moderately negative effect (coefficients = 0.0673 and -0.4234, respectively); the nominee's place of registration as positive has a marginally positive effect, while the nominator's place of registration and discrepancy in place of registration as positive have a marginally/very strongly negative effect (coefficients = 0.0025, -0.0022 and -6.728, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/china_rem_cond_receiver.csv}{}
+			{\\ \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi & \csvcolvii}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned REM results for the China network.}
+		\label{tab:china_rem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\section{Results of Relational Hyperevent Model Analysis across regions}
 \label{sec:res_rhem}
+
+Lastly, all five networks were analysed using relational hyperevent modelling much in the same fashion as outlined in section \ref{sec:res_rem}, main differences being 1) the network statistics and 2) the sampling conditioning; as with REM, three models were created for each network: one unconditioned, one source-conditioned, and one target-conditioned. In all models, observed events are only compared to possible non-events of the same size; this is necessary because contact tracing hyperevents always have only a single source. Without size constraints, an observed event $e(u,\{a,b,c\},t_i)$ might be compared to a possible event $e(\{a,b\},\{u,c\},t_i)$, which would be undesirable. Otherwise, unconditioned and conditioned models are largely the same as in REM, i.e. an observed hyperevent $e(h,t_i);\: h=(u,v)$ may be compared to a possible unobserved hyperevent $e(h',t_i);\: h'=(u',v');\: \lnot(u'=u \land v'=v)$ (unconditioned), $e(h',t_i);\: h'=(u,v')$ (source-conditioned), or $e(h',t_i);\: h'=(u',v)$ (target-conditioned).
+
+\paragraph{Yunnan network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are just unordered partial repetition of third and fourth order (i.e. unordered partial repetitions on sets that contain from three to four actors from the previous interaction) ($p<0.0001$ for both). Unordered partial repetition of third order has a marginally positive effect on contact nomination likelihood, while fourth order has a marginally negative effect (coefficients = 0.0326 and -0.0167, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/yunnan_rhem.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned RHEM results for the Yunnan network. Unordered repetition, partial repetition of order 3 and greater, and unordered partial repetition of order 6 and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:yunnan_rhem}
+	\end{mdframed}
+\end{table}
+
+For the source-condition model, the statistics that have a statistically significant impact on contact nomination likelihood are nominee set size ($p<0.0001$), unordered partial repetition of first ($p<0.0001$), second ($p<0.0001$), third ($p=0.0002$) and fifth order ($p<0.0001$), nominee out-degree, the average age of the nominees ($p=0.0279$), the discrepancy in age between nominator and nominees ($p=0.0074$), the sex of the nominator ($p=0.0015$), the average sex of the nominees ($p=0.0001$), the discrepancy in sex between nominator and nominees ($p=0.0105$), the family member status of the nominator ($p<0.0001$), and the discrepancy in family member status between nominator and nominees ($p=0.0044$). 
+
+The nominee set size has a very strongly negative effect on contact nomination likelihood (coefficient = -2.375); unordered partial repetition of order 1/2/3/5 has a strongly/marginally positive effect (coefficients = 0.7892, 0.0504, 0.0102 and 0.0101, respectively); nominee out-degree has a moderately positive effect (coefficient = 0.6339); the average age of the nominees has a marginally positive effect, while the discrepancy in age between nominator and nominees has a marginally negative effect (coefficients = 0.0183 and -0.0335, respectively); the nominator's sex, the average sex of the nominees and the discrepancy in sex between nominator and nominees all have a strongly positive effect (coefficients = 1.1334, 1.2505 and 0.7367, respectively); the family member status of the nominator has a very strongly positive effect, while the discrepancy in family member status between nominator and nominees has a very strongly negative effect (coefficients = 5.6009 and -1.7445, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/yunnan_rhem_cond_sender.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned RHEM results for the Yunnan network. Exact repetition, unordered repetition, partial repetition of order 0 and greater, unordered partial repetition of order 6 and greater, exact reciprocation, cyclical tie, shared source and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:yunnan_rhem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the significant statistics are the age of the nominator ($p<0.0001$), the discrepancy in age between nominator and nominees ($p=0.0888$), the discrepancy in sex between nominator and nominees ($p=0.0088$), the family member status of the nominator ($p<0.0001$), and the discrepancy in family member status between nominator and nominees ($p=0.0009$). Nominator age has a marginally positive effect on contact nomination likelihood, while discrepancy in age between nominator and nominees has a marginally negative effect (coefficients = 0.0298 and -0.0213, respectively); the discrepancy in sex between nominator and nominees has a strongly positive effect (coefficient = 0.8883); the family member status of the nominator has a very strongly positive effect, while family member status of the nominee has a very strongly negative effect (coefficients = 2.817 and -1.974, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/yunnan_rhem_cond_receiver.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned RHEM results for the Yunnan network. Unordered repetition, partial repetition of order 6 and greater and unordered partial repetition of order 6 and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:yunnan_rhem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Hainan network} With a 90\% confidence interval, no statistics have a significant impact on contact nomination likelihood in the unconditioned model.
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/hainan_rhem.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned RHEM results for the Hainan network. Unordered repetition, partial repetition of order 4 and greater, and unordered partial repetition of order 5 and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:hainan_rhem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the statistics that have a statistically significant impact on contact nomination likelihood are nominee set size ($p<0.0001$), unordered partial repetition of orders three ($p<0.0001$) and four $(p=0.0205$), the age of the nominator ($p<0.0001$), the average age of the nominees ($p=0.0153$), the discrepancy in age of nominator and nominees ($p=0.0168$), the family member status of the nominator ($p=0.0009$), the average family member status of the nominees ($p<0.0001$), and the discrepancy in family member status of nominator and nominees ($p=0.0077$). The size of the nominee set has a strongly negative effect on contact nomination likelihood (coefficient = -1.677); unordered partial repetition of third order has a slightly positive effect, while fourth order has a marginally negative effect (coefficients = 0.1049 and -0.0383, respectively); nominator age, average age of nominees and discrepancy between nominator and nominees age all have a marginally negative effect (coefficients = -0.0355, -0.0175 and -0.0216, respectively); family member status of the nominator and discrepancy in family member status of nominator and nominee have a strongly negative effect, while average family member status of the nominees has a strongly positive effect (coefficients = -1.1719, -0.8377 and 1.6025, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/hainan_rhem_cond_sender.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned RHEM results for the Hainan network. Exact repetition, unordered repetition, partial repetition of order 0 and greater, unordered partial repetition of order 5 and greater, exact reciprocation, nominator in-degree, transitive tie, cyclical tie, shared source and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:hainan_rhem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the significant statistics are the discrepancy in age of nominator and nominees ($p=0.0663$), the family member status of the nominator ($p=0.0001$), and the discrepancy in family member status of nominator and nominees ($p<0.0001$). Age discrepancy between nominator and nominees has a marginally negative effect (coefficient = -0.0169); family member status of the nominee has a strongly positive effect, while discrepancy in family member status of nominator and nominees has a strongly negative effect (coefficients = 1.674 and -1.896, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/hainan_rhem_cond_receiver.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned RHEM results for the Hainan network. Unordered repetition, partial repetition of order 5 and greater and unordered partial repetition of order 5 and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:hainan_rhem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Shaanxi network} With a 95\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are unordered partial repetition of orders one and two ($p<0.0001$), the discrepancy between the nominator's and nominees' age ($p=0.0786$), the discrepancy between the nominator's and nominees' sex ($p=0.0722$), the discrepancy between the nominees' sex ($p=0.0753$), the family member status of the nominator ($p<0.0001$), the average family member status of the nominees ($p=0.0005$), the average place of residence of the nominees ($p=0.0046$), the discrepancy between nominator's and nominees place of residence ($p<0.0001$), and the discrepancy between the nominees' place of residence ($p=0.0003$). 
+
+Unordered partial repetition of third and fourth degree have a moderately/marginally positive effect on contact nomination likelihood (coefficients = 0.3498 and 0.0243, respectively); age discrepancy between nominator and nominees has a marginally negative effect (coefficient = -0.0143); sex discrepancy between nominator and nominees and sex discrepancy between nominees both have a moderately/strongly positive effect (coefficients = 0.4030 and 0.9222); family member status of the nominator and average family member status of the nominees both have a strongly positive effect (coefficients = 2.563 and 0.9360, respectively); the average place of residence of the nominees, the discrepancy between nominator's and nominees' place of residence and the discrepancy between nominees' place of residence all have a marginally/very strongly negative effect (coefficients = -0.0598, -2.955 and -3.064, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/shanxi_rhem.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned RHEM results for the Shaanxi network. Unordered repetition, partial repetition of order 3 and greater and unordered partial repetition of order 3 and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:shaanxi_rhem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the significant statistics are the size of the nominee set ($p=0.0024$), unordered partial repetition of orders one and two ($p<0.0001$), the discrepancy between nominator's and nominees' age ($p=0.0847$), the discrepancy between nominator's and nominee's sex ($p=0.0767$), the average family member status of nominees ($p=0.0020$), the average place of residence of the nominees ($p=0.0009$), the discrepancy between nominator's and nominees place of residence ($p<0.0001$), and the discrepancy between nominees' place of residence ($p<0.0001$). 
+
+Nominee set size has a moderately negative effect on contact nomination likelihood (coefficient = -0.6436); unordered partial repetition of first and second order have a slightly/marginally negative effect (coefficients = 0.3280 and 0.0363, respectively); age discrepancy between nominator and nominees has a marginally negative effect (coefficient = -0.0148); sex discrepancy between nominator and nominees has a moderately positive effect (coefficient = 0.3961); average family member status of nominees has a strongly positive effect (coefficient = 0.8246); the average place of residence of nominees, discrepancy between nominator's and nominees' place of residence, and discrepancy between nominees' place of residence all have a marginally/very strongly negative effect (coefficients = -0.0703, -3.0903 and -3.4464, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/shanxi_rhem_cond_sender.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned RHEM results for the Shaanxi network. Exact repetition, unordered repetition, partial repetition of order 0 and greater, unordered partial repetition of order 3 and greater, nominator in-degree, transitive tie, cyclical tie, shared source and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:shaanxi_rhem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the significant statistics are the family member status of the nominator ($p<0.0001$), the average family member status of the nominees ($p=0.0146$), the average place of residence of the nominees ($p=0.0003$), and the discrepancy between nominator's and nominees' place of residence ($p<0.0001$). The family member status of the nominator and the average family member status of the nominees both have a very strongly/moderately positive effect (coefficients = 2.347 and 0.6189, respectively); the average place of residence of the nominees and discrepancy between nominator's and nominees' place of residence both have a marginally/very strongly negative effect (coefficients = -0.0690 and -3.275, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/shanxi_rhem_cond_receiver.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned RHEM results for the Shaanxi network. Unordered repetition, partial repetition of order three and greater and unordered partial repetition of order three and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:shaanxi_rhem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{Bucharest network} With a 90\% confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are the size of the nominee set ($p<0.0001$), unordered partial repetition of first degree ($p<0.0001$), exact reciprocation ($p<0.0001$), nominator in-degree ($p<0.0001$), nominee out-degree ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the average age of the nominees ($p=0.0028$), the discrepancy between nominator's and nominees' age ($p<0.0001$), the sex of the nominator ($p<0.0001$), the average sex of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' sex ($p<0.0001$), the discrepancy between nominees' sex ($p<0.0001$), medical employment status of the nominator ($p<0.0001$), average medical employment status of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' medical employment status ($p<0.0001$), the discrepancy between nominees' medical employment status ($p=0.0026$), the job of the nominator ($p<0.0001$), the average job of the nominees ($p=0.0022$), the discrepancy between nominator's and nominees' jobs ($p<0.0001$), and the discrepancy between nominees' jobs ($p=0.0010$). 
+
+Nominee set size has a moderately positive effect on contact nomination likelihood (coefficient = 0.4494); first-order unordered partial repetition has a very strongly negative effect (coefficient = -2.0076); exact reciprocation has a marginally positive effect (coefficient = 0.0572); nominator in-degree and nominee out-degree both have a moderately negative effect (coefficients = -0.5479 and -0.5456, respectively); cyclical tie has a marginally positive effect (coefficient = 0.0076); shared source has a marginally positive effect (coefficient = 0.0526); nominator age has a marginally positive effect, while average nominee age and discrepancy between nominator's and nominees' age have a marginally negative effect (coefficients = 0.0027, -0.0017 and -0.0292, respectively); nominator sex has a strongly positive effect, while average sex of the nominees, discrepancy between nominator's and nominees' sex and discrepancy between nominees' sex all have a (very) strongly negative effect (coefficients = 0.7815, -2.4552, -0.5717 and -1.6339, respectively); nominator medical employment status and average nominees medical employment status both have a strongly/moderately negative effect, while discrepancy between nominator's and nominees' medical employment status and discrepancy between nominees' medical employment status both have a moderately/slightly positive effect (coefficients = -0.9730, -0.3382, 0.4873 and 0.3006, respectively); nominator job and discrepancy between nominator's and nominees' jobs both have a marginally/slightly negative effect, while average job of the nominees and discrepancy between nominees' jobs both have a marginally/moderately positive effect (coefficients = -0.0144, -0.2345, 0.0271 and 0.3373, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/bucharest_rhem.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned RHEM results for the Bucharest network. Unordered repetition, partial repetition of order two and greater, unordered partial repetition of order two and greater, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rhem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned model, the significant statistics are the size of the nominee set ($p<0.0001$), unordered partial repetition of first degree ($p<0.0001$), exact reciprocation ($p<0.0001$), nominator in-degree ($p=0.0018$), nominee out-degree ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the discrepancy between nominator's and nominees' age ($p<0.0001$), the discrepancy between nominees' age ($p=0.0003$), the sex of the nominator ($p=0.0010$), the average sex of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' sex ($p<0.0001$), the discrepancy between nominees' sex ($p<0.0001$), medical employment status of the nominator ($p<0.0001$), average medical employment status of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' medical employment status ($p<0.0001$), the discrepancy between nominees' medical employment status ($p<0.0001$), the average job of the nominees ($p=0.0081$), the discrepancy between nominator's and nominees' jobs ($p<0.0001$), and the discrepancy between nominees' jobs ($p=0.0044$). 
+
+Nominee set size has a moderately positive effect on contact nomination likelihood (coefficient = 0.5626); first-degree unordered partial repetition has a very strongly negative effect (coefficient = -2.1296); exact reciprocation has a marginally positive effect (coefficient = 0.0511); nominator in-degree and nominee out-degree both have a marginally/moderately negative effect (coefficients = -0.0341 and -0.5525, respectively); cyclical tie has a marginally positive effect (coefficient = 0.0064); shared source has a marginally positive effect (coefficient = 0.0511); nominator age has a marginally positive effect, while discrepancy between nominator's age and discrepancy between nominees' age have a marginally negative effect (coefficients = 0.0043, -0.0221 and -0.0062, respectively); nominee sex has a marginally positive effect, while average sex of the nominees, discrepancy between nominator's and nominees' sex and discrepancy between nominees' sex all have a negative effect (coefficients = 0.0690, -2.7869, -0.3061 and -1.7506, respectively); medical employment status of nominator and nominees have a marginally/moderately negative effect, while discrepancy between nominator's and nominees' medical employment status and discrepancy between nominees' employment status have a slightly/moderately positive effect (coefficients = -0.0922, -0.4507, 0.3216 and 0.5848, respectively); average nominees job and discrepancy between nominees' jobs have a marginally/slightly positive effect, while discrepancy between nominator's and nominees' jobs has a moderately negative effect (coefficients = 0.0237, 0.2920 and -0.4205, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/bucharest_rhem_cond_sender.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned RHEM results for the Bucharest network. Exact repetition, unordered repetition, partial repetition of order zero and greater, unordered partial repetition of order three and greater, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rhem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the significant statistics are first-order unordered partial repetition ($p=0.0003$), exact reciprocation ($p<0.0001$), nominator in-degree ($p<0.0001$), nominee out-degree ($p<0.0001$), cyclical tie ($p=0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the average age of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' age ($p<0.0001$), the discrepancy between nominees' age ($p=0.0012$), the sex of the nominator ($p<0.0001$), the average sex of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees sex ($p<0.0001$), the medical employment status of the nominator ($p<0.0001$), the average medical employment status of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' medical employment status ($p<0.0001$), the discrepancy between nominees' medical employment status ($p=0.0436$), the nominator's job ($p<0.0001$), the average job of the nominees ($p<0.0001$), and the discrepancy between nominator's and nominees' jobs ($p<0.0001$). 
+
+First-degree unordered partial repetition has a marginally negative effect (coefficients = -0.0353); exact reciprocation has a marginally positive effect (coefficient = 0.0397); nominator in-degree and nominee out-degree both have a moderately/marginally negative effect (coefficients = -0.6605 and -0.0877, respectively); cyclical tie has a marginally positive effect (coefficient = 0.0036); shared source has a marginally positive effect (coefficient = 0.0231); nominator age and discrepancy between nominees' age both have a marginally positive effect, while average nominee age and discrepancy between nominator's and nominees' age have a marginally negative effect (coefficients = 0.0046, 0.0029, -0.0025 and -0.0308, respectively); nominator sex and discrepancy between nominator's and nominees' sex both have a strongly positive effect, while average nominee sex has a slightly negative effect (coefficients = 0.8357, 0.7223 and -0.1976, respectively); nominator medical employment status, average medical employment status of the nominees and discrepancy between nominees' medical employment status all have a strongly/marginally negative effect, while discrepancy between nominator's and nominees' medical employment status has a slightly positive effect (coefficients = -1.2676, -0.0508, -0.0742 and 0.3039, respectively); nominator job, average job of the nominees and discrepancy between nominator's and nominees' jobs all have a marginally/slightly negative effect (coefficients = -0.0108, -0.021 and -0.1475, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/bucharest_rhem_cond_receiver.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned RHEM results for the Bucharest network. Exact repetition, unordered repetition, partial repetition of order one and greater, unordered partial repetition of order two and greater, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:bucharest_rhem_cond_receiver}
+	\end{mdframed}
+\end{table}
+
+\paragraph{China network} With a \%90 confidence interval, the statistics that have a statistically significant impact on contact nomination likelihood are the size of the nominee set ($p<0.0001$), unordered partial repetition of first ($p<0.0001$), second ($p<0.0001$), third ($p=0.0579$), fourth ($p=0.0403$), sixth ($p=0.0003$) and seventh ($p=0.0040$) order, zero and first-order partial repetition ($p<0.0001$), exact reciprocation ($p<0.0001$), nominator in-degree ($p<0.0001$), nominee out-degree ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the age of the nominator ($p<0.0001$), the average age of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' age ($p<0.0001$), the discrepancy between nominees' age ($p<0.0001$), the sex of the nominator ($p<0.0001$), the average sex of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' sex ($p<0.0001$), the discrepancy between nominees' sex ($p<0.0001$), the place of residence of the nominator ($p<0.0001$), the average place of residence of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' place of residence ($p<0.0001$), the place/occasion of the nominator's infection ($p<0.0001$), the average place/occasion of the nominees' infections ($p<0.0001$), the discrepancy between nominator's and nominees' place/occasion of infection ($p<0.0001$), the nominator's symptoms ($p<0.0001$), the average symptoms of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' symptoms ($p<0.0001$), the discrepancy between nominees' symptoms ($p=0.0869$), the average symptom severity of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' symptom severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the average place where the nominees were registered as positive ($p<0.0001$), the discrepancy between nominator's and nominees' place of registration ($p<0.0001$), and the discrepancy between nominees' places of registration ($p<0.0001$). 
+
+Nominee set size has a moderately positive effect on contact nomination likelihood (coefficient = 0.3631); first and seventh-order unordered partial repetition have a slightly/marginally positive effect, while unordered partial repetition of orders two, three, four and six all have a marginally negative effect (coefficients = 0.2919, 0.0027, -0.0141, -0.0019, -0.0020 and -0.0032, respectively); partial repetition of zero order has a strongly negative effect, while first-order partial repetition has a marginally positive effect (coefficients = -1.597 and 0.0218, respectively); exact reciprocation has a marginally positive effect (coefficient = 0.0457); nominator in-degree has a slightly positive effect, while nominee out-degree has a marginally negative effect (coefficients = 0.2030 and -0.0526, respectively); cyclical tie has a marginally negative effect (coefficient = -0.0335); shared source has a marginally negative effect (coefficient = -0.0162); nominator age, average age of nominees and age discrepancy between nominees all have a marginally positive effect, while age discrepancy between nominator and nominee has a marginally negative effect (coefficients = 0.0048, 0.0094, 0.0084 and -0.0032, respectively); nominator sex and average sex of nominees both have a slightly/moderately negative effect, while sex discrepancy between nominator and nominees and sex discrepancy between nominees have a slightly/moderately positive effect (coefficients = -0.2923, -0.3874, 0.3014 and 0.3571, respectively); nominator place of residence, average place of residence of nominees and discrepancy between nominator's and nominees' place of residence all have a marginally/moderately negative effect (coefficients = -0.0012, -0.0009 and -0.6098, respectively); place/occasion of the nominator's infection and average place/occasion of the nominees' infections have a marginally positive effect, while discrepancy between nominator's and nominees' places/occasions of infection has a slightly negative effect (coefficients = 0.0003, 0.0003 and -0.2015, respectively); nominator symptoms and average symptoms of nominees have a marginally positive effect, while symptom discrepancy between nominator and nominees and symptom discrepancy between nominees have a slightly/marginally negative effect (coefficients = 0.0028, 0.0024, -0.1193 and -0.0819, respectively); average symptom severity of the nominees has a slightly positive effect, while symptom severity discrepancy between nominator and nominees has a moderately negative effect (coefficients = 0.1061 and -0.4284, respectively); nominator place of registration, average place of registration of the nominees, discrepancy between nominator's and nominees' place of registration and discrepancy between nominees' places of registration all have a marginally/very strongly negative effect (coefficients = -0.0007, -0.0009, -6.056 and -1.939, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/china_rhem.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Unconditioned RHEM results for the China network. Unordered repetition and partial repetition of order two and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:china_rhem}
+	\end{mdframed}
+\end{table}
+
+For the source-conditioned mode, the significant statistics are the size of the nominee set ($p<0.0001$), unordered partial repetition of first to tenth order ($p<0.0001$), exact reciprocation ($p<0.0001$), nominator in-degree ($p<0.0001$), nominee out-degree ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), the average age of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' age ($p<0.0001$), the discrepancy between nominees' age ($p<0.0001$), the average sex of the nominees ($p=0.0005$), the discrepancy between nominator's and nominees' sex ($p=0.0001$), the discrepancy between nominees' sex ($p<0.0001$), the average place of residence of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' place of residence ($p<0.0001$), the discrepancy between nominees' places of residence ($p=0.0002$), the average place/occasion of the nominees' infections ($p<0.0001$), the discrepancy between nominator's and nominees' place/occasion of infection ($p<0.0001$), the discrepancy between nominees' places/occasions of infection ($p<0.0001$), the nominator's symptoms ($p<0.0001$), the average symptoms of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' symptoms ($p<0.0001$), the discrepancy between nominees' symptoms ($p=0.0869$), the nominator's symptom severity ($p<0.0001$), the average symptom severity of the nominees ($p<0.0001$), the discrepancy between nominator's and nominees' symptom severity ($p<0.0001$), the place where the nominator was registered as positive ($p<0.0001$), the average place where the nominees were registered as positive ($p=0.0053$), the discrepancy between nominator's and nominees' place of registration ($p<0.0001$), and the discrepancy between nominees' places of registration ($p<0.0001$). 
+
+Nominee set size has a slightly positive effect (coefficient = 0.3216); first, third, sixth, seventh and ninth order unordered partial repetition have a strongly/marginally positive effect, while second, fourth, fifth, eighth and tenth order unordered partial repetition have a marginally negative effect (coefficients = 0.6390, 0.0227, 0.0045, 0.0072, 0.0298, -0.0330, -0.0150, -0.0068, -0.0271 and -0.0128, respectively); exact reciprocation has a marginally positive effect (coefficient = 0.0511); nominator in-degree and nominee out-degree both have a slightly/moderately negative effect (coefficients = -0.2008 and -0.4553, respectively); cyclical tie has a slightly positive effect (coefficient = 0.1158); shared source has a slightly negative effect (coefficient = -0.1439); average nominee age and age discrepancy between nominees have a marginally positive effect, while age discrepancy between nominator and nominee has a marginally negative effect (coefficients = 0.0051, 0.0117 and -0.0064, respectively); average sex of nominees has a marginally negative effect, while sex discrepancy between nominator and nominees and sex discrepancy between nominees have a slightly/moderately positive effect (coefficients = -0.0752, 0.1067 and 0.5948, respectively); average nominee place of residence and discrepancy between nominator's and nominees' places of residence have a marginally/moderately negative effect, while place of residence discrepancy between nominees has a slightly positive effect (coefficients = -0.0004, -0.4954 and 0.2044, respectively); average place/occasion of infection of nominees and place/occasion discrepancy between nominees have a marginally/slightly positive effect, while discrepancy between nominator's and nominees' places/occasions of infection has a slightly negative effect (coefficients = 0.0002, 0.2098 and -0.3065, respectively); nominator symptoms, average symptoms of nominees and symptom discrepancy between nominees all have a marginally/slightly positive effect, while symptom discrepancy between nominator and nominees has a slightly negative effect (coefficients = 0.0014, 0.0024, 0.2475 and -0.2788, respectively); nominator symptom severity, average symptom severity of nominees and symptom severity discrepancy between nominator and nominees all have a slightly/moderately positive effect (coefficients = 0.1995, 0.3376 and 0.2740, respectively); nominator place of registration as a positive patient, place of registration discrepancy between nominator and nominees and place of registration discrepancy between nominees all have a marginally/very strongly negative effect, while average place of registration of nominees has a marginally positive effect (coefficients = -0.0010, -4.178, -3.350 and 0.0003, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/china_rhem_cond_sender.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Source-conditioned RHEM results for the China network. Exact repetition, unordered repetition, partial repetition of order one and greater, transitive tie and shared target are all-zero and thus weren't included in the Cox model.}
+		\label{tab:china_rhem_cond_sender}
+	\end{mdframed}
+\end{table}
+
+Finally, for the target-conditioned model, the significant statistics are the size of the nominee set ($p=0.0962$), second-order unordered partial repetition ($p=0.0862$), zero-order partial repetition ($p<0.0001$), exact reciprocation ($p<0.0001$), nominator in-degree ($p<0.0001$), nominee out-degree ($p<0.0001$), transitive tie ($p<0.0001$), cyclical tie ($p<0.0001$), shared source ($p<0.0001$), shared target ($p<0.0001$), age of the nominator ($p=0.0002$), age discrepancy between nominator and nominee ($p=0.0003$), nominator sex ($p<0.0001$), sex discrepancy between nominator and nominees ($p<0.0001$), place of residence of the nominator ($p<0.0001$), average place of residence of the nominees ($p=0.0040$), discrepancy between nominator's and nominees' places of residence ($p<0.0001$), place/occasion of infection of the nominator ($p<0.0001$), average place/occasion of infection of the nominees ($p=0.0293$), place/occasion discrepancy between nominator and nominees ($p<0.0001$), symptoms of the nominator ($p<0.0001$), average symptoms of the nominees ($p<0.0001$), symptom discrepancy between nominator and nominees ($p<0.0001$), symptom severity of the nominator ($p<0.0001$), average symptom severity of the nominees ($p<0.0001$), symptom severity discrepancy between nominator and nominees ($p<0.0001$), average place of registration as a positive patient of the nominees ($p=0.0075$), and place of registration discrepancy between nominator and nominees ($p<0.0001$). 
+
+Nominee set size has a marginally positive effect on contact nomination likelihood (coefficient = 0.0254); second-order unordered partial repetition has a marginally negative effect (coefficient = -0.0323); zero-order partial repetition has a slightly negative effect (coefficient = -0.2166); exact reciprocation has a slightly negative effect (coefficient = -0.1309); nominator in-degree has a slightly positive effect, while nominee in-degree has a slightly negative effect (coefficient = 0.1004 and -0.1146, respectively); transitive tie has a marginally positive effect (coefficient = 0.0618); cyclical tie has a slightly positive effect (coefficient = 0.1355); shared source and shared target both have a slightly/marginally negative effect (coefficients = -0.1659 and -0.0399, respectively); nominator age has a marginally positive effect, while age discrepancy between nominator and nominees has a marginally negative effect (coefficients = 0.0022 and -0.0031, respectively); nominator sex has a marginally negative effect, while sex discrepancy between nominator and nominees has a slightly positive effect (coefficients = -0.0893 and 0.1348, respectively); nominator place of residence, average place of residence of nominees and place of residence discrepancy between nominator and nominees all have a marginally/moderately negative effect (coefficients = -0.0005, -0.0002 and -0.3329, respectively); nominator place/occasion of infection and average place/occasion of nominees have a marginally/negligibly positive effect, while place/occasion discrepancy between nominator and nominees has a slightly negative effect (coefficients = 0.0002, 0.00008 and -0.2837, respectively); nominator symptoms and average symptoms of nominees have a marginally positive effect, while symptom discrepancy between nominator and nominees has a slightly negative effect (coefficients = 0.0077, 0.0026 and -0.2554, respectively); nominator symptom severity, average symptom severity of nominees and symptom severity discrepancy between nominators and nominees all have a slightly positive effect (coefficients = 0.2589, 0.1883 and 0.3015, respectively); average place of registration as positive of nominees and place of registration discrepancy between nominator and nominees both have a marginally/very strongly negative effect (coefficients = -0.0004 and -11.35, respectively).
+
+\begin{table}[htbp]
+	\footnotesize
+	\centering
+	\begin{mdframed}
+		\begin{tabular}[width=\linewidth]{l|llll}
+			\hline
+			& \bfseries coef & \bfseries std err & $\mathbf{z}$ & $\mathbf{P>\lvert z \rvert}$\\
+			\hline
+			\csvreader[head to column names]{Tables/rhem/china_rhem_cond_receiver.csv}{}
+			{\\ \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi}\\
+			\hline
+		\end{tabular}
+		\caption{Target-conditioned RHEM results for the China network. Unordered repetition and partial repetition of order seven and greater are all-zero and thus weren't included in the Cox model.}
+		\label{tab:china_rhem_cond_receiver}
+	\end{mdframed}
+\end{table}
 
 \section{Discussion of results}
 \label{sec:res_discussion}
+
+\subsection{Reproducibility of previous results}
+\label{sec:discussion_repro}
+
+One aim of this work is investigating whether results presented in previous research papers can reliably be reproduced using the same set of methods. As for the papers from Yang et al. \cite{hainan_publication,shaanxi_publication,xian_publication}, this has been shown to be the case, as can be seen in section \ref{sec:sna_anovas}. 
+
+Regarding the paper by H\^ancean et al. \cite{hancean2022occupations}, things are not as clear. While the comparable network statistics (exact reciprocation, nominator in-degree, nominee out-degree, shared source and cyclical/transitive tie) are in agreement in terms of effect directionality, i.e. the sign of coefficient values, this is not the case for patient covariates (nominator age, nominees average age, age discrepancy, nominator sex, nominees average sex, sex discrepancy, nominator medical employment and nominees average medical employment). In particular, they determined nominator sex to be non-significant, while it was found to have a significantly positive effect here, across all three model variants; nominee average sex and sex discrepancy were reported to have a positive effect, while here they were found to have a negative effect across all model variants, with the exception of sex discrepancy in the target-conditioned model; finally, nominator medical employment and nominees average medical employment were both reported to be non-significant, whereas here both were found to be significantly negative across all three model variants \cite{hancean2022occupations}. For a full comparison, refer to \ref{tab:rhem_repro_table}. This discrepancy in reported results is most likely due to the fact that in this work, the full dataset was included into the analysis, while H\^ancean et al. only included records who had named/been named as a contact. Therefore, the dataset analysed in this dataset is far larger, which may well explain the discrepancy in results for the patient covariates; at the same time, the contact nomination records are the same in both cases, therefore the effect directionalities for the network statistics, e.g. reciprocation, are fully in agreement. However, the absolute coefficient values are mostly different in terms of magnitude, with the values reported by H\^ancean et al. generally being higher (e.g. -0.54 for nominee out-degree reported here (unconditioned model) vs -2.65 reported by H\^ancean et al. \cite{hancean2022occupations}). This difference may be due to either the size of the datasets, or different implementations, or both.
+
+\begin{table}[htbp]
+	\centering
+	\footnotesize
+	\begin{mdframed}
+		\begin{tabular*}{\linewidth}{l|llll}
+			\hline
+			\textbf{ } & H\^ancean et al. & Unconditioned & Source-conditioned & Target-conditioned\\
+			\hline
+			nominator age & \textcolor{green}{0.477*} & \textcolor{green}{0.002*} & \textcolor{green}{0.004*} & \textcolor{green}{0.004*}\\
+			nominees age & 0.019 & \textcolor{red}{-0.001*} & 0.0007 & \textcolor{red}{-0.002*}\\
+			age diff & \textcolor{red}{-0.652*} & \textcolor{red}{-0.029*} & \textcolor{red}{-0.022*} & \textcolor{red}{-0.030*}\\
+			nominator sex & 0.039 & \textcolor{green}{0.781*} & \textcolor{green}{0.069*} & \textcolor{green}{0.835*}\\
+			nominees sex & \textcolor{green}{0.107*} & \textcolor{red}{-2.455*} & \textcolor{red}{-2.786*} & \textcolor{red}{-0.197*}\\
+			sex diff & \textcolor{green}{0.628*} & \textcolor{red}{-0.571*} & \textcolor{red}{-0.306*} & \textcolor{green}{0.722*}\\
+			nominator medical & -0.003 & \textcolor{red}{-0.973*} & \textcolor{red}{-0.092*} & \textcolor{red}{-1.267*}\\
+			nominees medical & -0.130 & \textcolor{red}{-0.3382*}  & \textcolor{red}{-0.450*} & \textcolor{red}{-0.050*}\\
+			reciprocation & \textcolor{green}{0.105*} & \textcolor{green}{0.057*} & \textcolor{green}{0.051*} & \textcolor{green}{0.039*}\\
+			nominator in-degree & \textcolor{red}{-1.182*} & \textcolor{red}{-0.547*} & \textcolor{red}{-0.034*} & \textcolor{red}{-0.660*}\\
+			nominee out-degree & \textcolor{red}{-2.655*} & \textcolor{red}{-0.545*} & \textcolor{red}{-0.552*} & \textcolor{red}{-0.087*}\\
+			shared source & \textcolor{green}{0.099*} & \textcolor{green}{0.052*} & \textcolor{green}{0.051*} & \textcolor{green}{0.023*}\\
+			cyclical/transitive tie & \textcolor{green}{0.078*} & \textcolor{green}{0.007*} & \textcolor{green}{0.006*} & \textcolor{green}{0.003*}\\
+			\hline
+		\end{tabular*}
+	\end{mdframed}
+	\caption{Comparison of coefficient values and significances between \cite{hancean2022occupations} and this work. Red values denote negative effect, green values denote positive effect, asterisks denote statistical significance, and uncoloured values denote non-significance.}
+	\label{tab:rhem_repro_table}
+\end{table}
+
+\subsection{Comparison of results between regions}
+\label{sec:discussion_regions}
+
+\paragraph{Social Network Analysis} Descriptive statistics for degree centrality show a negative association between network size and network density. Two possible explanations for this phenomenon are 1) that when the virus is still a rare occurrence and thus few people get infected, patients are more likely to know who would have infected them (one caveat here is that this explanation assumes directionality in contact nomination, i.e. that patients nominate only possible sources of infection as opposed to sources as well as targets), and/or 2) that small sample sizes are more likely to show extremes, and that these tend to even out with a growing sample size (law of large numbers). Irrespective of the actual explanation, this phenomenon partly explains the ANOVA results for degree centrality, where all regions are pairwise different with the exception of Bucharest vs. China. Interesting to note is the fact that the Hainan network is significantly denser than the Yunnan region, which may be explained by Hainan's higher population density (290 vs. 120 per km$^2$) and status as a popular tourist region \cite{wiki_yunnan,wiki_hainan}. Reported values for pagerank centrality further support this.
+
+The miniscule average values for betweenness centrality and corresponding ANOVA results suggest that infections very rarely spread in chains, and/or infection clusters tend to be isolated, i.e. two larger densely connected groups of cases are almost never connected to one another. This notion is further reinforced by the small mean values for shortest path length per node, meaning that connected nodes are very close to each other, and the mean/median values for connected component size.
+
+\paragraph{OLS regression models} Comparable regressors across all regions are age, sex, and the five computed network statistics (i.e. degree centrality, betweenness centrality, pagerank centrality, component size and average shortest path length). 
+
+The age of the nominator and nominee and age discrepancy are mostly insignificant, and directionality is not consistent across the instances with significance. Nominator age has a negative effect in the Shaanxi and China networks, i.e. younger people are more likely to nominate contacts. Nominee age has a negative effect in the Yunnan network, but a positive effect in the China network, i.e. in the Yunnan network, younger people are likewise more likely to be nominated as contacts, while the opposite is true for the China network. Age discrepancy has a negative effect in the Shaanxi and Bucharest network, while it has a positive effect in the China network. This means that in Bucharest and Shaanxi, nominator and nominee were more likely to be close in age (age homophily), while in China, nominator and nominee were more likely to be from different age groups. Overall, there is no clear tendency visible across all regions except for nominator age.
+
+Sex paints a different story, where nominator sex, nominee sex and sex discrepancy are significant in almost all instances (except nominee sex in Yunnan and all variations in Hainan) and all have a positive effect where significant, with the exception of sex discrepancy in Bucharest, which has a negative effect. This is misleading, however, since the coding for the Bucharest network differs from the others; there, it is male = 1 and female = 2, while for the other four networks, it is male = 1 and female = 0. Therefore, while a positive effect means that males are more likely to be a nominator/nominee in Yunnan, Hainan, Shaanxi and China, the opposite is the case for Bucharest. In conclusion, nominators are more likely to be males in Yunnan, Shaanxi and China; nominees are more likely to be males in Shaanxi and China; contact nominations are more likely to occur between different-sex actors (i.e. male to female or female to male) in Yunnan, Shaanxi, and China. In Bucharest, in contrast, nominators and nominees are more likely to be female, and contact nominations are more likely to occur between same-sex actors (i.e. male to male or female to female).
+
+Nominator and nominee degree centrality have a positive effect across all regions, i.e. actors with a higher number of contacts are more likely to nominate/be nominated (which is obvious and self-explanatory). With the exception of Shaanxi, discrepancy in degree centrality also has a negative effect, i.e. nominations tend to happen between actors with a larger number of contacts (which is, again, self-explanatory). 
+
+Nominee betweenness centrality has a positive effect in all regions except Yunnan, while nominator betweenness centrality has a positive effect in Hainan and China and a negative effect in Yunnan, Shaanxi and Bucharest. This suggests that nominees are generally more likely to be information flow facilitators, while these facilitators are themselves less likely to nominate other people in the Yunnan, Shaanxi and Bucharest and more likely in Hainan and China. This is paradoxical at first, as one would expect the former, but not the latter (e.g. image the scenario where $B$ is a facilitator of information between clusters $C_1$ and $C_2$. One would therefore expect that $B$ is more likely to be nominated by $A\in C_1$ as a contact, which is supported by the results mentioned above, and that $B$ is more likely to nominate $D\in C_2$, which is however not supported by the results.). However, recall that the network is  undirected; therefore, an actor $B$ who gets nominated by both $A$ and $D$ would also be considered a node with a high betweenness centrality. As for discrepancy in betweenness centrality, there seems to be an inverted relationship with nominator betweenness centrality, i.e. where nominator betweenness centrality has a positive effect, discrepancy between nominator and nominee has a negative effect, and vice versa. \add{how to explain this?}
+
+Effects of pagerank centrality vastly differ between regions, with no clear tendency or pattern. Interestingly, there seems to be no correlation with degree centrality. With the exception of Bucharest, nominees are more likely to have a larger component size, while nominator component size has a positive effect in Shaanxi and China and a negative effect in Yunnan and Bucharest. In all regions, component size discrepancy has a negative effect. This suggests that contact nominations tend to occur between actors who are part of similarly sized components (i.e. infection clusters). This makes sense, since a connected component is a community of nodes who are densely interconnected, but are isolated from the rest of the network, i.e. contact nominations always happen between nodes of the same component.
+
+While effect directionality of nominator/nominee average shortest path length and discrepancy in average shortest path length differ across regions, it is always the case that both nominator and nominee average shortest path length have the same directionality, and discrepancy the opposite directionality of that, i.e. if nominator average shortest path length has a positive effect, so does nominee, and discrepancy has a negative effect, and vice versa. That means that when nominator and nominee tend to have longer shortest paths to other nodes, actors with similar average shortest path lengths tend to nominate each other, but when nominator and nominee tend to have shorter paths to other nodes, actors with different average shortest path lengths nominate each other. \add{why is that?}
+
+\paragraph{Relational event models} Comparable regressors across all regions are age, sex, and the computed network statistics (i.e. nomination activity, reciprocation, exact repetition, exact reciprocation, transitive tie, cyclical tie, shared source, and shared target).
+
+ 
+
+\subsection{Comparison of results between methods}
+\label{sec:discussion_methods}

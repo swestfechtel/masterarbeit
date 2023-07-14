@@ -15,13 +15,16 @@ nomination.events <- read.csv('shanxi_eventlist_nomination.csv', sep=',')
 nomination.events[,c(which(names(nomination.events) == 'num_referrals'):which(names(nomination.events) == 'triangle_effect_parents'))] <- log1p(nomination.events[,c(which(names(nomination.events) == 'num_referrals'):which(names(nomination.events) == 'triangle_effect_parents'))])
 nomination.events[,c(which(names(nomination.events) == 'num_referrals'):which(names(nomination.events) == 'triangle_effect_parents'))] <- scale(nomination.events[,c(which(names(nomination.events) == 'num_referrals'):which(names(nomination.events) == 'triangle_effect_parents'))])
 nomination.events.surv <- Surv(time=rep(1, nrow(nomination.events)), event=nomination.events$IS_OBSERVED)
-nomination.events.rem <- coxph(nomination.events.surv ~ num_referrals + exact_repetition + partial_repetition_1 + partial_repetition_2 + unordered_partial_repetition_0 + unordered_partial_repetition_1 + unordered_partial_repetition_2 + exact_reciprocation + referee_indegree + referral_outdegree + transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events)
+nomination.events.rem <- coxph(nomination.events.surv ~ num_referrals + exact_repetition + partial_repetition_0 + partial_repetition_1 + partial_repetition_2 + unordered_partial_repetition_1 + unordered_partial_repetition_2 + exact_reciprocation + referee_indegree + referral_outdegree + transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events)
 # unordered repetition, partial repetition 3-10, unordered partial repetition 3-10 NAN
 ```
 
 ```{r}
 options(width=300)
 summary(nomination.events.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.rem), file='../../../Thesis/tables/rhem/shanxi_rhem.csv')
 ```
 
 
@@ -30,13 +33,16 @@ nomination.events.cond.referee <- read.csv('shanxi_eventlist_nomination_cond_ref
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'num_referrals'):which(names(nomination.events.cond.referee) == 'triangle_effect_parents'))] <- log1p(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'num_referrals'):which(names(nomination.events.cond.referee) == 'triangle_effect_parents'))])
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'num_referrals'):which(names(nomination.events.cond.referee) == 'triangle_effect_parents'))] <- scale(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'num_referrals'):which(names(nomination.events.cond.referee) == 'triangle_effect_parents'))])
 nomination.events.cond.referee.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referee)), event=nomination.events.cond.referee$IS_OBSERVED)
-nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~ num_referrals + partial_repetition_1 + partial_repetition_2 + referral_outdegree + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee)
+nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~ num_referrals + unordered_partial_repetition_1 + unordered_partial_repetition_2 + referral_outdegree + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee)
 # exact repetition, unordered repetition, partial repetition 3-10, unordered partial repetition 0-10, exact_reciprocation, referee_indegree, transitive_tie, cyclical_tie, triangle_effect_children, triangle_effect_parents NAN
 ```
 
 ```{r}
 options(width=300)
 summary(nomination.events.cond.referee.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.cond.referee.rem), file='../../../Thesis/tables/rhem/shanxi_rhem_cond_sender.csv')
 ```
 
 
@@ -45,11 +51,14 @@ nomination.events.cond.referral <- read.csv('shanxi_eventlist_nomination_cond_re
 nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'num_referrals'):which(names(nomination.events.cond.referral) == 'triangle_effect_parents'))] <- log1p(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'num_referrals'):which(names(nomination.events.cond.referral) == 'triangle_effect_parents'))])
 nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'num_referrals'):which(names(nomination.events.cond.referral) == 'triangle_effect_parents'))] <- scale(nomination.events.cond.referral[,c(which(names(nomination.events.cond.referral) == 'num_referrals'):which(names(nomination.events.cond.referral) == 'triangle_effect_parents'))])
 nomination.events.cond.referral.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referral)), event=nomination.events.cond.referral$IS_OBSERVED)
-nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ num_referrals + exact_repetition + partial_repetition_1 + partial_repetition_2 + unordered_partial_repetition_0 + unordered_partial_repetition_1 + unordered_partial_repetition_2 +  exact_reciprocation + referee_indegree + referral_outdegree + transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
+nomination.events.cond.referral.rem <- coxph(nomination.events.cond.referral.surv ~ num_referrals + exact_repetition + unordered_partial_repetition_1 + unordered_partial_repetition_2 + partial_repetition_0 + partial_repetition_1 + partial_repetition_2 +  exact_reciprocation + referee_indegree + referral_outdegree + transitive_tie + cyclical_tie + triangle_effect_children + triangle_effect_parents + referee_age + referrals_avg_age + referee_referrals_age_difference + referrals_age_difference + referee_gender + referrals_avg_gender + referee_referrals_gender_difference + referrals_gender_difference + referee_relatives + referrals_avg_relatives + referee_referrals_relatives_difference + referrals_relatives_difference + referee_hukou + referrals_avg_hukou + referee_referrals_hukou_difference + referrals_hukou_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referral)
 # unordered repetition, partial repetition 3-10, unordered partial repetition 3-10 NAN
 ```
 
 ```{r}
 options(width=300)
 summary(nomination.events.cond.referral.rem)
+```
+```{r}
+write.csv(tidy(nomination.events.cond.referral.rem), file='../../../Thesis/tables/rhem/shanxi_rhem_cond_receiver.csv')
 ```
