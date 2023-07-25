@@ -62,3 +62,9 @@ summary(nomination.events.cond.referral.rem)
 ```{r}
 write.csv(tidy(nomination.events.cond.referral.rem), file='../../../Thesis/tables/rhem/bucharest_rhem_cond_receiver.csv')
 ```
+
+```{r}
+rsq(nomination.events.rem)
+rsq(nomination.events.cond.referee.rem)
+rsq(nomination.events.cond.referral.rem)
+```

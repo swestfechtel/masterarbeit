@@ -6,6 +6,7 @@ output: html_document
 
 ```{r}
 library(survival)
+library(survMisc)
 library(broom)
 setwd('E:/Data/masterarbeit/Data/Tables/rem')
 ```
@@ -23,6 +24,7 @@ nomination.events.rem <- coxph(nomination.events.surv ~ nomination_activity +  r
 ```{r}
 summary(nomination.events.rem)
 ```
+
 ```{r}
 write.csv(tidy(nomination.events.rem), file='../../../Thesis/tables/bucharest_rem.csv')
 ```
@@ -33,8 +35,8 @@ nomination.events.cond.referee <- read.csv2('bucharest_eventlist_nomination_cond
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- log1p(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))] <- scale(nomination.events.cond.referee[,c(which(names(nomination.events.cond.referee) == 'nomination_activity'):which(names(nomination.events.cond.referee) == 'network_time'))])
 nomination.events.cond.referee.surv <- Surv(time=rep(1, nrow(nomination.events.cond.referee)), event=nomination.events.cond.referee$IS_OBSERVED)
-nomination.events.cond.sender.rem <- coxph(nomination.events.cond.referee.surv ~  reciprocation  + exact_reciprocation + cyclical_tie + triangle_effect_children  + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_isco08_label + referral_isco08_label + isco08_label_difference + referee_medical + referral_medical + medical_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # nomination_activity, repetition, transitive_tie and triangle_effect_parents all NAN
-summary(nomination.events.cond.sender.rem)
+nomination.events.cond.referee.rem <- coxph(nomination.events.cond.referee.surv ~  reciprocation  + exact_reciprocation + cyclical_tie + triangle_effect_children  + network_activity + network_time + referee_age + referral_age + age_difference + referee_gender + referral_gender + gender_difference + referee_isco08_label + referral_isco08_label + isco08_label_difference + referee_medical + referral_medical + medical_difference + strata(EVENT_INTERVAL), data=nomination.events.cond.referee) # nomination_activity, repetition, transitive_tie and triangle_effect_parents all NAN
+summary(nomination.events.cond.referee.rem)
 ```
 ```{r}
 write.csv(tidy(nomination.events.cond.referee.rem), file='../../../Thesis/tables/bucharest_rem_cond_sender.csv')
@@ -54,4 +56,9 @@ summary(nomination.events.cond.referral.rem)
 ```
 ```{r}
 write.csv(tidy(nomination.events.cond.referral.rem), file='../../../Thesis/tables/bucharest_rem_cond_receiver.csv')
+```
+```{r}
+rsq(nomination.events.rem)
+rsq(nomination.events.cond.referee.rem)
+rsq(nomination.events.cond.referral.rem)
 ```
