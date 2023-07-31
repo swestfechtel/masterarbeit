@@ -34,8 +34,8 @@
 
 \DeclareMathOperator*{\argmax}{argmax}
 
-\titleformat{\chapter}[display]
-{\normalfont\bfseries}{}{0pt}{\Large}
+%\titleformat{\chapter}[display]
+%{\normalfont\bfseries}{}{0pt}{\Large}
 
 
 \title{
@@ -47,9 +47,63 @@
 \author{Simon Westfechtel}
 
 \begin{document}
-	\maketitle
+	\emergencystretch 3em
+	%\maketitle
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			
+			\Huge
+			\textbf{A Sociable Virus?}
+			
+			\vspace{0.5cm}
+			\LARGE
+			A Comparison and Investigation of Reproducibility of Methods for Analysing COVID-19 Transmission Chains Using Graph Networks
+			
+			\vspace{1cm}
+			\large
+			\textcolor{gray}{\textbf{Ein geselliges Virus?}}
+			
+			\vspace{0.5cm}
+			\normalsize
+			\textcolor{gray}{Ein Vergleich und eine Untersuchung der Reproduzierbarkeit von Methoden zur Analyse von COVID-19 Übertragungsketten mit Graphnetzwerken}
+			
+			\vfill
+			
+			\LARGE
+			Master Thesis
+			
+			\large
+			\textcolor{gray}{Masterarbeit}
+			
+			\vspace{0.4cm}
+			
+			\LARGE
+			Computational Social Systems
+			
+			\vspace{0.8cm}
+			
+			\large
+			Simon Westfechtel\\
+			Matr.-Nr. 353822\\
+			Aachen, \today
+			\vfill
+			
+			\Large
+			RWTH Aachen University\\
+			Chair for Computational Social Sciences and Humanities\\
+			
+			\vfill
+			\begin{flushleft}
+				\normalsize
+				Primary Supervisor / Erstprüfer: Priv.-Doz. Dr. Jürgen Lerner\\
+				Secondary Supervisor / Zweitprüferin: Dr. Nazmiye Gizem Bacaksizlar Turbic\\
+			\end{flushleft}
+			
+		\end{center}
+	\end{titlepage}
 	\begin{abstract}
-		abstract goes here
+		Scientific work on epidemics and pandemics mostly focuses on virology and potential treatments, while the societal aspect is often overlooked. The results are incoherent and often unfounded containment methods. The field of Computational Social Science offers a wide array of tools to analyse pandemic situations on a societal level. This work seeks to investigate and compare the usage of Social Network Analysis (SNA), Relational Event Models (REM) and Relational Hyperevent Models (RHEM) for this task. These methods are used to analyse six case contact networks from Europe and China. Results are compared to original reports where applicable to investigate reproducibility, and further compared horizontally (i.e. inter-regional) and vertically (i.e. inter-methodological). Results show a significant impact of age and sex on contact nomination likelihood, and a tendency for named contacts to become infected at later stages and interact with other contacts. Furthermore, Social Network Analysis and Relational (Hyper-)event Models should be used for different tasks. While no definitive answer can be given as to whether REM or RHEM are the preferable choice, findings justify the usage of RHEM over REM.  
 	\end{abstract}
 	\tableofcontents
 	\include{introduction}

@@ -1,4 +1,4 @@
-\chapter{3\quad Methodology}
+\chapter{Methodology}
 \label{ch:methods}
 
 \section{Social Network Analysis}
@@ -237,7 +237,7 @@ As mentioned before, there are essentially two steps, which are 1) the computati
 		\end{align*}
 		\item Shared target, i.e. the influence of the number of past events $(u,x,t_j)$ and $(v,x,t_k)$, $j \leq k < i$ on the likelihood of a possible event $(u,v,t_i)$ or $(v,u,t_i)$ $\rightarrow$ is there a tendency for actors who have nominated the same individual as a contact to name each other as contacts at a later time? (for an illustration, refer to figure \ref{fig:rem_triangle_parents})
 		\begin{align*}
-			shared.sender(e(u,v,t_i)) = \sum_{x=1}^{\lvert \mathcal{R} \rvert} \min [d(u,x,A_{t_i}), d(v,x,A_{t_i})]
+			shared.target(e(u,v,t_i)) = \sum_{x=1}^{\lvert \mathcal{R} \rvert} \min [d(u,x,A_{t_i}), d(v,x,A_{t_i})]
 		\end{align*}
 	\end{itemize}
 	\item Effects depending on actor attributes:
@@ -440,7 +440,8 @@ The statistics included in the models are in part similar to the ones used in RE
 		\end{align*}
 		\item Unordered repetition, i.e. the influence of the number of past events $e(h',<t_i)$ on the likelihood of a possible event $e(h,t_i)$, where $h' = (u',v'); \: h = (u,v); \: u',v' \subseteq u \cup v$ $\rightarrow$ is there a tendency for contact nominations to repeat involving the same actors, but with actors not necessarily in the same roles?
 		\begin{align*}
-			unordered.repetition(e(h,t_i)) = \sum e(h',<t_i); \: h.source \cup h.targets = h'.source \cup h'.targets
+			&unordered.repetition(e(h,t_i)) = \sum e(h',<t_i);&&\\
+			&h.source \cup h.targets = h'.source \cup h'.targets&&
 		\end{align*}
 		\begin{figure}
 			\begin{mdframed}
@@ -485,7 +486,8 @@ The statistics included in the models are in part similar to the ones used in RE
 	
 		\item Partial repetition, i.e. the influence of the number of past events $e(h',<t_i)$ on the likelihood of a possible event $e(h,t_i)$, where $h' = (u,v'); \: h = (u,v); \: v \cap v' \neq \emptyset$ $\rightarrow$ is the likelihood of a future event $e(h,t_i)$ associated with the number of past events for which the target sets contain common actors? 
 		\begin{align*}
-			partial.repetition(e(h,t_i)) = \sum e(h',<t_i); \: h.source = h'.source \land h.targets \cap h'.targets \neq \emptyset
+			&partial.repetition(e(h,t_i)) = \sum e(h',<t_i);&&\\
+			&h.source = h'.source \land h.targets \cap h'.targets \neq \emptyset&&
 		\end{align*}
 		\begin{figure}
 			\begin{mdframed}
@@ -587,7 +589,8 @@ The statistics included in the models are in part similar to the ones used in RE
 	
 		\item Exact reciprocation, i.e. the influence of past events $e(h',<t_i)$ on the likelihood of a possible event $e(h,t_i)$, where $h' = (u',v'); \: h = (u,v); \: u \subset v' \land v \cap u' \neq \emptyset$ $\rightarrow$ is there a tendency for nominees to "return the favour" to the nominator in future events?
 		\begin{align*}
-			exact.reciprocation(e(h,t_i)) = \sum e(h',<t_i); \: h.source \subset h'.targets \land h'.source \subset h.targets
+			&exact.reciprocation(e(h,t_i)) = \sum e(h',<t_i);&&\\
+			&h.source \subset h'.targets \land h'.source \subset h.targets&&
 		\end{align*}
 		\begin{figure}
 			\begin{mdframed}
